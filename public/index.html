@@ -57,7 +57,7 @@
     <div id='mapid'>
     </div>
     <script>
-      var mymap = L.map('mapid').setView([-23.565658, -46.651218], 15);
+      var mymap = L.map('mapid', {zoomControl: false}).setView([-23.565658, -46.651218], 15);
     mymap.locate({ setView: true, maxZoom:15 }).on("locationfound", e => {
     })
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
