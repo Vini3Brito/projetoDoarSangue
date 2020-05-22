@@ -3,15 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Quero Doar Sangue</title>
+    <title>Projeto Doar Sangue</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.14.3/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.14.3/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.14.3/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.14.3/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.14.3/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-database.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
     <!-- leaflet -->
@@ -59,7 +57,7 @@
     <div id='mapid'>
     </div>
     <script>
-      var mymap = L.map('mapid').setView([-23.565658, -46.651218], 11);
+      var mymap = L.map('mapid').setView([-23.565658, -46.651218], 13);
       mymap.locate({ setView: true }).on("locationfound", e => {
         L.marker([e.latlng.lat,e.latlng.lng]).addTo(mymap)
           .bindPopup('Você.')
@@ -88,7 +86,7 @@
 
         try {
           let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          let features = ['analytics', 'database'].filter(feature => typeof app[feature] === 'function');
           document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
         } catch (e) {
           console.error(e);
