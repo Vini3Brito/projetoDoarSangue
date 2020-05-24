@@ -26,10 +26,10 @@ const firebaseConfig = {
   //    }
   //
 
-function localDoacao(centro, distancia){
+async function localDoacao(centro, distancia){
   const localDoacao = geofirestore.collection("localDoacao");
-  const locais = new Array;
-  const ref = localDoacao.near({
+  const locais = [];
+  await localDoacao.near({
       center: new firebase.firestore.GeoPoint(centro.lat, centro.lng),
       radius: distancia
   }).get().then(function(res){

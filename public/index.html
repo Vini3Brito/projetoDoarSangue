@@ -40,12 +40,14 @@
     var mymap = L.map('mapid', {zoomControl: false}).setView(localInicial, 15);
     mymap.locate({ setView: true, maxZoom:15 }).on("locationfound", e => {
       //Consulta de locais quando usuário passa sua localização
-      let consulta = localDoacao(e.latlng, distanciaBusca);
-      console.log(consulta);
+      localDoacao(e.latlng, distanciaBusca).then(consulta => {
+        console.log(consulta);
+      });
     }).on("locationerror", e => {
       //Consulta de locais quando usuário NÃO passa sua localização
-      let consulta = localDoacao(localInicial, distanciaBusca);
-      console.log(consulta);
+      localDoacao(localInicial, distanciaBusca).then(consulta =>{
+        console.log(consulta);
+      });
     });
     </script>
     <script src="./mapbox.js"></script>
