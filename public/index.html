@@ -42,11 +42,13 @@
       //Consulta de locais quando usuário passa sua localização
       localDoacao(e.latlng, distanciaBusca).then(consulta => {
         console.log(consulta);
+        apontaLocais(consulta);
       });
     }).on("locationerror", e => {
       //Consulta de locais quando usuário NÃO passa sua localização
       localDoacao(localInicial, distanciaBusca).then(consulta =>{
         console.log(consulta);
+        apontaLocais(consulta);
       });
     });
     </script>

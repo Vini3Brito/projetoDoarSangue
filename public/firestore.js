@@ -45,9 +45,23 @@ async function localDoacao(centro, distancia){
   return locais;
 }
 
-//function apontaLocais(locais) {
-
-//}
+function apontaLocais(locais) {
+  console.log(locais)
+  locais.forEach(function(item){
+    L.marker(item.coordenadas).addTo(mymap)
+    .bindPopup(item.nomeLocal, {
+      closeButton: false,
+      //maxWith = x Caso precise mudar
+    })
+      //Popup só aparecer com mouse passando em cima
+      .on('mouseover', function (e) {
+            this.openPopup();
+        })
+      .on('mouseout', function (e) {
+            this.closePopup();
+      });
+  });
+}
 
   //===================Métodos de carga no banco de dados===================
   //
