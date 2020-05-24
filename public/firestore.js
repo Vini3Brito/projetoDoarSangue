@@ -45,6 +45,10 @@ function localDoacao(centro, distancia){
   return locais;
 }
 
+//function apontaLocais(locais) {
+
+//}
+
   //===================Métodos de carga no banco de dados===================
   //
   //
