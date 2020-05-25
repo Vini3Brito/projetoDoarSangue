@@ -60,7 +60,8 @@ function apontaLocais(locais) {
       .on('mouseout', function (e) {
             this.closePopup();
       });
-  });
+    });
+    return true
 }
 
   //===================Métodos de carga no banco de dados===================
