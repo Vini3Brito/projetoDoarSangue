@@ -44,26 +44,26 @@
     var mymap = L.map('mapid', {zoomControl: false}).setView(localInicial, 15);
     mymap.locate({ setView: true, maxZoom:15 }).on("locationfound", e => {
       //Consulta de locais quando usuário passa sua localização
-      localDoacao(e.latlng, distanciaBusca).then(consulta => {
-        console.log(consulta);
-        setTimeout(function() {
+      setTimeout(function() {
           console.log(check)
           if(!check) {
             alert('Houve um erro de carregamento. Por favor atualize a página')
           }
         }, 10000)
+      localDoacao(e.latlng, distanciaBusca).then(consulta => {
+        console.log(consulta);
         check = apontaLocais(consulta);
       });
     }).on("locationerror", e => {
       //Consulta de locais quando usuário NÃO passa sua localização
-      localDoacao(localInicial, distanciaBusca).then(consulta =>{
-        console.log(consulta);
-        setTimeout(function() {
+      setTimeout(function() {
           console.log(check)
           if(!check) {
             alert('Houve um erro de carregamento. Por favor atualize a página')
           }
         }, 10000)
+      localDoacao(localInicial, distanciaBusca).then(consulta =>{
+        console.log(consulta);
         check = apontaLocais(consulta);
       });
     });
