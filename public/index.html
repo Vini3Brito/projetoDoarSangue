@@ -39,7 +39,7 @@
     let localInicial = L.latLng(-23.565658, -46.651218);
     let raioExibicao = 5; //Km
     let distanciaBusca = raioExibicao*10;
-    let check = false
+    let check = false //checar tempo de execução
     //Criação do mapa 
     var mymap = L.map('mapid', {zoomControl: false}).setView(localInicial, 15);
     mymap.locate({ setView: true, maxZoom:15 }).on("locationfound", e => {
