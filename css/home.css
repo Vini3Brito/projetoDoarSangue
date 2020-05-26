@@ -10,7 +10,7 @@
 .questionario_mobile img {
     right: 7px;
     position: absolute;
-    bottom: 100px;
+    bottom: -120px;
 }
 
 .questionario_mobile {
@@ -26,13 +26,13 @@
     font-family: inherit;
     font-size: 0.85em;
     line-height: 1.2em;
-    border-radius: 15px;
+    border-radius: 9px;
     width: 110px;
     height: auto;
-    color: black;
+    color: white;
     padding: 4px;
     position: relative;
-    margin-top: 10px;
+    bottom: -60px;
 }
 
 #balao:after {
@@ -42,27 +42,23 @@
     position: absolute;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 20px solid #ff0000;
-    top: -12px;
-    left: 50%;
+    border-bottom: 0px solid #ff0000;
+    border-top: 20px solid red;
+    top: 130px;
+    left: 58%;
 }
 /* Style informações */
 .btn-primary {
     margin-left: 4px;
-    color: white;
-    font-size: inherit;
-    font-weight: bold;
     background-color: #ff0000!important;
     border-color: #ff0000!important;
-    margin-top: 4px;
-    border-radius: 8px;
     box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
-    FONT-SIZE: 20PX;
     position: fixed;
     z-index: 99999;
     width: 170px;
     height: 40px;
     font-family: inherit;
+    margin-top: 4px;
 }
 
 .btn-primary:hover {
@@ -103,6 +99,12 @@
 
 
 /* Style Questionário */
+#questionario img {
+    width: 12px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+}
 #questionario {
     float: right;
     display: none;
@@ -115,10 +117,11 @@
     width: 170px;
     height: 40px;
     z-index: 99999;
-    position: relative;
+    position: fixed;
     border: 1px solid transparent;
     box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
     margin-left: 4;
+ 
 }
 
 #questionario button:hover {
@@ -127,7 +130,7 @@
 
 #conteudo {
     float: right;
-    position: absolute;
+    position: fixed;
     right: 4px;
     top: 42px;
     background: whitesmoke;
@@ -161,6 +164,10 @@ img#close {
     display: none!important;
 }
 }
+@media (max-width: 768px){
+#questionario button{
+    display: none;
+}}
 
 @media(max-width:768px) {
     .questionario #botao {
@@ -194,6 +201,10 @@ body {
   }
   #mapid {
     width: 100%;
-    height: 658px;
+    height: 100vh;
     border: none;
   }
+  .modal-title {
+    margin-bottom: 0;
+    line-height: 0;
+}

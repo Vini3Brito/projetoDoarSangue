@@ -37,59 +37,59 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
     <script src="https://unpkg.com/geofirestore/dist/geofirestore.js"></script>
     <script src="./firestore.js"></script>
-    <div id='mapid'>
+    
+     <!-- Botão de informações -->
+  <div class="informacoes">
+    <button type="button" onclick='habilita_survey()'class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+        <h3>Informações</h3>
+    </button>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      <img src="../Insumos/Ícones/bolsa_media.png">Informações
+                      
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    AGUARDANDO TEXTO!!
+                </div>
 
-        <!-- Questinario Mobile -->
-        <div class="questionario_mobile">
-          <a href="http://eurecaconsultoria.com/" target="_blank" onclick="close_questionario_mobile()">
-          <img src="../Insumos/Ícones/kisspng-computer-icons-form-template-desktop-wallpaper-5b2daf3c77da68.6584092315297206364909 (1).png"></a>
-          <div id="balao">
-              <p>Nos ajude a avaliar o portal participando de nossa pesquisa de avaliação clicando na imagem a cima</p>
-          </div>
-      </div>
-          <!-- Questinario Desktop -->
-    <div id="questionario">
+            </div>
+        </div>
+    </div>
+</div>
+     <!-- Questinario Desktop -->
+     <div id="questionario">
       <div id="botao">
-        <button type="button"><h3>Questinário</h3></button>
+        <button type="button"><h3 onclick="abrir_questionario()">Questinário</h3>
+        <img src="../Insumos/Ícones/close-button_icon-icons.com_72803.png" onclick='close_questionario()'></button>
       </div>
       <div id="conteudo">
           <p>Olá visitante, sua visita é bem-vinda! Nos ajude a avaliar o portal participando de nossa pesquisa de avaliação clicando no link abaixo</p>
           <a href="http://eurecaconsultoria.com/" target="_blank" onclick="link_questionario()">LINK PARA TESTE</a>
       </div>
     </div>
-  
-  <!-- Botão de informações -->
-  <div class="informacoes">
-      <button type="button" onclick='habilita_survey()'class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
-          <h3>Informações</h3>
-      </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="../Insumos/Ícones/bolsa_media.png">Informações necessárias
-                        
-                      </h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      AGUARDANDO TEXTO!!
-                  </div>
-
-              </div>
-          </div>
-      </div>
-  </div>
-
+       <!-- Questinario Mobile -->
+       <div class="questionario_mobile">
+        <a href="http://eurecaconsultoria.com/" target="_blank" onclick="close_questionario_mobile()">
+        <img src="../Insumos/Ícones/kisspng-computer-icons-form-template-desktop-wallpaper-5b2daf3c77da68.6584092315297206364909 (1).png"></a>
+        <div id="balao">
+            <p>Nos ajude a avaliar o portal participando de nossa pesquisa de avaliação clicando na imagem a cima</p>
+        </div>
     </div>
+    <div id='mapid'>
   </div>
+
+
+ 
     <script>
     //Variáveis iniciais de ambiente
     let localInicial = L.latLng(-23.565658, -46.651218);
