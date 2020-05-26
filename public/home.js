@@ -18,3 +18,7 @@ function close_questionario_mobile() {
     document.getElementById("balao").style.display = "none";
     
 }
+function habilita_survey(){
+    document.getElementById("questionario").style.display = "block";
+
+}

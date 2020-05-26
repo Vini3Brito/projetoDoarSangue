@@ -49,21 +49,20 @@
           </div>
       </div>
           <!-- Questinario Desktop -->
-    <div class="questionario">
+    <div id="questionario">
       <div id="botao">
-          <h3 onclick="abrir_questionario()">Questionário</h3>
-          <img id="close" onclick="close_questionario()" src="../Insumos/Ícones/close-button_icon-icons.com_72803.png"/>
+        <button type="button"><h3>Questinário</h3></button>
       </div>
       <div id="conteudo">
-          <p>Nos ajude a avaliar o portal participando de nossa pesquisa de avaliação clicando no link abaixo</p>
+          <p>Olá visitante, sua visita é bem-vinda! Nos ajude a avaliar o portal participando de nossa pesquisa de avaliação clicando no link abaixo</p>
           <a href="http://eurecaconsultoria.com/" target="_blank" onclick="link_questionario()">LINK PARA TESTE</a>
       </div>
     </div>
   
   <!-- Botão de informações -->
   <div class="informacoes">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
-          Informações
+      <button type="button" onclick='habilita_survey()'class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+          <h3>Informações</h3>
       </button>
 
       <!-- Modal -->

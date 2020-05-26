@@ -60,6 +60,9 @@
     FONT-SIZE: 20PX;
     position: fixed;
     z-index: 99999;
+    width: 170px;
+    height: 40px;
+    font-family: inherit;
 }
 
 .btn-primary:hover {
@@ -100,31 +103,35 @@
 
 
 /* Style Questionário */
-.questionario #botao {
-    margin: 6px;
+#questionario {
     float: right;
-    display: flex;
+    display: none;
+}
+#questionario button {
+    right: 4px;
+    top: 4px;
     background: red;
-    width: 190px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
-    height: 44px;
+    border-radius: 3px;
+    width: 170px;
+    height: 40px;
     z-index: 99999;
     position: relative;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
+    margin-left: 4;
 }
 
-.questionario #botao:hover {
+#questionario button:hover {
     cursor: pointer;
-    opacity: 0.8;
 }
 
 #conteudo {
     float: right;
     position: absolute;
-    right: 6px;
-    top: 47px;
+    right: 4px;
+    top: 42px;
     background: whitesmoke;
-    width: 190px;
+    width: 170px;
     box-shadow: 0 4px 9px 0 rgba(3, 3, 3, 0.3);
     z-index: 9999;
 }
@@ -167,23 +174,20 @@ img#close {
     }
 }
 
-.questionario h3 {
-    font-size: 20px;
-    color: black;
-    font-family: inherit;
-    font-weight: bold;
-    margin-top: 8px;
-    height: 32px;
-    display: flex;
+#questionario h3 {
+    font-size: 21px;
     color: white;
-    padding-left: 30px;
+    font-family: inherit;
+    font-weight: 100;
+    margin: auto;
  
 }
 
 .informacoes h3 {
-    margin-left: 8px;
     font-size: 21px;
     color: white;
+    font-family: inherit;
+    font-weight: 100;
 }
 body {
     margin: 0px;
