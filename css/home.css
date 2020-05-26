@@ -185,3 +185,11 @@ img#close {
     font-size: 21px;
     color: white;
 }
+body {
+    margin: 0px;
+  }
+  #mapid {
+    width: 100%;
+    height: 658px;
+    border: none;
+  }
