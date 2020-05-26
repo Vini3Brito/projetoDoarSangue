@@ -14,6 +14,7 @@ function close_informacoes() {
 function abrir_informacoes() {
     document.getElementById("conteudo_informacoes").style.display = "block";
 }
-function close_questionario_mobile(){
+function close_questionario_mobile() {
     document.getElementById("balao").style.display = "none";
+    
 }
