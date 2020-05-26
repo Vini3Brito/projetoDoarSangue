@@ -117,10 +117,14 @@
     width: 170px;
     height: 40px;
     z-index: 99999;
+    color: white;
     position: fixed;
     border: 1px solid transparent;
     box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
     margin-left: 4;
+    font-size: 21px;
+    font-family: inherit;
+    font-weight: 600;
  
 }
 
@@ -194,7 +198,7 @@ img#close {
     font-size: 21px;
     color: white;
     font-family: inherit;
-    font-weight: 100;
+    font-weight: 600;
 }
 body {
     margin: 0px;
