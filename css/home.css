@@ -52,8 +52,8 @@
     color: white;
     font-size: inherit;
     font-weight: bold;
-    background-color: #ff0000;
-    border-color: #ff0000;
+    background-color: #ff0000!important;
+    border-color: #ff0000!important;
     margin-top: 4px;
     border-radius: 8px;
     box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
