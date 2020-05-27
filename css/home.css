@@ -7,6 +7,25 @@
     position: absolute;
     bottom: -140px;
 }
+#executar_questionario img{
+    right: 25px;
+    position: absolute;
+    bottom: -140px;
+    width: 65px;
+}
+#executar_questionario{
+    position: absolute;
+    bottom: 160px;
+    right: 0;
+    z-index: 999999;
+    display: none;
+}
+.informacoes h3 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: -3px!important;
+}
+
 
 .questionario_mobile {
     position: absolute;
@@ -108,9 +127,17 @@
 .modal-header {
     background: red;
     color: white;
+    height: 65px;
 }
 .modal-header h5 {
     font-size: 25px;
+    margin-top: -6px;
+}
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 640px!important;
+    margin: 1.75rem auto;
+}
 }
 .modal-body {
     font-size: 15px;
