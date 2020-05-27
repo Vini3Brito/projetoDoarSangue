@@ -25,10 +25,6 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""></script>
-      <script>
-        alert('Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.')
-      </script>
-
   </head>
   <body onload="timer_balao()">
     <script type="text/javascript" src="../public/home.js"></script>
@@ -99,28 +95,27 @@
       //Consulta de locais quando usuário passa sua localização
       localDoacao(e.latlng, distanciaBusca).then(consulta => {
         setTimeout(function() {
-          console.log(check)
           if(!check) {
             alert('Houve um erro de carregamento. Por favor atualize a página')
           }
         }, 10000)
-        console.log(consulta);
         check = apontaLocais(consulta);
       });
     }).on("locationerror", e => {
       //Consulta de locais quando usuário NÃO passa sua localização
       setTimeout(function() {
-          console.log(check)
           if(!check) {
             alert('Houve um erro de carregamento. Por favor atualize a página')
           }
         }, 10000)
       localDoacao(localInicial, distanciaBusca).then(consulta =>{
-        console.log(consulta);
         check = apontaLocais(consulta);
       });
     });
     </script>
     <script src="./mapbox.js"></script>
+    <script>
+      alert('Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.')
+    </script>
   </body>
 </html>
