@@ -129,11 +129,11 @@ width: 50px;
     top: 65px;
     left: 70%;
 }
-@media(max-width: 768px){
-    #balao:after{
-        top: 60px!important;
-
-    }
+@media (max-width: 768px){
+#balao:after {
+    top: 81px!important;
+    left: 62%;
+}
 }
 #balao_questionario:after{
     content: "";
@@ -176,9 +176,7 @@ height: 35px!important;
 }
 
 .informacoes p {
-    text-align: center;
-    padding: 4px;
-    line-height: 1.3;
+   line-height: 1.3;
     font-size: 17px;
 }
 .modal-title img {
@@ -201,6 +199,10 @@ height: 35px!important;
     margin: 1.75rem auto;
 }
 }
+.modal-body li {
+    line-height: 1.3;
+    font-size: 17px;
+}
 .modal-body {
     font-size: 15px;
 }
@@ -222,4 +224,16 @@ body {
   .modal-title {
     margin-bottom: 0;
     line-height: 0;
+}
+#iframe{
+    display: none;
+}
+iframe#iframe {
+    position: relative;
+    position: fixed;
+    z-index: 99999;
+  
+}
+.modal-content {
+    top: 0px!important;
 }
