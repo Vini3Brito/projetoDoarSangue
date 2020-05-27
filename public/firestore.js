@@ -78,7 +78,7 @@ function cargaDeTeste (){
 }*/
 
 
-/*#####################    Função executada para inserção de locais no dia 26/05
+  /*#####################    Função executada para inserção de locais no dia 26/05
 function carga2 (){
   const localDoacao = geofirestore.collection("localDoacao");
   localDoacao.add({
@@ -283,5 +283,12 @@ localDoacao.add({
     detalheLocal: null,
     dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
     coordinates: new firebase.firestore.GeoPoint(-23.560918, -46.650295)
+});
+localDoacao.add({
+    nomeLocal: 'CTA/SP',
+    idBanco: null,
+    detalheLocal: null,
+    dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+    coordinates: new firebase.firestore.GeoPoint(-23.534208, -46.686974)
 });
 }*/
