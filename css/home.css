@@ -39,7 +39,9 @@ width: 50px;
     font-weight: 400;
     margin-top: -3px!important;
 }
-
+.informacoes h6 {
+    font-size: 18px;
+}
 @media(max-width: 768px){
     .informacoes h3{
     font-size: 20px!important;
