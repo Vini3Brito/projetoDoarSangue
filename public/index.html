@@ -133,9 +133,10 @@
   </div>
 
   <div id="executar_questionario">
-    <img id='img_questionario' onclick="fechar_balao()" src="../Insumos/Ícones/icone-survey.png">
+    <img id='img_questionario' onclick="fechar_balao()" onmouseover='apresentar_balao()' onmouseout="fechar_balao()"
+    src="../Insumos/Ícones/icone-survey.png">
     <div id="balao_questionario">
-      <p>Obrigado por acessar o site! Você pode nos ajudar avaliando o sistema no link abaixo:</p>
+      <p>Obrigado por acessar o site! Você pode nos ajudar avaliando o sistema no ícone abaixo.</p>
     </div>
   </div>
   <div id='mapid'>
@@ -151,8 +152,8 @@
     let distanciaBusca = raioExibicao * 10;
     let check = false //checar tempo de execução
     //Criação do mapa 
-    var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 15);
-    mymap.locate({ setView: true, maxZoom: 15 }).on("locationfound", e => {
+    var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
+    mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
       //Consulta de locais quando usuário passa sua localização
       localDoacao(e.latlng, distanciaBusca).then(consulta => {
         setTimeout(function () {

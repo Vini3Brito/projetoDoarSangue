@@ -23,6 +23,9 @@ function timer_balao () {
         document.getElementById('balao').style.display = "none";;
         }, 4000);
       }
+function apresentar_balao(){
+    document.getElementById("balao_questionario").style.display = "block";
+}
 function fechar_balao(){
     document.getElementById("balao_questionario").style.display = "none";
 }
