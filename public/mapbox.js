@@ -1,3 +1,4 @@
+
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Projeto Doar Sangue - Amigos do Tezinho Inc. - Univesidade Anhembi Morumbi',
     maxZoom: 20,
@@ -7,15 +8,15 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
 }).addTo(mymap);
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.prototype.options.iconUrl = 'marcador.png'
-L.Icon.Default.prototype.options.iconSize = [30.5, 50]
 
-
+var iconePadrao = L.icon({
+  iconUrl: 'marcador.png',
+  iconSize:     [30.5, 50]
+});
 
 function apontaLocais(locais) {
     locais.forEach(function(item){
-      L.marker(item.coordenadas).addTo(mymap)
+      L.marker(item.coordenadas, {icon: iconePadrao}).addTo(mymap)
       .bindPopup(item.nomeLocal, {
         closeButton: false,
         //maxWith = x Caso precise mudar
