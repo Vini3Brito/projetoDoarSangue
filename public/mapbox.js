@@ -10,3 +10,23 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.prototype.options.iconUrl = 'marcador.png'
 L.Icon.Default.prototype.options.iconSize = [30.5, 50]
+
+
+
+function apontaLocais(locais) {
+    locais.forEach(function(item){
+      L.marker(item.coordenadas).addTo(mymap)
+      .bindPopup(item.nomeLocal, {
+        closeButton: false,
+        //maxWith = x Caso precise mudar
+      })
+        //Popup só aparecer com mouse passando em cima
+        .on('mouseover', function (e) {
+              this.openPopup();
+          })
+        .on('mouseout', function (e) {
+              this.closePopup();
+        });
+      });
+      return true
+  }
