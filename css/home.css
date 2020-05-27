@@ -58,10 +58,10 @@ width: 50px;
     margin: 0 auto;
     background: #ffffff;
     font-family: inherit;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.2em;
     border-radius: 9px;
-    width: 185px;
+    width: 250px;
     height: auto;
     color: black;
     padding: 4px;
@@ -69,13 +69,14 @@ width: 50px;
     bottom: -50px;
     box-shadow: 0 2px 4px rgba(3, 3, 3, 0.3);
     right: 2px;
+    padding: 6px;
 }
 @media(max-width: 768px){
 #balao {
     margin: 0 auto;
     background: #ffffff;
     font-family: inherit;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.2em;
     border-radius: 9px;
     width: 128px;
@@ -100,17 +101,19 @@ width: 50px;
     margin: 0 auto;
     background: #ffffff;
     font-family: inherit;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.2em;
     border-radius: 9px;
-    width: 185px;
+    width: 250px;
     height: auto;
     color: black;
     padding: 4px;
     position: relative;
-    bottom: -60px;
+    bottom: -50px;
     box-shadow: 0 2px 4px rgba(3, 3, 3, 0.3);
     display: none;
+    padding: 6px
+  
 }
 
 
@@ -123,8 +126,8 @@ width: 50px;
     border-right: 20px solid transparent;
     border-bottom: 0px solid #ff0000;
     border-top: 20px solid white;
-    top: 77px;
-    left: 58%;
+    top: 65px;
+    left: 70%;
 }
 @media(max-width: 768px){
     #balao:after{
@@ -141,8 +144,8 @@ width: 50px;
     border-right: 20px solid transparent;
     border-bottom: 0px solid #ff0000;
     border-top: 20px solid white;
-    top: 50px;
-    left: 59%;
+    top: 63px;
+    left: 70%;
 }
 
 /* Style informações */
