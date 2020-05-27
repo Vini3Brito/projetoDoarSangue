@@ -127,9 +127,17 @@
 .modal-header {
     background: red;
     color: white;
+    height: 65px;
 }
 .modal-header h5 {
     font-size: 25px;
+    margin-top: -6px;
+}
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 640px!important;
+    margin: 1.75rem auto;
+}
 }
 .modal-body {
     font-size: 15px;
