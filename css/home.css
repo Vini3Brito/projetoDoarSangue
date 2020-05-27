@@ -225,15 +225,6 @@ body {
     margin-bottom: 0;
     line-height: 0;
 }
-#iframe{
-    display: none;
-}
-iframe#iframe {
-    position: relative;
-    position: fixed;
-    z-index: 99999;
-  
-}
 .modal-content {
     top: 0px!important;
 }
