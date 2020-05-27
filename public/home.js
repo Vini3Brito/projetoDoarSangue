@@ -25,7 +25,6 @@ function timer_balao () {
       }
 function fechar_balao(){
     document.getElementById("balao_questionario").style.display = "none";
-    document.getElementById("iframe").style.display = "block";
 }
 function aparecer_texto(){
     document.getElementById("balao").style.display = "block"

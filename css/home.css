@@ -126,7 +126,7 @@ width: 50px;
     border-right: 20px solid transparent;
     border-bottom: 0px solid #ff0000;
     border-top: 20px solid white;
-    top: 65px;
+    top: 88px;
     left: 70%;
 }
 @media (max-width: 768px){
@@ -135,6 +135,12 @@ width: 50px;
     left: 62%;
 }
 }
+@media (max-width: 768px){
+    #balao_questionario:after {
+        top: 93px!important;
+        left: 63%!important;          
+    }
+    }
 #balao_questionario:after{
     content: "";
     width: 0;
@@ -144,7 +150,7 @@ width: 50px;
     border-right: 20px solid transparent;
     border-bottom: 0px solid #ff0000;
     border-top: 20px solid white;
-    top: 63px;
+    top: 106px;
     left: 70%;
 }
 
