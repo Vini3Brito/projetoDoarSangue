@@ -1,6 +1,6 @@
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Projeto Doar Sangue - Amigos do Tezinho Inc. - Univesidade Anhembi Morumbi',
+    attribution: 'Projeto Doar Sangue - Amigos do Tezinho Inc. - UAM',
     maxZoom: 20,
     minZoom: 4,
     id: 'lucasbassi/ck9vq4yzz01rq1imp48eqymsd',
