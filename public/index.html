@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Projeto Doar Sangue</title>
-  <link rel='stylesheet' type='text/css' media='screen' href='../css/home.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='./css/home.css'>
   <!-- link Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -32,8 +32,8 @@
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
   <script src="https://unpkg.com/geofirestore/dist/geofirestore.js"></script>
-  <script src="../js/firestore.js"></script>
-  <script type="text/javascript" src="../js/home.js"></script>
+  <script src="./js/firestore.js"></script>
+  <script type="text/javascript" src="./js/home.js"></script>
 
   <!-- Botão de informações -->
   <div class="informacoes">
@@ -48,7 +48,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              <img src="../Insumos/Ícones/bolsa_media.png">Informações
+              <img src="../Ícones/bolsa_media.png">Informações
             </h5>
             <button type="button" onclick='close_modal()'  class="close" data-dismiss="modal" aria-label="Fechar">
               <span aria-hidden="true">&times;</span>
@@ -124,7 +124,7 @@
   <!-- Questinario -->
   <div class="questionario_mobile">
     <img id='img_questionarioo' onmouseover='aparecer_texto()' onmouseout="reset()"
-      src="../Insumos/Ícones/icone-survey.png">
+      src="./Ícones/icone-survey.png">
     <!--  Primeiro texto que será executado em até 5 segundos -->
     <div id="balao">
       <p>Nos ajude a avaliar o site após navegar por todo o sistema!</p>
@@ -134,7 +134,7 @@
   <div id="executar_questionario">
     <a href="https://forms.gle/y1gkEoRZdHcWBPy4A" target="_blank">
     <img id='img_questionario' onclick="fechar_balao()" onmouseover='apresentar_balao()' onmouseout="fechar_balao()"
-    src="../Insumos/Ícones/icone-survey.png"></a>
+    src="./Ícones/icone-survey.png"></a>
     <div id="balao_questionario">
       <p>Obrigado por acessar o site! Você pode nos ajudar avaliando o sistema no ícone abaixo.</p>
     </div>
@@ -146,7 +146,7 @@
   <script>
     alert('Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.');
   </script>
-  <script src="../js/mapbox.js"></script>
+  <script src="./js/mapbox.js"></script>
 </body>
 
 </html>

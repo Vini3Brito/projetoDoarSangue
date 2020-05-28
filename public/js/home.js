@@ -1,5 +1,3 @@
-
-
 function habilita_survey(){
     document.getElementById("balao_questionario").style.display = "block";
     document.getElementById("executar_questionario").style.display = "block";
