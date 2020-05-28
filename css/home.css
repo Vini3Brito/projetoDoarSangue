@@ -237,3 +237,8 @@ body {
 .modal-content {
     top: 0px!important;
 }
+.modal-header {
+    top: 0px;
+    position: sticky!important;
+    z-index: 999;
+}
