@@ -11,7 +11,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 var iconePadrao = L.icon({
   iconUrl: '../Insumos/Ícones/marcador.png',
-  iconSize:     [30.5, 50]
+  iconSize: [30.5, 50], 
+  popupAnchor: [0, -18]
 });
 
 function apontaLocais(locais) {
