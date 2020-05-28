@@ -38,8 +38,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(mymap);
 
 var iconePadrao = L.icon({
-  iconUrl: './Ícones/marcador.png',
-  iconSize: [30.5, 50], 
+  iconUrl: './Ícones/marcador.svg',
+  iconSize: [25.8, 48.8], 
   popupAnchor: [0, -18]
 });
 
