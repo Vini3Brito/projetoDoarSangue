@@ -8,12 +8,46 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "/Insumos/"
     ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
+      }, {
+        "source": "!/js/**",
+        "destination": "/index.html"
+      }, {
+        "source": "!/css/**",
+        "destination": "/index.html"
+      } 
+    ],
+    "headers": [
+      {
+        "source": "/js/home.js",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=120"
+        } ]
+      }, {
+        "source": "/js/mapbox.js",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=120"
+        } ]
+      }, {
+        "source": "/js/firebase.js",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=120"
+        } ]
+      }, {
+        "source": "/css/home.css",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=120"
+        } ]
       }
     ]
   }

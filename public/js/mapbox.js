@@ -38,7 +38,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(mymap);
 
 var iconePadrao = L.icon({
-  iconUrl: '../Insumos/Ícones/marcador.png',
+  iconUrl: './Ícones/marcador.png',
   iconSize: [30.5, 50], 
   popupAnchor: [0, -18]
 });
