@@ -138,7 +138,7 @@ width: 50px;
 }
 @media (max-width: 768px){
 #balao:after {
-    top: 97px!important;
+    top: 86px!important;
     left: 62%;
 }
 }
@@ -172,7 +172,11 @@ width: 50px;
         padding-right: 2px;
     }
     }
-    
+    @media(max-width: 768px){
+        #balao p {
+            margin-bottom: 5px;
+        }
+        }    
 
 /* Style informações */
 .btn-primary {
