@@ -160,6 +160,19 @@ width: 50px;
     top: 106px;
     left: 70%;
 }
+@media(min-width: 769px){
+    #balao_questionario p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    }
+    @media(max-width: 769px){
+    #balao_questionario p {
+        padding-left: 1px;
+        padding-right: 2px;
+    }
+    }
+    
 
 /* Style informações */
 .btn-primary {
