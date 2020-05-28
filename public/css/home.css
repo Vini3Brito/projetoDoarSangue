@@ -196,6 +196,7 @@ width: 50px;
 .btn-primary {
 width: 135px!important;
 height: 35px!important;
+position: fixed;
 }
 }
 
