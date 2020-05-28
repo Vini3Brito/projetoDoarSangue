@@ -167,7 +167,8 @@ width: 50px;
     width: 170px;
     height: 40px;
     font-family: inherit;
-    margin-top: 4px;
+    margin-top: 7px;
+    margin-left: 7px;
 }
 @media(max-width: 768px){
 .btn-primary {
