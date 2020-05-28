@@ -1,3 +1,31 @@
+//Variáveis iniciais de ambiente
+let localInicial = L.latLng(-23.565658, -46.651218);
+let raioExibicao = 5; //Km
+let distanciaBusca = raioExibicao * 10;
+let check = false //checar tempo de execução
+//Criação do mapa 
+var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
+mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
+  //Consulta de locais quando usuário passa sua localização
+  localDoacao(e.latlng, distanciaBusca).then(consulta => {
+    setTimeout(function () {
+      if (!check) {
+        alert('Houve um erro de carregamento. Por favor atualize a página')
+      }
+    }, 10000)
+    check = apontaLocais(consulta);
+  });
+}).on("locationerror", e => {
+  //Consulta de locais quando usuário NÃO passa sua localização
+  setTimeout(function () {
+    if (!check) {
+      alert('Houve um erro de carregamento. Por favor atualize a página')
+    }
+  }, 10000)
+  localDoacao(localInicial, distanciaBusca).then(consulta => {
+    check = apontaLocais(consulta);
+  });
+});
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Projeto Doar Sangue - Amigos do Tezinho Inc. - UAM',
