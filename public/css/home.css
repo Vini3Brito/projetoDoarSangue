@@ -71,7 +71,10 @@ width: 50px;
     bottom: -50px;
     box-shadow: 0 2px 4px rgba(3, 3, 3, 0.3);
     right: 2px;
-    padding: 6px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    font-weight: 600;
 }
 @media(max-width: 768px){
 #balao {
@@ -93,7 +96,7 @@ width: 50px;
 
 @media(max-width: 768px){
     #balao_questionario {
-        font-size: 12px!important;
+        font-size: 14px!important;
         width: 128px!important;
         bottom: -74px!important;
         right: 2px!important;
@@ -109,12 +112,14 @@ width: 50px;
     width: 250px;
     height: auto;
     color: black;
-    padding: 4px;
     position: relative;
     bottom: -50px;
     box-shadow: 0 2px 4px rgba(3, 3, 3, 0.3);
     display: none;
-    padding: 6px
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    font-weight: 600;
   
 }
 
@@ -133,13 +138,13 @@ width: 50px;
 }
 @media (max-width: 768px){
 #balao:after {
-    top: 81px!important;
+    top: 97px!important;
     left: 62%;
 }
 }
 @media (max-width: 768px){
     #balao_questionario:after {
-        top: 93px!important;
+        top: 103px!important;
         left: 63%!important;          
     }
     }
