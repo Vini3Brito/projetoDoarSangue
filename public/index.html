@@ -1,0 +1,151 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Projeto Doar Sangue</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='./css/home.css'>
+  <!-- link Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <!-- leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+</head>
+
+<body onload="timer_balao()">
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+  <script src="https://unpkg.com/geofirestore/dist/geofirestore.js"></script>
+  <script language="javascript" type="text/javascript" src="./js/firestore.js"></script>
+  <script language="javascript" type="text/javascript" src="./js/home.js"></script>
+
+  <!-- Botão de informações -->
+  <div class="informacoes">
+    <button type="button" id='button_informacao' onclick='habilita_survey()' class="btn btn-primary" data-toggle="modal"
+      data-target="#modalExemplo">
+      <h3>Saiba Mais</h3>
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <img src="./Ícones/bolsa_media.png">Informações
+            </h5>
+            <button type="button" onclick='close_modal()'  class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>A doação de sangue deve ser voluntária, anônima e altruísta.</h6>
+            <p> No dia da doação é feita uma entrevista com um profissional de saúde, além de uma avaliação do histórico
+              médico do doador para avaliar a sua aptidão ou não para a doação de sangue.</p>
+            <br>
+            <h6>Frequência máxima para doações: </h6>
+            <ul>
+              <li>Homens: 4 doações anuais, com intervalo mínimo de 2 meses; </li>
+              <li>Mulheres: 3 doações anuais, com intervalo mínimo de 3 meses. </li>
+            </ul>
+            <br>
+            <h6>Requisitos mínimos para doação: </h6>
+            <p>O doador deve ter idade entre 16 e 69 anos, onde: </p>
+            <ul>
+              <li>Candidatos menores de 18 anos devem possuir consentimento formal do seu responsável legal; </li>
+              <li>O limite para a primeira doação é de 60 anos.</li>
+            </ul>
+            <p>O candidato deve pesar, no mínimo, 50kg; </p>
+            <p>A pulsação do candidato deverá ser regular e apresentar características normais; </p>
+            <p>Não consumir refeições gordurosas por pelo menos 3 horas antes da doação;</p>
+            <p>Não ingerir bebidas alcoólicas 12 horas antes da doação.</p>
+            <br>
+            <h6>Após a doação:</h6>
+            <p>É recomendável que permaneça por 15 minutos no local após fazer a doação;</p>
+            <p>Deve ser oferecida hidratação ao doador, repondo líquidos;</p>
+            <p>Aguardar, pelo menos, 60 minutos antes de consumir produtos fumígenos, como cigarro; </p>
+            <p>Permanecer aproximadamente 12 horas sem realizar qualquer esforço físico.</p>
+            <br>
+            <h6>Inaptidão temporária:</h6>
+            <p>Até 12 semanas após o parto ou abortamento; </p>
+            <p>Mulheres em período de amamentação, em que o parto tenha ocorrido há menos de 12 meses;</p>
+            <p>Recebimento de transfusões de sangue nos últimos 12 meses;
+            <p>
+            <p>Caso de infecções e uso de antibióticos. Estará apto à doação 2 semanas após o fim do tratamento e
+              desaparecimento dos sintomas;</p>
+            <p>Candidatos que se deslocarem ou que residam em regiões com epidemias. Aptidão após 30 dias da saída
+              dessas regiões; </p>
+            <p>Sintoma de gripe ou resfriado, junto à temperatura corporal maior ou igual 38°. Inapto por 2 semanas após
+              desaparecer os sintomas;</p>
+            <p>No caso de Malária:</p>
+            <ul>
+              <li>Caso de malária nos 12 meses que antecedem a doação; </li>
+              <li>Febre ou suspeita de malária nos últimos 30 dias; </li>
+            </ul>
+            <p>O uso de anabolizantes, crack ou cocaína impede a doação por um período de 12 meses;</p>
+            <p>O uso de maconha impede a doação por 12 horas;</p>
+            <p>No caso de Doença Sexualmente Transmissível, há inaptidão por 12 meses após a cura;</p>
+            <p>Candidatos que tenham feito "piercing", tatuagem ou maquiagem definitiva há inaptidão por 12 meses;</p>
+            <p>Ter se submetido a cirurgias e procedimentos odontológicos impede a doação por tempo variável de acordo
+              com o procedimento;</p>
+            <p>Procedimentos endoscópicos impedem a doação por 6 meses;</p>
+            <!-- homens que tiveram relações sexuais com outros homens e/ou as parceiras sexuais destes inaptidão por 12 meses-->
+            <br>
+            <h6>Inaptidão definitiva:</h6>
+            <p>Alcoolismo crônico; </p>
+            <p>Antecedente de hepatite viral após os 11 anos de idade; </p>
+            <p>Antecedente de infecção pelos agentes HBV, HCV, HIV ou HTLV;
+            <p>
+            <p>Antecedente epidemiológico para Doença de Chagas; </p>
+            <p>Uso de drogas injetáveis ilícitas.</p>
+            <br>
+            <p><b>FONTE: PORTARIA DE CONSOLIDAÇÃO Nº 5, DE 28 DE SETEMBRO DE 2017 - ACESSO 25/05/2020 AS 17H20</b></p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Questinario -->
+  <div class="questionario_mobile">
+    <img id='img_questionarioo' onmouseover='aparecer_texto()' onmouseout="reset()"
+      src="./Ícones/icone-survey.svg" width="65" height="65">
+    <!--  Primeiro texto que será executado em até 5 segundos -->
+    <div id="balao">
+      <p>Após navegar por todo o sistema, você poderá nos ajudar avaliando o site!</p>
+    </div>
+  </div>
+
+  <div id="executar_questionario">
+    <a href="https://forms.gle/y1gkEoRZdHcWBPy4A" target="_blank">
+    <img id='img_questionario' onclick="fechar_balao()" onmouseover='apresentar_balao()' onmouseout="fechar_balao()"
+    src="./Ícones/icone-survey.svg" width="65" height="65"></a>
+    <div id="balao_questionario">
+      <p>Obrigado por acessar o site! Você pode nos ajudar avaliando o sistema no ícone abaixo.</p>
+    </div>
+  </div>
+  <div id='mapid'>
+
+  </div>
+
+  <script>
+    alert('Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.');
+  </script>
+  <script language="javascript" type="text/javascript" src="./js/mapbox.js"></script>
+</body>
+
+</html>
