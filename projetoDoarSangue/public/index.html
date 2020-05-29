@@ -26,13 +26,13 @@
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
 </head>
-
 <body onload="timer_balao()">
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
   <script src="https://unpkg.com/geofirestore/dist/geofirestore.js"></script>
   <script language="javascript" type="text/javascript" src="./js/firestore.js"></script>
   <script language="javascript" type="text/javascript" src="./js/home.js"></script>
+
 
   <!-- Modal escolha do tipo sanguineo -->
   <div class="modal_selecione" id='myModal' tabindex="-1" role="dialog">
@@ -89,15 +89,14 @@
     </div>
   </div>
 
-
   <!-- Botão de informações -->
   <div class="informacoes">
     <button type="button" id='button_informacao' onclick='habilita_survey()' class="btn btn-primary" data-toggle="modal"
       data-target="#modalExemplo">
       <h3>Saiba Mais</h3>
     </button>
-    <!-- Modal -->
-    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+    <!-- Modal de informações -->
+    <div class="modal fade" id="modalExemplo"  tabindex="-1" role="dialog"
       aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -176,6 +175,7 @@
       </div>
     </div>
   </div>
+
   <!-- Questinario -->
   <div class="questionario_mobile">
     <img id='img_questionarioo' onmouseover='aparecer_texto()' onmouseout="reset()"

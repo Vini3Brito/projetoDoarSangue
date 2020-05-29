@@ -265,6 +265,7 @@ body {
     position: sticky!important;
     z-index: 999;
 }
+
 /* Modal selecionar o tipo sanguineo */
 .modal_selecione {
     position: fixed;
