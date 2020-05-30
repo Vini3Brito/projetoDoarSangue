@@ -95,7 +95,7 @@ const firebaseConfig = {
   //    }
   //
   //--------------------------------------------------------------------------------
-  
+
 async function carregaLocais(centro, distancia){
   const localDoacao = geofirestore.collection("localDoacao");
   const locais = [];
@@ -121,60 +121,63 @@ async function carregaLocais(centro, distancia){
 
 async function carregaLocaisPorTipo(centro, distancia, tipo){
     const localDoacao = geofirestore.collection("localDoacao");
+    const bancoSangue = db.collection("bancoSangue");
     const locais = [];
     await localDoacao.near({
         center: new firebase.firestore.GeoPoint(centro.lat, centro.lng),
         radius: distancia
-    }).get().then(function(res){
-      res.forEach(async function(doc){
-        let local = new Object();
-        local.idLocal = doc.id;
-        local.nomeLocal = doc.data().nomeLocal;
-        local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
-        // if(doc.data().idBanco != null){
-            console.log(local.nomeLocal);
-            await doc.data().idBanco.get().then(async function (banco){
-                console.log(doc.data().idBanco.id);
-                // local.idBanco = banco.ref
-                console.log(banco.ref);
-                await banco.ref.collection("nivelEstoque").orderBy("dataAtualizacao", "desc").limit(1)
-                .get().then(doc=>{
-                    doc.forEach(res =>{
+    }).get().then(async function(res){
+        await res.forEach(async function(doc){
+            let local = new Object();
+            local.idLocal = doc.id;
+            local.nomeLocal = doc.data().nomeLocal;
+            local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
+            if(doc.data().idBanco != null){
+                local.idBanco = doc.data().idBanco.id;
+            } else {
+                local.idBanco = null;
+            }
+            locais.push(local);
+        });
+        //Por conta da função forEach não suportar async/await foi usado um for para consulta ao banco de sangue.
+        for (const local in locais){
+            if(locais[local].idBanco != null){
+                await bancoSangue.doc(locais[local].idBanco).collection("nivelEstoque")
+                .orderBy("dataAtualizacao", "desc")
+                .limit(1).get().then(doc=>{
+                    doc.forEach(res=>{
                         switch (tipo){
                             case 1:
-                                local.nivelEstoque = res.data().nivelApos;
+                                locais[local].nivelEstoque = res.data().nivelApos;
                                 break;
                             case 2:
-                                local.nivelEstoque = res.data().nivelBpos;
+                                locais[local].nivelEstoque = res.data().nivelBpos;
                                 break;
                             case 3:
-                                local.nivelEstoque = res.data().nivelOpos;
+                                locais[local].nivelEstoque = res.data().nivelOpos;
                                 break;
                             case 4:
-                                local.nivelEstoque = res.data().nivelABpos;
+                                locais[local].nivelEstoque = res.data().nivelABpos;
                                 break;
                             case 5:
-                                local.nivelEstoque = res.data().nivelAneg;
+                                locais[local].nivelEstoque = res.data().nivelAneg;
                                 break;
                             case 6:
-                                local.nivelEstoque = res.data().nivelBneg;
+                                locais[local].nivelEstoque = res.data().nivelBneg;
                                 break;
                             case 7:
-                                local.nivelEstoque = res.data().nivelOneg;
+                                locais[local].nivelEstoque = res.data().nivelOneg;
                                 break;
                             case 8:
-                                local.nivelEstoque = res.data().nivelABneg;
+                                locais[local].nivelEstoque = res.data().nivelABneg;
                                 break;
                         }
                     });
+                }).catch(function(error){
+                    console.log(error);
                 });
-            }).catch(function(error){
-                console.log(error);
-            });
-        // }
-        console.log(local);
-        locais.push(local);
-      });
+            }
+        }
     }).catch(function(error){
         console.log(error);
     });
