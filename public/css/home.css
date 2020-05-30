@@ -373,3 +373,13 @@ button#button_tipo:hover {
     background: #ffffff00;
     border: none;
 }
+
+/* div que as informações do local entram */
+#local {
+    z-index: 999999;
+}
+/* locais ainda nao mostrados */
+#mostraLocal {
+    display: block
+}
+    

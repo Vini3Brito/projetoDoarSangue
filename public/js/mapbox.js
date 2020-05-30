@@ -52,15 +52,43 @@ function apontaLocais(locais) {
       })
         //Popup só aparecer com mouse passando em cima
         .on('mouseover', function (e) {
-              this.openPopup();
-          })
-        .on('mouseout', function (e) {
-              this.closePopup();
-        });
-      });
-      return true
-  }
-  
+          this.openPopup();
+      })
+    .on('mouseout', function (e) {
+          this.closePopup();
+    })
+    .on('click', function (e) {
+        abrirLocal(item) 
+    });
+  });
+  return true
+}
+
+// Abrir modal dos locais
+function abrirLocal(item) {
+  console.log(item)
+  teste = "";
+  teste += '<div id="mostraLocal" class="modal" tabindex="-1" role="dialog">';
+  teste += '<div class="modal-dialog" role="document">';
+  teste += '<div class="modal-content">';
+  teste += '<div class="modal-header">';
+  teste += '<h4 class="modal-title">' + item.nomeLocal + '</h4>';
+  teste += '<button type="button" onclick="fechaLocal()" class="close" data-dismiss="modal" aria-label="Close">';
+  teste += '<span aria-hidden="true">&times;</span>';
+  teste += '</button>';
+  teste += '</div>';
+  teste += '<div class="modal-body">';
+  teste += '<p>Foi.</p>';
+  teste += '</div>';
+  teste += '</div>';
+  teste += '</div>';
+  teste += '</div>';
+  teste += '<style>'
+  document.getElementById("local").innerHTML = teste
+}
+
+
+
   //==============================Teste dos métodos==============================
   //------Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo------
   

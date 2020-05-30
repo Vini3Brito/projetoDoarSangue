@@ -46,4 +46,8 @@ function reset(){
     document.getElementById('balao').style.visibility = "hidden";
 }
 
-
+//Fecha o modal de informações do local
+function fechaLocal () {
+    document.getElementById("mostraLocal").style.display = "none";
+  }
+    
