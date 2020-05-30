@@ -8,6 +8,7 @@ var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
 mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
   //Consulta de locais quando usuário passa sua localização
   carregaLocais(e.latlng, distanciaBusca).then(consulta => {
+    console.log(consulta);
     setTimeout(function () {
       if (!check) {
         alert('Houve um erro de carregamento. Por favor atualize a página')
@@ -22,7 +23,7 @@ mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
       alert('Houve um erro de carregamento. Por favor atualize a página')
     }
   }, 10000)
-  carregaLocais(localInicial, distanciaBusca).then(consulta => {
+  carregaLocais(localInicial, distanciaBusca, 1).then(consulta => {
     check = apontaLocais(consulta);
   });
 });
@@ -144,7 +145,7 @@ function abrirLocal(item) {
 
   //==============================Teste dos métodos==============================
   //------Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo------
-  
+
 // carregaDetalhesLocal("E18O20sOAXudGpju5VMw").then(resultado=>{         
 //   console.log(resultado);
 // });
