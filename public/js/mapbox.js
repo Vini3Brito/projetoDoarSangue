@@ -22,7 +22,7 @@ mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
       alert('Houve um erro de carregamento. Por favor atualize a página')
     }
   }, 10000)
-  carregaLocais(localInicial, distanciaBusca, 1).then(consulta => {
+  carregaLocais(localInicial, distanciaBusca).then(consulta => {
     check = apontaLocais(consulta);
   });
 });
@@ -60,8 +60,11 @@ function apontaLocais(locais) {
       });
       return true
   }
- 
-// carregaDetalhesLocal("E18O20sOAXudGpju5VMw").then(resultado=>{
+  
+  //==============================Teste dos métodos==============================
+  //------Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo------
+  
+// carregaDetalhesLocal("E18O20sOAXudGpju5VMw").then(resultado=>{         
 //   console.log(resultado);
 // });
 // carregaDetalhesBanco("E18O20sOAXudGpju5VMw").then(resultado =>{
