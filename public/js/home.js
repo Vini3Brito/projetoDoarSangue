@@ -34,4 +34,7 @@ function reset(){
     document.getElementById("balao").style.display = "none"
 }
 
-
+/* Função para fechar o modal principal de escolher o tipo sanguineo */
+function close_escolha(){
+    document.getElementById("myModal").aria-hidden.true;
+}
