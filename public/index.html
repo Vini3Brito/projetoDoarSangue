@@ -34,6 +34,62 @@
   <script language="javascript" type="text/javascript" src="./js/firestore.js"></script>
   <script language="javascript" type="text/javascript" src="./js/home.js"></script>
 
+  <!-- Modal escolha do tipo sanguineo -->
+  <div class="modal_selecione" id='myModal' tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header_selecione">
+          <h2 class="modal-title">Selecione o seu tipo sanguíneo</h2>
+        </div>
+        <div class="modal-body">
+          <div class="tipo_sanguino">
+            <div id="container">
+                 <button type="button" id="botao">
+                        A+
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+                    <button type="button" id="botao">
+                        A-
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+                    <button type="button" id="botao">
+                        B+
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+                    <button type="button" id="botao">
+                        B-
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+            </div>
+    
+            <div id="container_secundario">
+             
+                    <button type="button" id="botao">
+                        AB+
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+                    <button type="button" id="botao">
+                        AB-
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+                    <button type="button" id="botao">
+                        O+
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+                    <button type="button" id="botao">
+                        O-
+                        <img src="../Insumos/SVG/bolsa_media.svg">
+                    </button>
+            </div>
+            <button id="button_tipo" type="button">Não sei o tipo sanguíneo</button>
+         
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Botão de informações -->
   <div class="informacoes">
     <button type="button" id='button_informacao' onclick='habilita_survey()' class="btn btn-primary" data-toggle="modal"
@@ -146,6 +202,9 @@
     alert('Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.');
   </script>
   <script language="javascript" type="text/javascript" src="./js/mapbox.js"></script>
+  <script type="text/javascript">
+    $('#myModal').modal('show')
+  </script>
 </body>
 
 </html>
