@@ -272,6 +272,16 @@ body {
     position: sticky!important;
     z-index: 999;
 }
+
+button#button_informacao {
+    display: none;
+}
+#img_questionarioo {
+    display: none;
+}
+div#balao {
+    display: none;
+}
 /* Modal selecionar o tipo sanguineo */
 .modal_selecione {
     position: fixed;
@@ -340,10 +350,6 @@ div#container_secundario {
     margin: 1.75rem auto;
 }
 }
-.modal_selecione .modal-body {
-    padding: 0;
-    background: red;
-}
 .modal_selecione h2.modal-title {
     text-align: center;
     padding-top: 10px;
@@ -373,3 +379,18 @@ button#button_tipo:hover {
     background: #ffffff00;
     border: none;
 }
+.modal_selecione .modal-body {
+    padding: 0;
+    background: red;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Local é pra colocar a div, mostrarlocal é pra só abrir quando clicar */
+#local {
+    z-index: 999999;
+}
+#mostraLocal {
+    display: block
+}
+/* legenda */
