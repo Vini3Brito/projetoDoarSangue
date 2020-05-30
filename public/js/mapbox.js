@@ -29,45 +29,59 @@ mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
 });
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Projeto Doar Sangue - Amigos do Tezinho Inc. - UAM',
-    maxZoom: 20,
-    minZoom: 4,
-    id: 'lucasbassi/ck9vq4yzz01rq1imp48eqymsd',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
+  attribution: 'Projeto Doar Sangue - Amigos do Tezinho Inc. - UAM',
+  maxZoom: 20,
+  minZoom: 4,
+  id: 'lucasbassi/ck9vq4yzz01rq1imp48eqymsd',
+  tileSize: 512,
+  zoomOffset: -1,
+  accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
 }).addTo(mymap);
 
 var iconePadrao = L.icon({
   iconUrl: './Ícones/marcador.svg',
-  iconSize: [25.8, 48.8], 
+  iconSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 
 function apontaLocais(locais) {
-    locais.forEach(function(item){
-      L.marker(item.coordenadas, {icon: iconePadrao}).addTo(mymap)
+  locais.forEach(function (item) {
+    L.marker(item.coordenadas, { icon: iconePadrao }).addTo(mymap)
       .bindPopup(item.nomeLocal, {
         closeButton: false,
         //maxWith = x Caso precise mudar
       })
-        //Popup só aparecer com mouse passando em cima
-        .on('mouseover', function (e) {
-          this.openPopup();
+      //Popup só aparecer com mouse passando em cima
+      .on('mouseover', function (e) {
+        this.openPopup();
       })
-    .on('mouseout', function (e) {
-          this.closePopup();
-    })
-    .on('click', function (e) {
-        abrirLocal(item) 
-    });
+      .on('mouseout', function (e) {
+        this.closePopup();
+      })
+      .on('click', function (e) {
+        abrirLocal(item)
+      });
   });
   return true
 }
 
 // Abrir modal dos locais
-function abrirLocal(item) {
-  console.log(item)
+async function abrirLocal(item) {
+  //console.log(item)
+  ref = {
+    texto: ['Crítico', 'Alerta', 'Estável'],
+    img: ['./Ícones/bolsa_baixa.png', './Ícones/bolsa_media.png', './Ícones/bolsa_alta.png']
+  }
+  detLocal = await carregaDetalhesLocal(item.idLocal).then(local => {
+    console.log(local);
+    return local
+  });
+  detBanco = await carregaDetalhesBanco(item.idLocal).then(banco => {
+    console.log(banco);
+    return banco
+  });
+  console.log(ref.texto[detBanco.nivelApos-1])
+  console.log(ref.img[detBanco.nivelApos-1])
   teste = "";
   teste += '<div id="mostraLocal" class="modal" tabindex="-1" role="dialog">';
   teste += '<div class="modal-dialog" role="document">';
@@ -83,51 +97,51 @@ function abrirLocal(item) {
   teste += '<div class="nivel_sangue">';
   teste += '<div class="titulo">';
   teste += '<h4> Banco de Sangue </h4>'
- teste += '</div>';
- teste += '<div class="container_img">';
- teste += '<div class="img01">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> A+ </h5>'
- teste += '</div>';
- teste += '<div class="img02">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> A- </h5>'
- teste += '</div>';
- teste += '<div class="img03">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> B+ </h5>'
- teste += '</div>';
- teste += '<div class="img04">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> B- </h5>'
- teste += '</div>';
- teste += '</div>';
- teste += '<div class="container_imgs">';
- teste += '<div class="img05">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> O+ </h5>'
- teste += '</div>';
- teste += '<div class="img06">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> O- </h5>'
- teste += '</div>';
- teste += '<div class="img07">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> AB+ </h5>'
- teste += '</div>';
- teste += '<div class="img08">';
- teste += '<img src="./Ícones/bolsa_media.png">'
- teste += '<h6> Alerta </h6>'
- teste += '<h5> AB- </h5>'
- teste += '</div>';
- teste += '</div>';
+  teste += '</div>';
+  teste += '<div class="container_img">';
+  teste += '<div class="img01">';
+  teste += '<img src="'+ ref.img[detBanco.nivelApos-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelApos-1]+ '</h6>'
+  teste += '<h5> A+ </h5>'
+  teste += '</div>';
+  teste += '<div class="img02">';
+  teste += '<img src="'+ ref.img[detBanco.nivelAneg-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelAneg-1]+ '</h6>'
+  teste += '<h5> A- </h5>'
+  teste += '</div>';
+  teste += '<div class="img03">';
+  teste += '<img src="'+ ref.img[detBanco.nivelBpos-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelBpos-1]+ '</h6>'
+  teste += '<h5> B+ </h5>'
+  teste += '</div>';
+  teste += '<div class="img04">';
+  teste += '<img src="'+ ref.img[detBanco.nivelBneg-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelBneg-1]+ '</h6>'
+  teste += '<h5> B- </h5>'
+  teste += '</div>';
+  teste += '</div>';
+  teste += '<div class="container_imgs">';
+  teste += '<div class="img05">';
+  teste += '<img src="'+ ref.img[detBanco.nivelOpos-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelOpos-1]+ '</h6>'
+  teste += '<h5> O+ </h5>'
+  teste += '</div>';
+  teste += '<div class="img06">';
+  teste += '<img src="'+ ref.img[detBanco.nivelOneg-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelOneg-1]+ '</h6>'
+  teste += '<h5> O- </h5>'
+  teste += '</div>';
+  teste += '<div class="img07">';
+  teste += '<img src="'+ ref.img[detBanco.nivelABpos-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelABpos-1]+ '</h6>'
+  teste += '<h5> AB+ </h5>'
+  teste += '</div>';
+  teste += '<div class="img08">';
+  teste += '<img src="'+ ref.img[detBanco.nivelABneg-1]+'">'
+  teste += '<h6>'+ ref.texto[detBanco.nivelABneg-1]+ '</h6>'
+  teste += '<h5> AB- </h5>'
+  teste += '</div>';
+  teste += '</div>';
   teste += '</div>';
   teste += '<div class="info">';
   teste += '<div class="endereco">';
