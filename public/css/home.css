@@ -4,14 +4,15 @@
     position: absolute;
     bottom: -140px;
     width: 65px;
+    opacity: 0.5;
 }
 @media(max-width: 768px){
-.questionario_mobile img {
-right: 5px;
-position: absolute;
-bottom: -145px;
-width: 50px;
-}
+    .questionario_mobile img {
+    right: 5px;
+    position: absolute;
+    bottom: -145px;
+    width: 50px;
+    }
 }
 @media(max-width: 768px){
 #executar_questionario img{
@@ -54,7 +55,6 @@ width: 50px;
     bottom: 160px;
     right: 0;
     z-index: 999999;
-
 }
 #balao {
     margin: 0 auto;
@@ -75,6 +75,10 @@ width: 50px;
     padding-top: 10px;
     padding-bottom: 3px;
     font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 300ms, visibility 300ms;
+    transition: opacity 300ms, visibility 300ms;
 }
 @media(max-width: 768px){
 #balao {
@@ -120,7 +124,10 @@ width: 50px;
     padding-top: 10px;
     padding-bottom: 3px;
     font-weight: 600;
-  
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 300ms, visibility 300ms;
+    transition: opacity 300ms, visibility 300ms;
 }
 
 
