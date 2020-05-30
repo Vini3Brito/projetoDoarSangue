@@ -7,7 +7,7 @@ let check = false //checar tempo de execução
 var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
 mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
   //Consulta de locais quando usuário passa sua localização
-  localDoacao(e.latlng, distanciaBusca).then(consulta => {
+  carregaLocais(e.latlng, distanciaBusca).then(consulta => {
     setTimeout(function () {
       if (!check) {
         alert('Houve um erro de carregamento. Por favor atualize a página')
@@ -22,7 +22,7 @@ mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
       alert('Houve um erro de carregamento. Por favor atualize a página')
     }
   }, 10000)
-  localDoacao(localInicial, distanciaBusca).then(consulta => {
+  carregaLocais(localInicial, distanciaBusca, 1).then(consulta => {
     check = apontaLocais(consulta);
   });
 });
@@ -60,3 +60,10 @@ function apontaLocais(locais) {
       });
       return true
   }
+ 
+// carregaDetalhesLocal("E18O20sOAXudGpju5VMw").then(resultado=>{
+//   console.log(resultado);
+// });
+// carregaDetalhesBanco("E18O20sOAXudGpju5VMw").then(resultado =>{
+//   console.log(resultado);
+// });

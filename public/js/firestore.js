@@ -12,39 +12,233 @@ const firebaseConfig = {
   var db = firebase.firestore();
   const geofirestore = new GeoFirestore(db);
 
-  //======================Métodos de consulta ao banco de dados======================
+  //======================Método de consulta ao banco de dados======================
+  //
+  //  •  carregaLocais(<latLng> centro, <Number> distancia);
+  //  •  carregaLocaisPorTipo(<latLng> centro, <Number> distancia, <Number> tipo);
+  //  •  carregaDetalhesLocal(<hash> idLocal);
+  //  •  carregaDetalhesBanco(<hash> idLocal);
+  //
+  //========================Detalhe dos métodos de consulta=========================
   //
   //  •  carregaLocais(<latLng> centro, <Number> distancia);
   //
   //    centro: Coordenadas do ponto central de busca no formato latLng do Leaflet;
   //    distancia: Raio em km utilizado na busca a partir do centro.
   //
-  //  Retorna Array do objeto local:
+  //  -> Retorna Array do objeto local:
   //    local{
+  //      idLocal: <hash>,
   //      nomeLocal: <string>,
   //      coordenadas: <latLng>
   //    }
   //
-
-async function localDoacao(centro, distancia){
+  //--------------------------------------------------------------------------------
+  //
+  //  •  carregaLocaisPorTipo(<latLng> centro, <Number> distancia, <Number> tipo);
+  //
+  //    centro: Coordenadas do ponto central de busca no formato latLng do Leaflet;
+  //    distancia: Raio em km utilizado na busca a partir do centro;.
+  //    tipo: Tipo sanguíneo utilizado para consulta
+  //      1: A+
+  //      2: B+
+  //      3: O+
+  //      4: AB+
+  //      5: A-
+  //      6: B-
+  //      7: O-
+  //      8: AB-
+  //
+  //  -> Retorna Array do objeto local:
+  //    local{
+  //      idLocal: <hash>,
+  //      nomeLocal: <string>,
+  //      coordenadas: <latLng>,
+  //      nivelEstoque: <number> (1-Crítico / 2-Alerta / 3-Estável)
+  //    }
+  //
+  //--------------------------------------------------------------------------------
+  //
+  //  •  carregaDetalhesLocal(<hash> idLocal);
+  //
+  //    idLocal: Hash identificadora do local para consulta;
+  //
+  //  -> Retorna objeto detalhe:
+  //    detalhe{
+  //      enderecoLocal: <string>,
+  //      horarioFuncionamento: <string>,       (Caso o dado exista no banco)
+  //      telefone: <string>,                   (Caso o dado exista no banco)
+  //      email: <string>,                      (Caso o dado exista no banco)
+  //      site: <string>,                       (Caso o dado exista no banco)
+  //      redeSocial: <string>,                 (Caso o dado exista no banco)
+  //      tipoAgendamento: <string>,
+  //      dataAtualizacao: <date>
+  //    }
+  //
+  //
+  //  •  carregaDetalhesBanco(<hash> idLocal);
+  //
+  //    idLocal: Hash identificadora do local para consulta;
+  //
+  //  -> Retorna objeto banco:
+  //    banco{
+  //      nomeBanco: <string>,
+  //      nivelApos: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      nivelBpos: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      nivelOpos: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      nivelABpos: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      nivelAneg: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      nivelBneg: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      nivelOneg: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      nivelABneg: <number>,      (1-Crítico / 2-Alerta / 3-Estável)
+  //      dataAtualizacao: <date>
+  //    }
+  //
+  //--------------------------------------------------------------------------------
+  
+async function carregaLocais(centro, distancia){
   const localDoacao = geofirestore.collection("localDoacao");
   const locais = [];
   await localDoacao.near({
       center: new firebase.firestore.GeoPoint(centro.lat, centro.lng),
       radius: distancia
   }).get().then(function(res){
-      res.forEach(function(doc){
-        let nome = doc.data().nomeLocal;
-        let latlng = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
-        let local = new Object({nomeLocal: nome, coordenadas: latlng});
+    res.forEach(function(doc){
+        let local = new Object();
+        local.idLocal = doc.id;
+        local.nomeLocal = doc.data().nomeLocal;
+        local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
+        if(doc.data().idBanco != null){
+            local.idBanco = doc.data().idBanco.id;
+        }
         locais.push(local);
-      });
+    });
   }).catch(function(error){
       console.log(error);
   });
   return locais;
 }
 
+async function carregaLocaisPorTipo(centro, distancia, tipo){
+    const localDoacao = geofirestore.collection("localDoacao");
+    const locais = [];
+    await localDoacao.near({
+        center: new firebase.firestore.GeoPoint(centro.lat, centro.lng),
+        radius: distancia
+    }).get().then(function(res){
+      res.forEach(async function(doc){
+        let local = new Object();
+        local.idLocal = doc.id;
+        local.nomeLocal = doc.data().nomeLocal;
+        local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
+        // if(doc.data().idBanco != null){
+            console.log(local.nomeLocal);
+            await doc.data().idBanco.get().then(async function (banco){
+                console.log(doc.data().idBanco.id);
+                // local.idBanco = banco.ref
+                console.log(banco.ref);
+                await banco.ref.collection("nivelEstoque").orderBy("dataAtualizacao", "desc").limit(1)
+                .get().then(doc=>{
+                    doc.forEach(res =>{
+                        switch (tipo){
+                            case 1:
+                                local.nivelEstoque = res.data().nivelApos;
+                                break;
+                            case 2:
+                                local.nivelEstoque = res.data().nivelBpos;
+                                break;
+                            case 3:
+                                local.nivelEstoque = res.data().nivelOpos;
+                                break;
+                            case 4:
+                                local.nivelEstoque = res.data().nivelABpos;
+                                break;
+                            case 5:
+                                local.nivelEstoque = res.data().nivelAneg;
+                                break;
+                            case 6:
+                                local.nivelEstoque = res.data().nivelBneg;
+                                break;
+                            case 7:
+                                local.nivelEstoque = res.data().nivelOneg;
+                                break;
+                            case 8:
+                                local.nivelEstoque = res.data().nivelABneg;
+                                break;
+                        }
+                    });
+                });
+            }).catch(function(error){
+                console.log(error);
+            });
+        // }
+        console.log(local);
+        locais.push(local);
+      });
+    }).catch(function(error){
+        console.log(error);
+    });
+    return locais;
+}
+
+async function carregaDetalhesLocal(idLocal){
+    const detalheLocal = db.collection("localDoacao").doc(idLocal).collection("detalheLocal");
+    const detalhe = new Object();
+    await detalheLocal.orderBy("dataAtualizacao", "desc").limit(1).get().then(doc=>{
+        doc.forEach(res =>{
+            detalhe.enderecoLocal = res.data().enderecoLocal;
+            if(res.data().horarioFuncionamento != null){
+                detalhe.horarioFuncionamento = res.data().horarioFuncionamento;
+            }
+            if(res.data().telefone != null){
+                detalhe.telefone = res.data().telefone
+            }
+            if(res.data().email != null){
+                detalhe.email = res.data().email;
+            }
+            if(res.data().site != null){
+                detalhe.site = res.data().site;
+            }
+            if(res.data().redeSocial != null){
+                detalhe.redeSocial = res.data().redeSocial;
+            }
+            detalhe.tipoAgendamento = res.data().tipoAgendamento;
+            detalhe.dataAtualizacao = res.data().dataAtualizacao.toDate();
+        });
+    }).catch(function(error){
+        console.log(error);
+    });
+    return detalhe;
+}
+
+async function carregaDetalhesBanco(idLocal){
+    const localDoacao = db.collection("localDoacao").doc(idLocal);
+    const estoque = new Object();
+    await localDoacao.get().then(async function (res) {
+        if(res.data().d.idBanco != null){
+            await res.data().d.idBanco.get().then(async function (banco){
+                await banco.ref.collection("nivelEstoque").orderBy("dataAtualizacao", "desc").limit(1)
+                .get().then(doc=>{
+                    doc.forEach(res =>{
+                        estoque.nomeBanco = banco.id;
+                        estoque.nivelApos = res.data().nivelApos;
+                        estoque.nivelBpos = res.data().nivelBpos;
+                        estoque.nivelOpos = res.data().nivelOpos;
+                        estoque.nivelABpos = res.data().nivelABpos;
+                        estoque.nivelAneg = res.data().nivelAneg;
+                        estoque.nivelBneg = res.data().nivelBneg;
+                        estoque.nivelOneg = res.data().nivelOneg;
+                        estoque.nivelABneg = res.data().nivelABneg;
+                        estoque.dataAtualizacao = res.data().dataAtualizacao.toDate();
+                    });
+                });
+            })
+        }
+    }).catch(function(error){
+        console.log(error);
+    });
+    return estoque;
+}
   //===================Métodos de carga no banco de dados===================
   //
   //
