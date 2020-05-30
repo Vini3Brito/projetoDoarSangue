@@ -393,4 +393,123 @@ button#button_tipo:hover {
 #mostraLocal {
     display: block
 }
+@media (min-width: 576px){
+#local .modal-dialog {
+    max-width: 850px!important;
+    width: 100%;
+    margin: 1.75rem auto;
+}
+}
+#local .modal-body {
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    background: red;
+}
+.modal-body .nivel_sangue {
+    background: white;
+    max-width: 380px;
+    width: 100%;
+    height: 320px;
+    border-radius: 22px;
+
+}
+@media(min-width: 768px){
+    #local .container {
+        display: flex; 
+    
+    }
+    
+    }
+    #local .info {
+        background: white;
+        max-width: 380px;
+        width: 100%;
+        height: 320px;
+        border-radius: 22px;
+        margin-left: 24px;
+    }
+    #local .modal-header {
+        border-top-left-radius: 22px;
+        border-top-right-radius: 22px;
+        border-bottom: none;
+    }
+    #local .modal-content {
+        background: #00008b00;
+        border: none;
+    }
+    #local .titulo h4 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+    .nivel_sangue img {
+        width: 50px;
+        margin-top: 5px;
+        margin-left: 21px;
+        margin-right: 21px;
+    }
+    .container_img {
+        display: flex;
+        justify-content: center;
+    }
+    .container_imgs {
+        display: flex;
+        justify-content: center;
+    }
+    .img01 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img02 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img03 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img04 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img05 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img06 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img07 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img08 h6 {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .img01 h5 {
+        text-align: center;
+    }
+    .img02 h5 {
+        text-align: center;
+    }
+    .img03 h5 {
+        text-align: center;
+    }
+    .img04 h5 {
+        text-align: center;
+    }
+    .img05 h5 {
+        text-align: center;
+    }
+    .img06 h5 {
+        text-align: center;
+    }
+    .img07 h5 {
+        text-align: center;
+    }
+    .img08 h5 {
+        text-align: center;
+    }
 /* legenda */

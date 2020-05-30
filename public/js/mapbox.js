@@ -78,7 +78,61 @@ function abrirLocal(item) {
   teste += '</button>';
   teste += '</div>';
   teste += '<div class="modal-body">';
-  teste += '<p>Foi.</p>';
+  teste += '<div class="container">'
+  teste += '<div class="nivel_sangue">';
+  teste += '<div class="titulo">';
+  teste += '<h4> Banco de Sangue </h4>'
+ teste += '</div>';
+ teste += '<div class="container_img">';
+ teste += '<div class="img01">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> A+ </h5>'
+ teste += '</div>';
+ teste += '<div class="img02">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> A- </h5>'
+ teste += '</div>';
+ teste += '<div class="img03">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> B+ </h5>'
+ teste += '</div>';
+ teste += '<div class="img04">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> B- </h5>'
+ teste += '</div>';
+ teste += '</div>';
+ teste += '<div class="container_imgs">';
+ teste += '<div class="img05">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> O+ </h5>'
+ teste += '</div>';
+ teste += '<div class="img06">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> O- </h5>'
+ teste += '</div>';
+ teste += '<div class="img07">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> AB+ </h5>'
+ teste += '</div>';
+ teste += '<div class="img08">';
+ teste += '<img src="./Ícones/bolsa_media.png">'
+ teste += '<h6> Alerta </h6>'
+ teste += '<h5> AB- </h5>'
+ teste += '</div>';
+ teste += '</div>';
+  teste += '</div>';
+  teste += '<div class="info">';
+  teste += '<div class="endereco">';
+  teste += '<h6>endereço</h6>'
+  teste += '</div>';
+  teste += '</div>';
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
