@@ -386,4 +386,11 @@ button#button_tipo:hover {
     border-bottom-right-radius: 20px;
 }
 
+/* Local é pra colocar a div, mostrarlocal é pra só abrir quando clicar */
+#local {
+    z-index: 999999;
+}
+#mostraLocal {
+    display: block
+}
 /* legenda */

@@ -83,7 +83,6 @@ function abrirLocal(item) {
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
-  teste += '<style>'
   document.getElementById("local").innerHTML = teste
 }
 

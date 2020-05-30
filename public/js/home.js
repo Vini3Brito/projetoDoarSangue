@@ -50,3 +50,7 @@ function reset(){
 function close_escolha(){
     document.getElementById("myModal").aria-hidden.true;
 }
+
+// FECHA O MODAL DE INFO LOCAL NO [X]
+function fechaLocal () {
+    document.getElementById("mostraLocal").style.display = "none";}
