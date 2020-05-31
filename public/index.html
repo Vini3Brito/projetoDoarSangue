@@ -40,7 +40,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header_selecione">
-          <h2 class="modal-title">Selecione o seu tipo sanguíneo</h2>
+         <h2 class="modal-title">Selecione o seu tipo sanguíneo</h2>
         </div>
         <div class="modal-body">
           <div class="tipo_sanguino">
@@ -49,19 +49,20 @@
               <!-- botões para escolher os tipos sanguineos -->
               <!-- cada botão tem um valor de classe diferente -->
 
-                 <button type="button" id="botao" class="a+" onclick='close_escolha()'>
+                 <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a+" >
                         A+
                         <img src="../Insumos/SVG/bolsa_media.svg">
+                        
                     </button>
-                    <button type="button" id="botao" class="a-"  onclick="close_escolha()">
+                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a-">
                         A-
                         <img src="../Insumos/SVG/bolsa_media.svg">
                     </button>
-                    <button type="button" id="botao" class="b+"  onclick="close_escolha()">
+                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b+">
                         B+
                         <img src="../Insumos/SVG/bolsa_media.svg">
                     </button>
-                    <button type="button" id="botao" class="b-"  onclick="close_escolha()">
+                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b-">
                         B-
                         <img src="../Insumos/SVG/bolsa_media.svg">
                     </button>
@@ -69,24 +70,24 @@
 
             <div id="container_secundario">
              
-                    <button type="button" id="botao" class="ab+"  onclick="close_escolha()">
+                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="ab+">
                         AB+
                         <img src="../Insumos/SVG/bolsa_media.svg">
                     </button>
-                    <button type="button" id="botao" class="ab-"  onclick="close_escolha()">
+                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="ab-">
                         AB-
                         <img src="../Insumos/SVG/bolsa_media.svg">
                     </button>
-                    <button type="button" id="botao" class="o+"  onclick="close_escolha()">
+                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="o+"  >
                         O+
                         <img src="../Insumos/SVG/bolsa_media.svg">
                     </button>
-                    <button type="button" id="botao" class="o-"  onclick="close_escolha()">
+                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="o-"  >
                         O-
                         <img src="../Insumos/SVG/bolsa_media.svg">
                     </button>
             </div>
-            <button id="button_tipo"  onclick="close_escolha()" class="sem_escolha" type="button">Não sei o tipo sanguíneo</button>
+            <button id="button_tipo"  class="close" data-dismiss="modal" aria-label="Fechar" class="sem_escolha" type="button">Não sei o tipo sanguíneo</button>
          
         </div>
         </div>
@@ -204,7 +205,7 @@
    <!-- Legenda -->
 <div id="legenda">
   <button class="btn btn-primary" id='button_legenda' type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
-
+  
 <div class="row" >
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">

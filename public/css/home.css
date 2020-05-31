@@ -312,6 +312,7 @@ div#balao {
         width: 40px;
     }
     .modal_selecione #botao {
+        opacity: 1!important;
     background: white;
     font-size: 25px;
     width: 115px;
@@ -357,6 +358,7 @@ div#container_secundario {
     font-size: 30px;
 }
 button#button_tipo {
+    opacity: 1;
     background: none;
     color: inherit;
     border: none;
