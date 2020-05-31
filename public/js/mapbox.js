@@ -73,22 +73,21 @@ async function abrirLocal(item) {
   document.getElementById("img_questionarioo").style.display = "none";
   document.getElementById("balao_questionario").style.display = "none";
   document.getElementById("balao").style.display = "none";
-  //console.log(item)
+  
   ref = {
     texto: ['Crítico', 'Alerta', 'Estável'],
-    img: ['./Ícones/bolsa_baixa.png', './Ícones/bolsa_media.png', './Ícones/bolsa_alta.png']
+    img: ['./Ícones/bolsa_baixa.svg', './Ícones/bolsa_media.svg', './Ícones/bolsa_alta.svg']
   }
   detLocal = await carregaDetalhesLocal(item.idLocal).then(local => {
-    console.log(local);
     return local
   });
   detBanco = await carregaDetalhesBanco(item.idLocal).then(banco => {
-    console.log(banco);
     return banco
   });
- 
-  console.log(ref.texto[detBanco.nivelApos-1])
-  console.log(ref.img[detBanco.nivelApos-1])
+  endereco = detLocal.enderecoLocal.split('\\n')
+  horario = detLocal.horarioFuncionamento.split('\\n')
+  data = arrumarData(detLocal.dataAtualizacao.toString())
+  
   teste = "";
   teste += '<div id="mostraLocal" class="modal" tabindex="-1" role="dialog">';
   teste += '<div class="modal-dialog" role="document">';
@@ -152,12 +151,30 @@ async function abrirLocal(item) {
   teste += '</div>';
   teste += '<div class="info">';
   teste += '<div class="endereco">';
-  teste += '<h6>ENDEREÇO: <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu scelerisque risus.</span> </h6>'
-  teste += '<h6>De segunda a sexta-feira,<span> Lorem ipsum dolor sit amet.</span> </h6>'
-  teste += '<h6>TELEFONE: <span> (11) 00000-0000</span> </h6>'
-  teste += '<h6>E-MAIL: <span> teste@gmail.com</span> </h6>'
-  teste += '<h6>AGENDAMENTO ONLINE: <span> www.teste.com.br</span> </h6>'
-  teste += '<p>Dados atualizados no dia 31/05/2020</P>'
+  teste += '<h6>Endereço: <br>'
+  endereco.forEach(function (parte) {
+    teste += '<span>'+ parte +'</span><br>'
+  })
+  teste += '</h6>'
+  teste += '<h6>Funcionamento: <br>'
+  horario.forEach(function (parte){
+    teste += '<span>'+ parte +';</span><br>'
+  })
+  teste += '</h6>'
+  teste += '<h6>Telefone: <br><span>'+ detLocal.telefone +'</span> </h6>'
+  teste += '<h6>Site: <br> <span><a href="'+detLocal.site+'"target="_blank">'+detLocal.site+'</a></span> </h6>'
+  switch(detLocal.tipoAgendamento) {
+    case "2":
+      teste += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'  
+    break;
+    case "3":
+      teste += '<h6><span>O agendamento para doação ocorre através do telefone.</span></h6>'
+    break;
+    case "4":
+      teste += '<h6><span>O agendamento para doação ocorre presencialmente.</span></h6>'
+    break;
+  }
+  teste += '<p>Ultima atualização: '+ data +'</P>'
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
@@ -176,3 +193,11 @@ async function abrirLocal(item) {
 // carregaDetalhesBanco("E18O20sOAXudGpju5VMw").then(resultado =>{
 //   console.log(resultado);
 // });
+
+function arrumarData(data) {
+    vData = data.split(" ")
+    meses = {'Jan': '1','Feb': '2','Mar': '3','Apr': '4','May': '5','June': '6','July ': '7','Aug': '8',
+    'Sep': '9','Out': '10','Nov': '11','Dec': '12'}
+    dataFim = vData[2] + "/" + meses[vData[1]] + "/" + vData[3] + " " + vData[4]
+    return dataFim
+}
