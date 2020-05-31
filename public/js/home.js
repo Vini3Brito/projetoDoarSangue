@@ -53,5 +53,16 @@ function close_escolha(){
 
 // FECHA O MODAL DE INFO LOCAL NO [X]
 function fechaLocal () {
-    document.getElementById("mostraLocal").style.display = "none";}
-    $('#mostraLocal').modal('show');
+    document.getElementById("mostraLocal").style.display = "none";
+    document.getElementById("button_informacao").style.display = "block";
+    document.getElementById("img_questionario").style.display = "block";
+    document.getElementById("img_questionarioo").style.display = "block";
+    document.getElementById("balao_questionario").style.display = "block";
+    document.getElementById("balao").style.display = "block";
+    }
+
+    function open_legenda(){
+        document.getElementById("legenda").style.bottom = "110px";
+        document.getElementById("info_legenda").style.display = "block";
+    }
+  
