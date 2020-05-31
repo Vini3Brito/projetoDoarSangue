@@ -61,8 +61,3 @@ function fechaLocal () {
     document.getElementById("balao").style.display = "block";
     }
 
-    function open_legenda(){
-        document.getElementById("legenda").style.bottom = "110px";
-        document.getElementById("info_legenda").style.display = "block";
-    }
-  
