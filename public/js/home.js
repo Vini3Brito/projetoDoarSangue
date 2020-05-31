@@ -7,6 +7,7 @@ function habilita_survey(){
     document.getElementById("img_questionarioo").style.display = "none";
     document.getElementById("balao_questionario").style.display = "none";
     document.getElementById("balao").style.display = "none";
+    document.getElementById("legenda").style.display = "none";
 }
 
 function close_modal(){
@@ -17,6 +18,7 @@ function close_modal(){
     document.getElementById("balao_questionario").style.opacity = "1";
     document.getElementById("balao_questionario").style.visibility = "visible";
     document.getElementById("balao").style.display = "none";
+    document.getElementById("legenda").style.display = "block";
 }
     
 function timer_balao () {
