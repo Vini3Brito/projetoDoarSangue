@@ -535,17 +535,19 @@ button#button_tipo:hover {
         position: fixed;
         bottom: 3px;
         z-index: 99999;
-        left: 6px;
+        left: 7px;
         padding-left: 5px;
         padding-top: 5px;
         width: 170px;
         padding-bottom: 5px;
-        background: red;
-        color: white;
-    }
-    #legenda button.btn.btn-primary {
+        background: white;
+        color: black;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+}
+    #button_legenda {
         position: fixed;
-        bottom: 2px;
+        bottom: 4px;
     }
     #info_legenda h4 {
         font-size: 20px;
@@ -583,4 +585,10 @@ button#button_tipo:hover {
     }
     .critico {
         display: flex;
+    }
+    button#button_legenda {
+        font-size: 25px;
+        font-weight: 400;
+        padding: 0px;
+        padding-bottom: 1px;
     }

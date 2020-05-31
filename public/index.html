@@ -203,7 +203,7 @@
     
    <!-- Legenda -->
 <div id="legenda">
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
+  <button class="btn btn-primary" id='button_legenda' type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
 
 <div class="row" >
   <div class="col">
@@ -212,15 +212,15 @@
         <div id="info_legenda">
           <div class="estavel">
             <h4>Estavel:</h4>
-            <img src="../Insumos/SVG/bolsa_media.svg">
+            <img src="../Insumos/SVG/marcador-claro.svg">
         </div>
         <div class="Alerta">
           <h4>Alerta:</h4>
-          <img src="../Insumos/SVG/bolsa_media.svg">
+          <img src="../Insumos/SVG/marcador-medio.svg">
       </div>
       <div class="critico">
         <h4>Critico:</h4>
-          <img src="../Insumos/SVG/bolsa_media.svg">
+          <img src="../Insumos/SVG/marcador-escuro.svg">
         </div>
         </div>
       </div>
@@ -258,6 +258,15 @@ $('#myModal').on('hidden.bs.modal', function (e) {
     document.getElementById("balao").style.display = "block";
 })
 
+
+
+$('#multiCollapseExample1').on('hidden.bs.collapse', function () {
+  document.getElementById("button_legenda").style.bottom = "4px";
+})
+
+$('#multiCollapseExample1').on('show.bs.collapse', function () {
+  document.getElementById("button_legenda").style.bottom = "125px";
+})
 
 
   </script>
