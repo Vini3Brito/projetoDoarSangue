@@ -66,8 +66,13 @@ function apontaLocais(locais) {
 }
 
 // Abrir modal dos locais
-$('#mostraLocal').modal('show');
+
 async function abrirLocal(item) {
+  document.getElementById("button_informacao").style.display = "none";
+  document.getElementById("img_questionario").style.display = "none";
+  document.getElementById("img_questionarioo").style.display = "none";
+  document.getElementById("balao_questionario").style.display = "none";
+  document.getElementById("balao").style.display = "none";
   //console.log(item)
   ref = {
     texto: ['Crítico', 'Alerta', 'Estável'],
@@ -81,7 +86,7 @@ async function abrirLocal(item) {
     console.log(banco);
     return banco
   });
-  $('#mostraLocal').modal('show');
+ 
   console.log(ref.texto[detBanco.nivelApos-1])
   console.log(ref.img[detBanco.nivelApos-1])
   teste = "";

@@ -530,3 +530,60 @@ button#button_tipo:hover {
         font-size: 15px;
 
     }
+    button#legenda {
+        position: fixed;
+        bottom: 0px;
+        z-index: 9999;
+        left: 6px;
+        bottom: 6px;
+        border: none;
+        background: red;
+        width: 170px;
+        height: 40px;
+        box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
+        color: white;
+        font-size: 25px;
+        font-weight: 400;
+        border-radius: 4px;
+    }
+    div#info_legenda {
+        border-top-left-radius: 0px!important;
+        border-top-right-radius: 0px!important;
+        width: 170px;
+        background: #fb0000;
+        color: white;
+        bottom: 0px;
+        position: fixed;
+        z-index: 999;
+        left: 6px;
+        box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
+        border-radius: 10px;
+        bottom: 2px;
+        padding-top: 15px;
+        display: none;
+    }
+    #info_legenda h4 {
+        font-size: 20px;
+        padding-left: 12px;
+    }
+    .critico img {
+        width: 25px;
+        margin-left: 20px;
+    }
+    .critico {
+        display: flex;
+    }
+    .alerta img {
+        width: 25px;
+        margin-left: 24px;
+    }
+    .alerta {
+        display: flex;
+    }
+    .estavel img {
+        width: 25px;
+        margin-left: 17px;
+    }
+    .estavel {
+        display: flex;
+    }
