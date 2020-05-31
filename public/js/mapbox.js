@@ -66,6 +66,7 @@ function apontaLocais(locais) {
 }
 
 // Abrir modal dos locais
+$('#mostraLocal').modal('show');
 async function abrirLocal(item) {
   //console.log(item)
   ref = {
@@ -80,6 +81,7 @@ async function abrirLocal(item) {
     console.log(banco);
     return banco
   });
+  $('#mostraLocal').modal('show');
   console.log(ref.texto[detBanco.nivelApos-1])
   console.log(ref.img[detBanco.nivelApos-1])
   teste = "";
@@ -145,17 +147,20 @@ async function abrirLocal(item) {
   teste += '</div>';
   teste += '<div class="info">';
   teste += '<div class="endereco">';
-  teste += '<h6>endereço</h6>'
+  teste += '<h6>ENDEREÇO: <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu scelerisque risus.</span> </h6>'
+  teste += '<h6>De segunda a sexta-feira,<span> Lorem ipsum dolor sit amet.</span> </h6>'
+  teste += '<h6>TELEFONE: <span> (11) 00000-0000</span> </h6>'
+  teste += '<h6>E-MAIL: <span> teste@gmail.com</span> </h6>'
+  teste += '<h6>AGENDAMENTO ONLINE: <span> www.teste.com.br</span> </h6>'
+  teste += '<p>Dados atualizados no dia 31/05/2020</P>'
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
-  document.getElementById("local").innerHTML = teste
+  document.getElementById("local").innerHTML = teste;
 }
-
-
 
   //==============================Teste dos métodos==============================
   //------Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo------

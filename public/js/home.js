@@ -54,3 +54,4 @@ function close_escolha(){
 // FECHA O MODAL DE INFO LOCAL NO [X]
 function fechaLocal () {
     document.getElementById("mostraLocal").style.display = "none";}
+    $('#mostraLocal').modal('show');
