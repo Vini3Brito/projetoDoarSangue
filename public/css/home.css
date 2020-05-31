@@ -530,37 +530,22 @@ button#button_tipo:hover {
         font-size: 15px;
 
     }
-    button#legenda {
+
+    .row .card.card-body {
         position: fixed;
-        bottom: 0px;
-        z-index: 9999;
+        bottom: 3px;
+        z-index: 99999;
         left: 6px;
-        bottom: 6px;
-        border: none;
+        padding-left: 5px;
+        padding-top: 5px;
+        width: 170px;
+        padding-bottom: 5px;
         background: red;
-        width: 170px;
-        height: 40px;
-        box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
         color: white;
-        font-size: 25px;
-        font-weight: 400;
-        border-radius: 4px;
     }
-    div#info_legenda {
-        border-top-left-radius: 0px!important;
-        border-top-right-radius: 0px!important;
-        width: 170px;
-        background: #fb0000;
-        color: white;
-        bottom: 0px;
+    #legenda button.btn.btn-primary {
         position: fixed;
-        z-index: 999;
-        left: 6px;
-        box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
-        border-radius: 10px;
         bottom: 2px;
-        padding-top: 15px;
-        display: none;
     }
     #info_legenda h4 {
         font-size: 20px;
@@ -585,5 +570,17 @@ button#button_tipo:hover {
         margin-left: 17px;
     }
     .estavel {
+        display: flex;
+    }
+    #info_legenda img {
+        width: 20px;
+    }
+    .estavel {
+        display: flex;
+    }
+    .Alerta {
+        display: flex;
+    }
+    .critico {
         display: flex;
     }
