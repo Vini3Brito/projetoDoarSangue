@@ -105,6 +105,7 @@ async function abrirLocal(item) {
   document.getElementById("img_questionarioo").style.display = "none";
   document.getElementById("balao_questionario").style.display = "none";
   document.getElementById("balao").style.display = "none";
+  document.getElementById("legenda").style.display = "none";
 
   ref = {
     texto: ['Crítico', 'Alerta', 'Estável'],
