@@ -106,6 +106,7 @@ async function abrirLocal(item) {
   document.getElementById("img_questionarioo").style.display = "none";
   document.getElementById("balao_questionario").style.display = "none";
   document.getElementById("balao").style.display = "none";
+  document.getElementById("legenda").style.display = "none";
 
   ref = {
     texto: ['Crítico', 'Alerta', 'Estável'],
@@ -234,7 +235,7 @@ async function abrirLocal(item) {
 function arrumarData(data) {
   vData = data.split(" ")
   meses = {
-    'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'June': '06', 'July ': '07', 'Aug': '08',
+    'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'Jun': '06', 'Jul': '07', 'Aug': '08',
     'Sep': '09', 'Out': '10', 'Nov': '11', 'Dec': '12'
   }
   dataFim = vData[2] + "/" + meses[vData[1]] + "/" + vData[3] + " " + vData[4]

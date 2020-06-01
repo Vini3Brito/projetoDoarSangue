@@ -254,6 +254,7 @@ position: fixed;
 
 body {
     margin: 0px;
+    overflow: hidden;
   }
   #mapid {
     width: 100%;
@@ -652,7 +653,7 @@ button#button_tipo:hover {
         
     #button_legenda {
         position: fixed;
-        bottom: 4px;
+        bottom: 12px;
     }
     #info_legenda h4 {
         font-size: 20px;
@@ -712,3 +713,17 @@ button#button_tipo:hover {
         font-style: italic;
         margin-bottom: 0px;
     }
+    div#mostraLocal {
+        background: #00000073 !important;
+    }
+    @media (max-width: 400px){
+.modal-body .nivel_sangue {
+    height: 297px!important;
+}
+    }
+
+    @media (max-width: 400px){
+    #local .info {
+        height: 327px!important;
+    }
+}
