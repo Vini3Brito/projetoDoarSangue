@@ -254,6 +254,7 @@ position: fixed;
 
 body {
     margin: 0px;
+    overflow: hidden;
   }
   #mapid {
     width: 100%;
