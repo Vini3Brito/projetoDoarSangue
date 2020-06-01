@@ -64,3 +64,4 @@ function fechaLocal () {
     document.getElementById("legenda").style.display = "block";
     }
 
+

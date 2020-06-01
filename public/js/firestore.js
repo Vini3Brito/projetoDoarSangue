@@ -211,7 +211,6 @@ async function carregaDetalhesLocal(idLocal){
     }).catch(function(error){
         console.log(error);
     });
-    console.log(detalhe);
     return detalhe;
 }
 
@@ -234,7 +233,6 @@ async function carregaDetalhesBanco(idBanco){
     }).catch(function(error){
         console.log(error);
     });
-    console.log(estoque);
     return estoque;
 }
 
