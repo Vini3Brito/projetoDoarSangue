@@ -358,6 +358,7 @@ div#container_secundario {
     font-size: 30px;
 }
 button#button_tipo {
+    
     opacity: 1;
     background: none;
     color: inherit;
@@ -572,7 +573,7 @@ button#button_tipo:hover {
         text-align: center;
     }
     .info p {
-        color: black;
+        color: white;
         margin-left: 10px;
         margin-top: 15px;
         line-height: 1.3;
@@ -698,4 +699,16 @@ button#button_tipo:hover {
     }
     #legenda {
         display: none;
+    }
+
+    .close {
+      float: none!important;
+    }
+
+    #textTipo {
+        font-size: 18px;
+        text-align: center;
+        color: #ffffff;
+        font-style: italic;
+        margin-bottom: 0px;
     }

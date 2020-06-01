@@ -15,7 +15,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
 }).addTo(mymap);
 function valorSelecionado(tipo) {
-  console.log(tipo)
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
     carregaLocaisPorTipo(e.latlng, distanciaBusca, tipo).then(consulta => {
@@ -121,100 +120,100 @@ async function abrirLocal(item) {
   horario = detLocal.horarioFuncionamento.split('\\n')
   data = arrumarData(detLocal.dataAtualizacao.toString())
 
-  teste = "";
-  teste += '<div id="mostraLocal" class="modal" tabindex="-1" role="dialog">';
-  teste += '<div class="modal-dialog" role="document">';
-  teste += '<div class="modal-content">';
-  teste += '<div class="modal-header">';
-  teste += '<h4 class="modal-title">' + item.nomeLocal + '</h4>';
-  teste += '<button type="button" onclick="fechaLocal()" class="close" data-dismiss="modal" aria-label="Close">';
-  teste += '<span aria-hidden="true">&times;</span>';
-  teste += '</button>';
-  teste += '</div>';
-  teste += '<div class="modal-body">';
-  teste += '<div class="container">'
-  teste += '<div class="nivel_sangue">';
-  teste += '<div class="titulo">';
-  teste += '<h4> Banco de Sangue </h4>'
-  teste += '</div>';
-  teste += '<div class="container_img">';
-  teste += '<div class="img01">';
-  teste += '<img src="' + ref.img[detBanco.nivelApos - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelApos - 1] + '</h6>'
-  teste += '<h5> A+ </h5>'
-  teste += '</div>';
-  teste += '<div class="img02">';
-  teste += '<img src="' + ref.img[detBanco.nivelAneg - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelAneg - 1] + '</h6>'
-  teste += '<h5> A- </h5>'
-  teste += '</div>';
-  teste += '<div class="img03">';
-  teste += '<img src="' + ref.img[detBanco.nivelBpos - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelBpos - 1] + '</h6>'
-  teste += '<h5> B+ </h5>'
-  teste += '</div>';
-  teste += '<div class="img04">';
-  teste += '<img src="' + ref.img[detBanco.nivelBneg - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelBneg - 1] + '</h6>'
-  teste += '<h5> B- </h5>'
-  teste += '</div>';
-  teste += '</div>';
-  teste += '<div class="container_imgs">';
-  teste += '<div class="img05">';
-  teste += '<img src="' + ref.img[detBanco.nivelOpos - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelOpos - 1] + '</h6>'
-  teste += '<h5> O+ </h5>'
-  teste += '</div>';
-  teste += '<div class="img06">';
-  teste += '<img src="' + ref.img[detBanco.nivelOneg - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelOneg - 1] + '</h6>'
-  teste += '<h5> O- </h5>'
-  teste += '</div>';
-  teste += '<div class="img07">';
-  teste += '<img src="' + ref.img[detBanco.nivelABpos - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelABpos - 1] + '</h6>'
-  teste += '<h5> AB+ </h5>'
-  teste += '</div>';
-  teste += '<div class="img08">';
-  teste += '<img src="' + ref.img[detBanco.nivelABneg - 1] + '">'
-  teste += '<h6>' + ref.texto[detBanco.nivelABneg - 1] + '</h6>'
-  teste += '<h5> AB- </h5>'
-  teste += '</div>';
-  teste += '</div>';
-  teste += '</div>';
-  teste += '<div class="info">';
-  teste += '<div class="endereco">';
-  teste += '<h6>Endereço: <br>'
+  mLocal = "";
+  mLocal += '<div id="mostraLocal" class="modal"  tabindex="-1" role="dialog">';
+  mLocal += '<div class="modal-dialog" role="document">';
+  mLocal += '<div class="modal-content">';
+  mLocal += '<div class="modal-header">';
+  mLocal += '<h4 class="modal-title">' + item.nomeLocal + '</h4>';
+  mLocal += '<button type="button" onclick="fechaLocal()" class="close" data-dismiss="modal" aria-label="Close">';
+  mLocal += '<span aria-hidden="true">&times;</span>';
+  mLocal += '</button>';
+  mLocal += '</div>';
+  mLocal += '<div class="modal-body">';
+  mLocal += '<div class="container">'
+  mLocal += '<div class="nivel_sangue">';
+  mLocal += '<div class="titulo">';
+  mLocal += '<h4> Banco de Sangue </h4>'
+  mLocal += '</div>';
+  mLocal += '<div class="container_img">';
+  mLocal += '<div class="img01">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelApos - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelApos - 1] + '</h6>'
+  mLocal += '<h5> A+ </h5>'
+  mLocal += '</div>';
+  mLocal += '<div class="img02">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelAneg - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelAneg - 1] + '</h6>'
+  mLocal += '<h5> A- </h5>'
+  mLocal += '</div>';
+  mLocal += '<div class="img03">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelBpos - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelBpos - 1] + '</h6>'
+  mLocal += '<h5> B+ </h5>'
+  mLocal += '</div>';
+  mLocal += '<div class="img04">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelBneg - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelBneg - 1] + '</h6>'
+  mLocal += '<h5> B- </h5>'
+  mLocal += '</div>';
+  mLocal += '</div>';
+  mLocal += '<div class="container_imgs">';
+  mLocal += '<div class="img05">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelOpos - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelOpos - 1] + '</h6>'
+  mLocal += '<h5> O+ </h5>'
+  mLocal += '</div>';
+  mLocal += '<div class="img06">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelOneg - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelOneg - 1] + '</h6>'
+  mLocal += '<h5> O- </h5>'
+  mLocal += '</div>';
+  mLocal += '<div class="img07">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelABpos - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelABpos - 1] + '</h6>'
+  mLocal += '<h5> AB+ </h5>'
+  mLocal += '</div>';
+  mLocal += '<div class="img08">';
+  mLocal += '<img src="' + ref.img[detBanco.nivelABneg - 1] + '">'
+  mLocal += '<h6>' + ref.texto[detBanco.nivelABneg - 1] + '</h6>'
+  mLocal += '<h5> AB- </h5>'
+  mLocal += '</div>';
+  mLocal += '</div>';
+  mLocal += '</div>';
+  mLocal += '<div class="info">';
+  mLocal += '<div class="endereco">';
+  mLocal += '<h6>Endereço: <br>'
   endereco.forEach(function (parte) {
-    teste += '<span>' + parte + '</span><br>'
+    mLocal += '<span>' + parte + '</span><br>'
   })
-  teste += '</h6>'
-  teste += '<h6>Funcionamento: <br>'
+  mLocal += '</h6>'
+  mLocal += '<h6>Funcionamento: <br>'
   horario.forEach(function (parte) {
-    teste += '<span>' + parte + ';</span><br>'
+    mLocal += '<span>' + parte + ';</span><br>'
   })
-  teste += '</h6>'
-  teste += '<h6>Telefone: <br><span>' + detLocal.telefone + '</span> </h6>'
-  teste += '<h6>Site: <br> <span><a href="' + detLocal.site + '"target="_blank">' + detLocal.site + '</a></span> </h6>'
+  mLocal += '</h6>'
+  mLocal += '<h6>Telefone: <br><span>' + detLocal.telefone + '</span> </h6>'
+  mLocal += '<h6>Site: <br> <span><a href="' + detLocal.site + '"target="_blank">' + detLocal.site + '</a></span> </h6>'
   switch (detLocal.tipoAgendamento) {
     case "2":
-      teste += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
+      mLocal += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
       break;
     case "3":
-      teste += '<h6><span>O agendamento para doação ocorre através do telefone.</span></h6>'
+      mLocal += '<h6><span>O agendamento para doação ocorre através do telefone.</span></h6>'
       break;
     case "4":
-      teste += '<h6><span>O agendamento para doação ocorre presencialmente.</span></h6>'
+      mLocal += '<h6><span>O agendamento para doação ocorre presencialmente.</span></h6>'
       break;
   }
-  teste += '<p>Ultima atualização: ' + data + '</P>'
-  teste += '</div>';
-  teste += '</div>';
-  teste += '</div>';
-  teste += '</div>';
-  teste += '</div>';
-  teste += '</div>';
-  document.getElementById("local").innerHTML = teste;
+  mLocal += '<p>Ultima atualização: ' + data + '</p>'
+  mLocal += '</div>';
+  mLocal += '</div>';
+  mLocal += '</div>';
+  mLocal += '</div>';
+  mLocal += '</div>';
+  mLocal += '</div>';
+  document.getElementById("local").innerHTML = mLocal;
 }
 
 //==============================Teste dos métodos==============================
@@ -230,8 +229,8 @@ async function abrirLocal(item) {
 function arrumarData(data) {
   vData = data.split(" ")
   meses = {
-    'Jan': '1', 'Feb': '2', 'Mar': '3', 'Apr': '4', 'May': '5', 'June': '6', 'July ': '7', 'Aug': '8',
-    'Sep': '9', 'Out': '10', 'Nov': '11', 'Dec': '12'
+    'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'June': '06', 'July ': '07', 'Aug': '08',
+    'Sep': '09', 'Out': '10', 'Nov': '11', 'Dec': '12'
   }
   dataFim = vData[2] + "/" + meses[vData[1]] + "/" + vData[3] + " " + vData[4]
   return dataFim
