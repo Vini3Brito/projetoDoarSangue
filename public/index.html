@@ -17,7 +17,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
- 
+
 
   <!-- leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -36,11 +36,11 @@
   <script language="javascript" type="text/javascript" src="./js/home.js"></script>
 
   <!-- Modal inicial para escolher do tipo sanguineo -->
-  <div class="modal_selecione" id='myModal' tabindex="-1" role="dialog" >
+  <div class="modal_selecione" id='myModal' tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header_selecione">
-         <h2 class="modal-title">Selecione o seu tipo sanguíneo</h2>
+          <h2 class="modal-title">Selecione o seu tipo sanguíneo</h2>
         </div>
         <div class="modal-body">
           <div class="tipo_sanguino">
@@ -48,48 +48,57 @@
 
               <!-- botões para escolher os tipos sanguineos -->
               <!-- cada botão tem um valor de classe diferente -->
+              <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b+"
+                value="2" onclick="valorSelecionado(this.value)">
+                B+
+                <img src="../Insumos/SVG/bolsa_media.svg">
+              </button>
+              <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b-"
+                value="6" onclick="valorSelecionado(this.value)">
+                B-
+                <img src="../Insumos/SVG/bolsa_media.svg">
+              </button>
+              <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a+"
+                value="1" onclick="valorSelecionado(this.value)">
+                A+
+                <img src="../Insumos/SVG/bolsa_media.svg">
 
-                 <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a+" >
-                        A+
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                        
-                    </button>
-                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a-">
-                        A-
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                    </button>
-                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b+">
-                        B+
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                    </button>
-                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b-">
-                        B-
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                    </button>
+              </button>
+              <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a-"
+                value="5" onclick="valorSelecionado(this.value)">
+                A-
+                <img src="../Insumos/SVG/bolsa_media.svg">
+              </button>
+
+
             </div>
 
             <div id="container_secundario">
-             
-                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="ab+">
-                        AB+
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                    </button>
-                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="ab-">
-                        AB-
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                    </button>
-                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="o+"  >
-                        O+
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                    </button>
-                    <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="o-"  >
-                        O-
-                        <img src="../Insumos/SVG/bolsa_media.svg">
-                    </button>
+
+              <button class="close" onclick="valorSelecionado(this.value)" data-dismiss="modal" aria-label="Fechar"
+                type="button" id="botao" class="ab+" value="4">
+                AB+
+                <img src="../Insumos/SVG/bolsa_media.svg">
+              </button>
+              <button class="close" onclick="valorSelecionado(this.value)" data-dismiss="modal" aria-label="Fechar"
+                type="button" id="botao" class="ab-" value="8">
+                AB-
+                <img src="../Insumos/SVG/bolsa_media.svg">
+              </button>
+              <button class="close" onclick="valorSelecionado(this.value)" data-dismiss="modal" aria-label="Fechar"
+                type="button" id="botao" class="o+" value="3">
+                O+
+                <img src="../Insumos/SVG/bolsa_media.svg">
+              </button>
+              <button class="close" onclick="valorSelecionado(this.value)" data-dismiss="modal" aria-label="Fechar"
+                type="button" id="botao" class="o-" value="7">
+                O-
+                <img src="../Insumos/SVG/bolsa_media.svg">
+              </button>
             </div>
-            <button id="button_tipo"  class="close" data-dismiss="modal" aria-label="Fechar" class="sem_escolha" type="button">Não sei o tipo sanguíneo</button>
-         
-        </div>
+            <button id="button_tipo" onclick="valorSelecionado(this.value)" class="close" data-dismiss="modal"
+              aria-label="Fechar" class="sem_escolha" value="0" type="button">Não sei o tipo sanguíneo</button>
+          </div>
         </div>
       </div>
     </div>
@@ -201,43 +210,45 @@
       <p>Obrigado por acessar o site! Você pode nos ajudar avaliando o sistema no ícone abaixo.</p>
     </div>
   </div>
-    
-   <!-- Legenda -->
-<div id="legenda">
-  <button class="btn btn-primary" id='button_legenda' type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
-  
-<div class="row" >
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body" >
-        <div id="info_legenda">
-          <div class="estavel">
-            <h4>Estavel:</h4>
-            <img src="../Insumos/SVG/marcador-claro.svg">
+
+  <!-- Legenda -->
+  <div id="legenda">
+    <button class="btn btn-primary" id='button_legenda' type="button" data-toggle="collapse"
+      data-target=".multi-collapse" aria-expanded="false"
+      aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
+
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            <div id="info_legenda">
+              <div class="estavel">
+                <h4>Estavel:</h4>
+                <img src="../Insumos/SVG/marcador-claro.svg">
+              </div>
+              <div class="Alerta">
+                <h4>Alerta:</h4>
+                <img src="../Insumos/SVG/marcador-medio.svg">
+              </div>
+              <div class="critico">
+                <h4>Critico:</h4>
+                <img src="../Insumos/SVG/marcador-escuro.svg">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="Alerta">
-          <h4>Alerta:</h4>
-          <img src="../Insumos/SVG/marcador-medio.svg">
-      </div>
-      <div class="critico">
-        <h4>Critico:</h4>
-          <img src="../Insumos/SVG/marcador-escuro.svg">
-        </div>
-        </div>
-      </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-   
+  </div>
 
- 
 
-  
-   <!-- local é pra abrir o modal de local -->
+
+
+
+  <!-- local é pra abrir o modal de local -->
   <div id='local'>
-    
+
   </div>
   <div id='mapid'>
 
@@ -248,29 +259,30 @@
   </script>
   <script language="javascript" type="text/javascript" src="./js/mapbox.js"></script>
   <script type="text/javascript">
-  $('#myModal').modal({
-  keyboard: false
-})
-  $('#myModal').modal('show');
-/* Função exibir botões e imagens */
-$('#myModal').on('hidden.bs.modal', function (e) {
-    document.getElementById("button_informacao").style.display = "block";
-    document.getElementById("img_questionarioo").style.display = "block";
-    document.getElementById("balao").style.display = "block";
-    document.getElementById("legenda").style.display = "block";
-})
+    $('#myModal').modal({
+      keyboard: false
+    })
+    $('#myModal').modal('show');
+    /* Função exibir botões e imagens */
+    $('#myModal').on('hidden.bs.modal', function (e) {
+      document.getElementById("button_informacao").style.display = "block";
+      document.getElementById("img_questionarioo").style.display = "block";
+      document.getElementById("balao").style.display = "block";
+      document.getElementById("legenda").style.display = "block";
+    })
 
 
 
-$('#multiCollapseExample1').on('hidden.bs.collapse', function () {
-  document.getElementById("button_legenda").style.bottom = "4px";
-})
+    $('#multiCollapseExample1').on('hidden.bs.collapse', function () {
+      document.getElementById("button_legenda").style.bottom = "4px";
+    })
 
-$('#multiCollapseExample1').on('show.bs.collapse', function () {
-  document.getElementById("button_legenda").style.bottom = "125px";
-})
+    $('#multiCollapseExample1').on('show.bs.collapse', function () {
+      document.getElementById("button_legenda").style.bottom = "125px";
+    })
 
 
   </script>
 </body>
+
 </html>

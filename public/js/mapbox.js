@@ -5,29 +5,6 @@ let distanciaBusca = raioExibicao * 10;
 let check = false //checar tempo de execução
 //Criação do mapa 
 var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
-mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
-  //Consulta de locais quando usuário passa sua localização
-  carregaLocais(e.latlng, distanciaBusca).then(consulta => {
-    console.log(consulta);
-    setTimeout(function () {
-      if (!check) {
-        alert('Houve um erro de carregamento. Por favor atualize a página')
-      }
-    }, 10000)
-    check = apontaLocais(consulta);
-  });
-}).on("locationerror", e => {
-  //Consulta de locais quando usuário NÃO passa sua localização
-  setTimeout(function () {
-    if (!check) {
-      alert('Houve um erro de carregamento. Por favor atualize a página')
-    }
-  }, 10000)
-  carregaLocais(localInicial, distanciaBusca, 1).then(consulta => {
-    check = apontaLocais(consulta);
-  });
-});
-
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Projeto Doar Sangue - Amigos do Tezinho Inc. - UAM',
   maxZoom: 20,
@@ -37,16 +14,72 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
 }).addTo(mymap);
+function valorSelecionado(tipo) {
+  console.log(tipo)
+  mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
+    //Consulta de locais quando usuário passa sua localização
+    carregaLocaisPorTipo(e.latlng, distanciaBusca, tipo).then(consulta => {
+      console.log(consulta);
+      setTimeout(function () {
+        if (!check) {
+          alert('Houve um erro de carregamento. Por favor atualize a página')
+        }
+      }, 10000)
+      check = apontaLocais(consulta);
+    });
+  }).on("locationerror", e => {
+    //Consulta de locais quando usuário NÃO passa sua localização
+    carregaLocaisPorTipo(localInicial, distanciaBusca, tipo).then(consulta => {
+      setTimeout(function () {
+        if (!check) {
+          alert('Houve um erro de carregamento. Por favor atualize a página')
+        }
+      }, 10000)
+      check = apontaLocais(consulta);
+    });
+  });
+}
+
+
 
 var iconePadrao = L.icon({
   iconUrl: './Ícones/marcador.svg',
   iconSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
+var iconeClaro = L.icon({
+  iconUrl: './Ícones/marcador-claro.svg',
+  iconSize: [25.8, 48.8],
+  popupAnchor: [0, -18]
+});
+var iconeMedio = L.icon({
+  iconUrl: './Ícones/marcador-medio.svg',
+  iconSize: [25.8, 48.8],
+  popupAnchor: [0, -18]
+});
+var iconeEscuro = L.icon({
+  iconUrl: './Ícones/marcador-escuro.svg',
+  iconSize: [25.8, 48.8],
+  popupAnchor: [0, -18]
+});
 
 function apontaLocais(locais) {
   locais.forEach(function (item) {
-    L.marker(item.coordenadas, { icon: iconePadrao }).addTo(mymap)
+    switch(item.nivelEstoque) {
+    case '1':
+      icone = iconeClaro
+    break
+    case '2':
+      icone = iconeMedio
+    break
+    case '3':
+      icone = iconeEscuro
+    break
+    default:
+      icone = iconePadrao
+    break
+    }
+    L.marker(item.coordenadas, { icon: icone }).addTo(mymap)
       .bindPopup(item.nomeLocal, {
         closeButton: false,
         //maxWith = x Caso precise mudar
@@ -73,7 +106,7 @@ async function abrirLocal(item) {
   document.getElementById("img_questionarioo").style.display = "none";
   document.getElementById("balao_questionario").style.display = "none";
   document.getElementById("balao").style.display = "none";
-  
+
   ref = {
     texto: ['Crítico', 'Alerta', 'Estável'],
     img: ['./Ícones/bolsa_baixa.svg', './Ícones/bolsa_media.svg', './Ícones/bolsa_alta.svg']
@@ -87,7 +120,7 @@ async function abrirLocal(item) {
   endereco = detLocal.enderecoLocal.split('\\n')
   horario = detLocal.horarioFuncionamento.split('\\n')
   data = arrumarData(detLocal.dataAtualizacao.toString())
-  
+
   teste = "";
   teste += '<div id="mostraLocal" class="modal" tabindex="-1" role="dialog">';
   teste += '<div class="modal-dialog" role="document">';
@@ -106,45 +139,45 @@ async function abrirLocal(item) {
   teste += '</div>';
   teste += '<div class="container_img">';
   teste += '<div class="img01">';
-  teste += '<img src="'+ ref.img[detBanco.nivelApos-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelApos-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelApos - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelApos - 1] + '</h6>'
   teste += '<h5> A+ </h5>'
   teste += '</div>';
   teste += '<div class="img02">';
-  teste += '<img src="'+ ref.img[detBanco.nivelAneg-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelAneg-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelAneg - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelAneg - 1] + '</h6>'
   teste += '<h5> A- </h5>'
   teste += '</div>';
   teste += '<div class="img03">';
-  teste += '<img src="'+ ref.img[detBanco.nivelBpos-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelBpos-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelBpos - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelBpos - 1] + '</h6>'
   teste += '<h5> B+ </h5>'
   teste += '</div>';
   teste += '<div class="img04">';
-  teste += '<img src="'+ ref.img[detBanco.nivelBneg-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelBneg-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelBneg - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelBneg - 1] + '</h6>'
   teste += '<h5> B- </h5>'
   teste += '</div>';
   teste += '</div>';
   teste += '<div class="container_imgs">';
   teste += '<div class="img05">';
-  teste += '<img src="'+ ref.img[detBanco.nivelOpos-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelOpos-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelOpos - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelOpos - 1] + '</h6>'
   teste += '<h5> O+ </h5>'
   teste += '</div>';
   teste += '<div class="img06">';
-  teste += '<img src="'+ ref.img[detBanco.nivelOneg-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelOneg-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelOneg - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelOneg - 1] + '</h6>'
   teste += '<h5> O- </h5>'
   teste += '</div>';
   teste += '<div class="img07">';
-  teste += '<img src="'+ ref.img[detBanco.nivelABpos-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelABpos-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelABpos - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelABpos - 1] + '</h6>'
   teste += '<h5> AB+ </h5>'
   teste += '</div>';
   teste += '<div class="img08">';
-  teste += '<img src="'+ ref.img[detBanco.nivelABneg-1]+'">'
-  teste += '<h6>'+ ref.texto[detBanco.nivelABneg-1]+ '</h6>'
+  teste += '<img src="' + ref.img[detBanco.nivelABneg - 1] + '">'
+  teste += '<h6>' + ref.texto[detBanco.nivelABneg - 1] + '</h6>'
   teste += '<h5> AB- </h5>'
   teste += '</div>';
   teste += '</div>';
@@ -153,28 +186,28 @@ async function abrirLocal(item) {
   teste += '<div class="endereco">';
   teste += '<h6>Endereço: <br>'
   endereco.forEach(function (parte) {
-    teste += '<span>'+ parte +'</span><br>'
+    teste += '<span>' + parte + '</span><br>'
   })
   teste += '</h6>'
   teste += '<h6>Funcionamento: <br>'
-  horario.forEach(function (parte){
-    teste += '<span>'+ parte +';</span><br>'
+  horario.forEach(function (parte) {
+    teste += '<span>' + parte + ';</span><br>'
   })
   teste += '</h6>'
-  teste += '<h6>Telefone: <br><span>'+ detLocal.telefone +'</span> </h6>'
-  teste += '<h6>Site: <br> <span><a href="'+detLocal.site+'"target="_blank">'+detLocal.site+'</a></span> </h6>'
-  switch(detLocal.tipoAgendamento) {
+  teste += '<h6>Telefone: <br><span>' + detLocal.telefone + '</span> </h6>'
+  teste += '<h6>Site: <br> <span><a href="' + detLocal.site + '"target="_blank">' + detLocal.site + '</a></span> </h6>'
+  switch (detLocal.tipoAgendamento) {
     case "2":
-      teste += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'  
-    break;
+      teste += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
+      break;
     case "3":
       teste += '<h6><span>O agendamento para doação ocorre através do telefone.</span></h6>'
-    break;
+      break;
     case "4":
       teste += '<h6><span>O agendamento para doação ocorre presencialmente.</span></h6>'
-    break;
+      break;
   }
-  teste += '<p>Ultima atualização: '+ data +'</P>'
+  teste += '<p>Ultima atualização: ' + data + '</P>'
   teste += '</div>';
   teste += '</div>';
   teste += '</div>';
@@ -184,8 +217,8 @@ async function abrirLocal(item) {
   document.getElementById("local").innerHTML = teste;
 }
 
-  //==============================Teste dos métodos==============================
-  //------Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo------
+//==============================Teste dos métodos==============================
+//------Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo------
 
 // carregaDetalhesLocal("E18O20sOAXudGpju5VMw").then(resultado=>{         
 //   console.log(resultado);
@@ -195,9 +228,11 @@ async function abrirLocal(item) {
 // });
 
 function arrumarData(data) {
-    vData = data.split(" ")
-    meses = {'Jan': '1','Feb': '2','Mar': '3','Apr': '4','May': '5','June': '6','July ': '7','Aug': '8',
-    'Sep': '9','Out': '10','Nov': '11','Dec': '12'}
-    dataFim = vData[2] + "/" + meses[vData[1]] + "/" + vData[3] + " " + vData[4]
-    return dataFim
+  vData = data.split(" ")
+  meses = {
+    'Jan': '1', 'Feb': '2', 'Mar': '3', 'Apr': '4', 'May': '5', 'June': '6', 'July ': '7', 'Aug': '8',
+    'Sep': '9', 'Out': '10', 'Nov': '11', 'Dec': '12'
+  }
+  dataFim = vData[2] + "/" + meses[vData[1]] + "/" + vData[3] + " " + vData[4]
+  return dataFim
 }

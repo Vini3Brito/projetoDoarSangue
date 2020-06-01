@@ -147,28 +147,28 @@ async function carregaLocaisPorTipo(centro, distancia, tipo){
                 .limit(1).get().then(doc=>{
                     doc.forEach(res=>{
                         switch (tipo){
-                            case 1:
+                            case "1":
                                 locais[local].nivelEstoque = res.data().nivelApos;
                                 break;
-                            case 2:
+                            case "2":
                                 locais[local].nivelEstoque = res.data().nivelBpos;
                                 break;
-                            case 3:
+                            case "3":
                                 locais[local].nivelEstoque = res.data().nivelOpos;
                                 break;
-                            case 4:
+                            case "4":
                                 locais[local].nivelEstoque = res.data().nivelABpos;
                                 break;
-                            case 5:
+                            case "5":
                                 locais[local].nivelEstoque = res.data().nivelAneg;
                                 break;
-                            case 6:
+                            case "6":
                                 locais[local].nivelEstoque = res.data().nivelBneg;
                                 break;
-                            case 7:
+                            case "7":
                                 locais[local].nivelEstoque = res.data().nivelOneg;
                                 break;
-                            case 8:
+                            case "8":
                                 locais[local].nivelEstoque = res.data().nivelABneg;
                                 break;
                         }
