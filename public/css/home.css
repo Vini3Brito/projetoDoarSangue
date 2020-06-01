@@ -653,7 +653,7 @@ button#button_tipo:hover {
         
     #button_legenda {
         position: fixed;
-        bottom: 4px;
+        bottom: 12px;
     }
     #info_legenda h4 {
         font-size: 20px;
