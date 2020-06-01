@@ -61,5 +61,6 @@ function fechaLocal () {
     document.getElementById("img_questionarioo").style.display = "block";
     document.getElementById("balao_questionario").style.display = "block";
     document.getElementById("balao").style.display = "block";
+    document.getElementById("legenda").style.display = "block";
     }
 
