@@ -71,14 +71,14 @@ const firebaseConfig = {
   //      email: <string>,                      (Caso o dado exista no banco)
   //      site: <string>,                       (Caso o dado exista no banco)
   //      redeSocial: <string>,                 (Caso o dado exista no banco)
-  //      tipoAgendamento: <string>,
+  //      tipoAgendamento: <string>,            (1-Não tem / 2-On-line / 3-Telefone / 4-Presencial)
   //      dataAtualizacao: <date>
   //    }
   //
   //
-  //  •  carregaDetalhesBanco(<hash> idLocal);
+  //  •  carregaDetalhesBanco(<hash> idBanco);
   //
-  //    idLocal: Hash identificadora do local para consulta;
+  //    idBanco: Nome identificador do banco de sangue para consulta;
   //
   //  -> Retorna objeto banco:
   //    banco{
@@ -211,37 +211,33 @@ async function carregaDetalhesLocal(idLocal){
     }).catch(function(error){
         console.log(error);
     });
+    console.log(detalhe);
     return detalhe;
 }
 
-async function carregaDetalhesBanco(idLocal){
-    const localDoacao = db.collection("localDoacao").doc(idLocal);
+async function carregaDetalhesBanco(idBanco){
+    const bancoSangue = db.collection("bancoSangue").doc(idBanco).collection("nivelEstoque");
     const estoque = new Object();
-    await localDoacao.get().then(async function (res) {
-        if(res.data().d.idBanco != null){
-            await res.data().d.idBanco.get().then(async function (banco){
-                await banco.ref.collection("nivelEstoque").orderBy("dataAtualizacao", "desc").limit(1)
-                .get().then(doc=>{
-                    doc.forEach(res =>{
-                        estoque.nomeBanco = banco.id;
-                        estoque.nivelApos = res.data().nivelApos;
-                        estoque.nivelBpos = res.data().nivelBpos;
-                        estoque.nivelOpos = res.data().nivelOpos;
-                        estoque.nivelABpos = res.data().nivelABpos;
-                        estoque.nivelAneg = res.data().nivelAneg;
-                        estoque.nivelBneg = res.data().nivelBneg;
-                        estoque.nivelOneg = res.data().nivelOneg;
-                        estoque.nivelABneg = res.data().nivelABneg;
-                        estoque.dataAtualizacao = res.data().dataAtualizacao.toDate();
-                    });
-                });
-            })
-        }
+    await bancoSangue.orderBy("dataAtualizacao", "desc").limit(1).get().then(doc=>{
+        doc.forEach(res =>{
+            estoque.nomeBanco = idBanco;
+            estoque.nivelApos = res.data().nivelApos;
+            estoque.nivelBpos = res.data().nivelBpos;
+            estoque.nivelOpos = res.data().nivelOpos;
+            estoque.nivelABpos = res.data().nivelABpos;
+            estoque.nivelAneg = res.data().nivelAneg;
+            estoque.nivelBneg = res.data().nivelBneg;
+            estoque.nivelOneg = res.data().nivelOneg;
+            estoque.nivelABneg = res.data().nivelABneg;
+            estoque.dataAtualizacao = res.data().dataAtualizacao.toDate();
+        });
     }).catch(function(error){
         console.log(error);
     });
+    console.log(estoque);
     return estoque;
 }
+
   //===================Métodos de carga no banco de dados===================
   //
   //

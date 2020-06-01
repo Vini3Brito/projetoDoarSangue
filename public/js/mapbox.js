@@ -97,6 +97,7 @@ function apontaLocais(locais) {
   return true
 }
 
+
 // Abrir modal dos locais
 
 async function abrirLocal(item) {
@@ -110,15 +111,19 @@ async function abrirLocal(item) {
     texto: ['Crítico', 'Alerta', 'Estável'],
     img: ['./Ícones/bolsa_baixa.svg', './Ícones/bolsa_media.svg', './Ícones/bolsa_alta.svg']
   }
+  let detLocal;
+  let detBanco;
   detLocal = await carregaDetalhesLocal(item.idLocal).then(local => {
     return local
   });
-  detBanco = await carregaDetalhesBanco(item.idLocal).then(banco => {
+  detBanco = await carregaDetalhesBanco(item.idBanco).then(banco => {
     return banco
   });
   endereco = detLocal.enderecoLocal.split('\\n')
   horario = detLocal.horarioFuncionamento.split('\\n')
   data = arrumarData(detLocal.dataAtualizacao.toString())
+  console.log(detLocal);
+  console.log(detBanco);
 
   mLocal = "";
   mLocal += '<div id="mostraLocal" class="modal"  tabindex="-1" role="dialog">';
