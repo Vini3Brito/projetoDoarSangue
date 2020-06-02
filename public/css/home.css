@@ -746,3 +746,39 @@ button#button_tipo:hover {
             margin: 10px;
     }
 }
+
+div#mostraLocal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+#mostraLocal {
+    text-align: center;
+    padding: 0!important;
+}
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+
+div#myModal {
+    text-align: center;
+    padding: 0!important;
+}
+
+div#myModal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+#modalExemplo .modal-dialog {
+    display: block!important;
+    text-align: left;
+    vertical-align: middle;
+}
