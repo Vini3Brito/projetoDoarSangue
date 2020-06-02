@@ -64,19 +64,19 @@ var iconeEscuro = L.icon({
 
 function apontaLocais(locais) {
   locais.forEach(function (item) {
-    switch(item.nivelEstoque) {
-    case '1':
-      icone = iconeClaro
-    break
-    case '2':
-      icone = iconeMedio
-    break
-    case '3':
-      icone = iconeEscuro
-    break
-    default:
-      icone = iconePadrao
-    break
+    switch (item.nivelEstoque) {
+      case '1':
+        icone = iconeClaro
+        break
+      case '2':
+        icone = iconeMedio
+        break
+      case '3':
+        icone = iconeEscuro
+        break
+      default:
+        icone = iconePadrao
+        break
     }
     L.marker(item.coordenadas, { icon: icone }).addTo(mymap)
       .bindPopup(item.nomeLocal, {
@@ -97,6 +97,7 @@ function apontaLocais(locais) {
   return true
 }
 
+
 // Abrir modal dos locais
 
 async function abrirLocal(item) {
@@ -111,14 +112,23 @@ async function abrirLocal(item) {
     texto: ['Crítico', 'Alerta', 'Estável'],
     img: ['./Ícones/bolsa_baixa.svg', './Ícones/bolsa_media.svg', './Ícones/bolsa_alta.svg']
   }
+  let detLocal;
+  let detBanco;
+  let horario;
+  let redes;
   detLocal = await carregaDetalhesLocal(item.idLocal).then(local => {
     return local
   });
-  detBanco = await carregaDetalhesBanco(item.idLocal).then(banco => {
+  detBanco = await carregaDetalhesBanco(item.idBanco).then(banco => {
     return banco
   });
   endereco = detLocal.enderecoLocal.split('\\n')
-  horario = detLocal.horarioFuncionamento.split('\\n')
+  if (detLocal.horarioFuncionamento != null) {
+    horario = detLocal.horarioFuncionamento.split('\\n')
+  }
+  if (detLocal.redeSocial != null) {
+    redes = detLocal.redeSocial.split('\\n')
+  }
   data = arrumarData(detLocal.dataAtualizacao.toString())
 
   mLocal = "";
@@ -189,13 +199,33 @@ async function abrirLocal(item) {
     mLocal += '<span>' + parte + '</span><br>'
   })
   mLocal += '</h6>'
-  mLocal += '<h6>Funcionamento: <br>'
-  horario.forEach(function (parte) {
-    mLocal += '<span>' + parte + ';</span><br>'
-  })
-  mLocal += '</h6>'
-  mLocal += '<h6>Telefone: <br><span>' + detLocal.telefone + '</span> </h6>'
-  mLocal += '<h6>Site: <br> <span><a href="' + detLocal.site + '"target="_blank">' + detLocal.site + '</a></span> </h6>'
+  if (horario != null) {
+    mLocal += '<h6>Funcionamento: <br>'
+    horario.forEach(function (parte) {
+      mLocal += '<span>' + parte + ';</span><br>'
+    })
+    mLocal += '</h6>'
+  }
+  if (detLocal.telefone != null || detLocal.site != null || detLocal.email != null || redes != null) {
+    mLocal += '<h6>Contato:<br>'
+    if (detLocal.telefone != null) {
+      mLocal += '<span>Telefone: ' + detLocal.telefone + '</span><br>'
+    }
+    if (detLocal.site != null) {
+      mLocal += '<span>Site: <a href="' + detLocal.site + '"target="_blank">' + detLocal.site + '</a></span><br>'
+    }
+    if (detLocal.email != null) {
+      mLocal += '<span>Email: ' + detLocal.email + '</span> <br>'
+    }
+    if (redes != null) {
+      redes.forEach(function (parte) {
+        rede = parte.split(";")
+        mLocal += '<span><a href="' + rede[1] + '"target="_blank">' + rede[0] + '</a> | </span>'
+      })
+    }
+    mLocal += '</h6>'
+  }
+
   switch (detLocal.tipoAgendamento) {
     case "2":
       mLocal += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
