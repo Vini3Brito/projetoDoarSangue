@@ -779,6 +779,5 @@ div#myModal:before {
 }
 #modalExemplo .modal-dialog {
     display: block!important;
-    text-align: left;
-    vertical-align: middle;
+   
 }
