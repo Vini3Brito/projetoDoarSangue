@@ -727,3 +727,22 @@ button#button_tipo:hover {
         height: 327px!important;
     }
 }
+
+@media (min-width: 0px) and (max-width: 405px){
+    .modal_selecione #botao{
+            width: 100px;
+            margin: 15px;
+    }
+}
+@media(min-width: 406px) and (max-width: 575px){
+    .modal_selecione #botao{
+            width: 115px;
+            margin: 35px;
+    }
+}
+@media(min-width: 576px) and (max-width: 1000px){
+    .modal_selecione #botao{
+            width: 115px;
+            margin: 10px;
+    }
+}
