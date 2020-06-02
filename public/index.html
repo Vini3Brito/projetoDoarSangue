@@ -220,8 +220,8 @@
 
     <div class="row">
       <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample1">
-          <div class="card card-body">
+        <div class="collapse multi-collapse" id="multiCollapseExample1" >
+          <div class="card card-body" id="legendaa">
             <div id="info_legenda">
               <div class="estavel">
                 <h4>Estavel:</h4>
@@ -247,7 +247,7 @@
     
   </div>
   <div id='mapid'>
-
+    
   </div>
 
   <script>
@@ -272,8 +272,7 @@
     $('#multiCollapseExample1').on('hidden.bs.collapse', function () {
       document.getElementById("button_legenda").style.bottom = "12px";
     })
-
-    $('#multiCollapseExample1').on('show.bs.collapse', function () {
+ $('#multiCollapseExample1').on('show.bs.collapse', function () {
       document.getElementById("button_legenda").style.bottom = "125px";
     })
 

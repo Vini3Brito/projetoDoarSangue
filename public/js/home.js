@@ -63,4 +63,7 @@ function fechaLocal () {
     document.getElementById("balao").style.display = "block";
     document.getElementById("legenda").style.display = "block";
     }
+    
+        
+    
 
