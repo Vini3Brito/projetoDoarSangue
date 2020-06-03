@@ -22,10 +22,8 @@ function close_modal(){
 }
     
 function timer_balao () {
-    setTimeout(function(){
         document.getElementById('balao').style.opacity = "1";
         document.getElementById('balao').style.visibility = "visible";
-    }, 1000);
     setTimeout(function() {
         document.getElementById('balao').style.opacity = "0";
         document.getElementById('balao').style.visibility = "hidden";
@@ -70,5 +68,19 @@ function fechaLocal () {
         }
     });
     
-
+function aciona() {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("button_informacao").style.visibility = "hidden";
+    document.getElementById("legenda").style.visibility = "hidden";
+    document.getElementById("img_questionarioo").style.visibility = "hidden";
+    document.getElementById("balao_questionario").style.visibility = "hidden";
+}
+function desativa() {
+    document.getElementById("overlay").style.display = "none"
+    document.getElementById("button_informacao").style.visibility = "visible";
+    document.getElementById("legenda").style.visibility = "visible";
+    document.getElementById("img_questionarioo").style.visibility = "visible";
+    document.getElementById("balao_questionario").style.visibility = "visible";
+    timer_balao()
+}
 
