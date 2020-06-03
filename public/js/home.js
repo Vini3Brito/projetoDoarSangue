@@ -64,7 +64,11 @@ function fechaLocal () {
     document.getElementById("legenda").style.display = "block";
     }
     
-        
+    $(document).click(function(e) {
+        if (!$(e.target).is('.panel-body')) {
+            $('.collapse').collapse('hide');	    
+        }
+    });
     
 
 
