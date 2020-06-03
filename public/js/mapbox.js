@@ -108,6 +108,7 @@ async function abrirLocal(item) {
   document.getElementById("balao").style.display = "none";
   document.getElementById("legenda").style.display = "none";
 
+
   ref = {
     texto: ['Crítico', 'Alerta', 'Estável'],
     img: ['./Ícones/bolsa_baixa.svg', './Ícones/bolsa_media.svg', './Ícones/bolsa_alta.svg']
@@ -227,13 +228,13 @@ async function abrirLocal(item) {
   }
 
   switch (detLocal.tipoAgendamento) {
-    case "2":
+    case 2:
       mLocal += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
       break;
-    case "3":
+    case 3:
       mLocal += '<h6><span>O agendamento para doação ocorre através do telefone.</span></h6>'
       break;
-    case "4":
+    case 4:
       mLocal += '<h6><span>O agendamento para doação ocorre presencialmente.</span></h6>'
       break;
   }

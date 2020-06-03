@@ -222,19 +222,19 @@
 
     <div class="row">
       <div class="col">
-        <div class="collapse multi-collapse hide" id="multiCollapseExample1">
-          <div class="card card-body">
+        <div class="collapse multi-collapse" id="multiCollapseExample1" >
+          <div class="card card-body" id="legendaa">
             <div id="info_legenda">
-              <div class="estavel">
-                <h4>Estavel:</h4>
+              <div class="critico">
+                <h4>Crítico:</h4>
                 <img src="../Insumos/SVG/marcador-claro.svg">
               </div>
               <div class="Alerta">
                 <h4>Alerta:</h4>
                 <img src="../Insumos/SVG/marcador-medio.svg">
               </div>
-              <div class="critico">
-                <h4>Critico:</h4>
+              <div class="estavel">
+                <h4>Estável:</h4>
                 <img src="../Insumos/SVG/marcador-escuro.svg">
               </div>
             </div>
@@ -249,7 +249,7 @@
     
   </div>
   <div id='mapid'>
-
+    
   </div>
 
   <script>
@@ -274,8 +274,7 @@
     $('#multiCollapseExample1').on('hidden.bs.collapse', function () {
       document.getElementById("button_legenda").style.bottom = "12px";
     })
-
-    $('#multiCollapseExample1').on('show.bs.collapse', function () {
+ $('#multiCollapseExample1').on('show.bs.collapse', function () {
       document.getElementById("button_legenda").style.bottom = "125px";
     })
 
