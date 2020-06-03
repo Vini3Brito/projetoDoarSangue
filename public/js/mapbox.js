@@ -28,12 +28,13 @@ function valorSelecionado(tipo) {
     });
   }).on("locationerror", e => {
     //Consulta de locais quando usuário NÃO passa sua localização
-    carregaLocaisPorTipo(localInicial, distanciaBusca, tipo).then(consulta => {
+    novocarregaLocais(localInicial, distanciaBusca, tipo).then(consulta => {
       setTimeout(function () {
         if (!check) {
           alert('Houve um erro de carregamento. Por favor atualize a página')
         }
       }, 10000)
+      console.log(consulta);
       check = apontaLocais(consulta);
     });
   });
@@ -113,16 +114,10 @@ async function abrirLocal(item) {
     texto: ['Crítico', 'Alerta', 'Estável'],
     img: ['./Ícones/bolsa_baixa.svg', './Ícones/bolsa_media.svg', './Ícones/bolsa_alta.svg']
   }
-  let detLocal;
-  let detBanco;
+  let detLocal = item.detalheLocal;
+  let detBanco = item.banco;
   let horario;
   let redes;
-  detLocal = await carregaDetalhesLocal(item.idLocal).then(local => {
-    return local
-  });
-  detBanco = await carregaDetalhesBanco(item.idBanco).then(banco => {
-    return banco
-  });
   endereco = detLocal.enderecoLocal.split('\\n')
   if (detLocal.horarioFuncionamento != null) {
     horario = detLocal.horarioFuncionamento.split('\\n')

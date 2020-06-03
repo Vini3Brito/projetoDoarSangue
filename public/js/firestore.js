@@ -318,7 +318,6 @@ async function novocarregaLocais(centro, distancia, tipo){
                 }
                 local.banco = doc.data().banco;
             }
-            console.log(local)
             locais.push(local);
         });
     }).catch(function(error){
