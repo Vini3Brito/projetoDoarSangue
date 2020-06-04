@@ -147,7 +147,7 @@ async function abrirLocal(item) {
   mLocal += '<div class="container">'
   mLocal += '<div class="nivel_sangue">';
   mLocal += '<div class="titulo">';
-  mLocal += '<h4> Banco de Sangue </h4>'
+  mLocal += '<h4> Nível de Estoque </h4>'
   mLocal += '</div>';
   mLocal += '<div class="container_img">';
   mLocal += '<div class="img01">';

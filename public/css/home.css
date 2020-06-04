@@ -500,7 +500,6 @@ button#button_tipo:hover {
     }
     #local .titulo h4 {
         text-align: center;
-        text-transform: uppercase;
         margin-top: 10px;
     }
     .nivel_sangue img {
@@ -746,7 +745,7 @@ button#button_tipo:hover {
             margin: 10px;
     }
 }
-
+@media(min-width: 576px){
 div#mostraLocal:before {
     content: '';
     display: inline-block;
@@ -754,14 +753,17 @@ div#mostraLocal:before {
     vertical-align: middle;
     margin-right: -4px;
 }
+}
 #mostraLocal {
     text-align: center;
     padding: 0!important;
 }
+@media(min-width: 576px){
 .modal-dialog {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
+}
 }
 
 
@@ -769,13 +771,14 @@ div#myModal {
     text-align: center;
     padding: 0!important;
 }
-
+@media(min-width: 576px){
 div#myModal:before {
     content: '';
     display: inline-block;
     height: 100%;
     vertical-align: middle;
     margin-right: -4px;
+}
 }
 #modalExemplo .modal-dialog {
     display: block!important;
@@ -793,4 +796,10 @@ div#myModal:before {
     background-color: rgba(0,0,0,0.5);
     z-index: 99999;
     cursor: pointer;
+  }
+  @media (max-width: 321px){
+#local .container {
+    padding: 0px!important;
+    /* margin-left: 0px; */
+}
   }

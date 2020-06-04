@@ -70,17 +70,13 @@ function fechaLocal () {
     
 function aciona() {
     document.getElementById("overlay").style.display = "block";
-    document.getElementById("button_informacao").style.visibility = "hidden";
-    document.getElementById("legenda").style.visibility = "hidden";
-    document.getElementById("img_questionarioo").style.visibility = "hidden";
-    document.getElementById("balao_questionario").style.visibility = "hidden";
 }
 function desativa() {
-    document.getElementById("overlay").style.display = "none"
-    document.getElementById("button_informacao").style.visibility = "visible";
-    document.getElementById("legenda").style.visibility = "visible";
-    document.getElementById("img_questionarioo").style.visibility = "visible";
-    document.getElementById("balao_questionario").style.visibility = "visible";
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("button_informacao").style.display = "block";
+      document.getElementById("img_questionarioo").style.display = "block";
+      document.getElementById("balao").style.display = "block";
+      document.getElementById("legenda").style.display = "block";
     timer_balao()
 }
 
