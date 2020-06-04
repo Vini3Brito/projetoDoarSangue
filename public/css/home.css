@@ -629,6 +629,7 @@ button#button_tipo:hover {
     #info_legenda h4 {
         font-size: 20px;
         padding-left: 12px;
+        padding-top: 4px;
     }
     .critico img {
         width: 25px;
