@@ -14,9 +14,12 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
 }).addTo(mymap);
-function valorSelecionado(tipo) {
+function valorSelecionado(tipo) {  
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
+    if (tipo==0) {
+      document.getElementById("legenda").style.display = "none"
+    }
     desativa()
     novocarregaLocais(e.latlng, distanciaBusca, tipo).then(consulta => {
       setTimeout(function () {
@@ -27,6 +30,9 @@ function valorSelecionado(tipo) {
       check = apontaLocais(consulta);
     });
   }).on("locationerror", e => {
+    if (tipo==0) {
+      document.getElementById("legenda").style.display = "none"
+    }
     desativa()
     //Consulta de locais quando usuário NÃO passa sua localização
     novocarregaLocais(localInicial, distanciaBusca, tipo).then(consulta => {
@@ -208,7 +214,7 @@ async function abrirLocal(item) {
       mLocal += '<span>Telefone: ' + detLocal.telefone + '</span><br>'
     }
     if (detLocal.site != null) {
-      mLocal += '<span>Site: <a href="' + detLocal.site + '"target="_blank">' + detLocal.site + '</a></span><br>'
+      mLocal += '<span><a href="' + detLocal.site + '"target="_blank">Site</a></span><br>'
     }
     if (detLocal.email != null) {
       mLocal += '<span>Email: ' + detLocal.email + '</span> <br>'
