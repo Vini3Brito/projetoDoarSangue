@@ -711,2454 +711,519 @@ function cargaDeTeste (){
         },
         coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
     });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+}*/
+
+/*########## Carga executada dia 03/06 para inclusão de dados sobre locais
+function carga6(){
+    const localColeta = geofirestore.collection("localColeta");    localColeta.doc().set({
+        nomeLocal: 'Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
+            enderecoLocal: 'Av. Brigadeiro Luís Antônio, 2533\\nJardim Paulista, 01401-002',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 17h00\\nSábados, das 08h00 às 16h00\\nFechado aos domingos',
+            telefone: '(11) 3373-2000',
+            email: 'atendimento@bssp.com.br',
+            site: 'http://www.bssp.com.br/',
+            tipoAgendamento: '2',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
             nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.569522, -46.650506)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Hospital Professor Edmundo Vasconcelos - Banco de Sangue de São Paulo',
+        detalheLocal:{
+            enderecoLocal: 'R. Borges Lagoa, 1450\\nVila Clementino, 04038-905',
+            horarioFuncionamento: 'Segunda à sábado, das 08h00 às 12h00\\nFechado aos domingos',
+            telefone: '(11) 5080-4435',
+            site: 'https://www.doesanguedoevida.com.br/home',
+            redeSocial: 'Facebook;https://www.facebook.com/doesangue.bssp\\nInstagram;https://www.instagram.com/bancodesanguesaopaulo/',
+            tipoAgendamento: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Banco de Sangue de São Paulo (mas é outro)',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.595571, -46.65145)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Banco de Sangue São Paulo - Paraíso',
+        detalheLocal:{
+            enderecoLocal: 'R. Tomás Carvalhal, 711\\nParaíso, 04006-020',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 17h00\\nSábado, das 08h00 às 16h00\\nFechado aos domingos',
+            telefone: '(11) 3373-2050',
+            site: 'https://www.doesanguedoevida.com.br/home',
+            redeSocial: 'Facebook;https://www.facebook.com/doesangue.bssp\\nInstagram;https://www.instagram.com/bancodesanguesaopaulo/',
+            tipoAgendamento: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Banco de Sangue de São Paulo (mas é outro)',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.577917, -46.647844)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Banco de Sangue Paulista - Santo Amaro',
+        detalheLocal:{
+            enderecoLocal: 'R. Iguatinga, 382\\nSanto Amaro, 04744-040',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 16h30\\nSábado, das 08h00 às 16h00\\nFechado aos domingos',
+            telefone: '(11) 3048-8969',
+            email: 'acentral@bancodesanguepaulista.com.br',
+            site: 'https://www.bancodesanguepaulista.com.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/bancodesanguepaulista/\\nInstagram;https://www.instagram.com/bancodesanguepaulista/',
+            tipoAgendamento: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Banco de Sangue Paulista',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.655942, -46.70554)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Banco de Sangue Paulista - Vila Nova Conceição',
+        detalheLocal:{
+            enderecoLocal: 'R. Dr. Alceu de Campos Rodrigues, 46, 14° andar\\nVila Nova Conceiçao, 04544-000',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 16h30\\nSábado, das 08h00 às 16h00\\nFechado aos domingos',
+            telefone: '(11) 3048-8950',
+            email: 'acentral@bancodesanguepaulista.com.br',
+            site: 'https://www.bancodesanguepaulista.com.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/bancodesanguepaulista/\\nInstagram;https://www.instagram.com/bancodesanguepaulista/',
+            tipoAgendamento: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Banco de Sangue Paulista',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.590063, -46.672961)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Hospital Campo Limpo',
+        detalheLocal:{
+            enderecoLocal: 'Estrada de Itapecerica 1742\\nCampo Limpo, 05835-005',
+            horarioFuncionamento: ' Segunda à sábado, das 08h00 às 13h00\\nFechado aos domingos',
+            telefone: '(11) 5812-1379',
+            email: 'colsan@colsan.org.br',
+            site: 'https://www.colsan.org.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/colsanoficial\\nInstagram;https://www.instagram.com/colsanoficial/',
+            tipoAgendamento: '1',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Colsan',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.649018, -46.749579)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Hospital Municipal Alípio Correa Neto',
+        detalheLocal:{
+            enderecoLocal: 'Alameda Rodrigo de Brum, 1989\\nVila Paranagua, 03807-230',
+            horarioFuncionamento: ' Segunda à sábado, das 08h00 às 12h30\\nFechado aos domingos',
+            telefone: '(11) 2545-4652',
+            email: 'colsan@colsan.org.br',
+            site: 'https://www.colsan.org.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/colsanoficial\\nInstagram;https://www.instagram.com/colsanoficial/',
+            tipoAgendamento: '1',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Colsan',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.500519, -46.472723)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Hospital Municipal Dr. Carmino Caricchio',
+        detalheLocal:{
+            enderecoLocal: 'Av. Celso Garcia, 4815 \\nTatuapé, 03085-030',
+            horarioFuncionamento: ' Segunda à sábado, das 08h00 às 12h30\\nFechado aos domingos',
+            telefone: '(11) 2942-8094',
+            email: 'colsan@colsan.org.br',
+            site: 'https://www.colsan.org.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/colsanoficial\\nInstagram;https://www.instagram.com/colsanoficial/',
+            tipoAgendamento: '1',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Colsan',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.532837, -46.566303)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Hospital do Servidor Público Municipal',
+        detalheLocal:{
+            enderecoLocal: 'R. Castro Alves, 60, 4º andar\\nAclimação, 01532-000',
+            horarioFuncionamento: ' Segunda à sábado, das 08h00 às 12h30\\nFechado aos domingos',
+            telefone: '(11) 3277-5303',
+            email: 'colsan@colsan.org.br',
+            site: 'https://www.colsan.org.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/colsanoficial\\nInstagram;https://www.instagram.com/colsanoficial/',
+            tipoAgendamento: '1',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Colsan',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.566373, -46.639159)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Hemocentro São Lucas - Liberdade',
+        detalheLocal:{
+            enderecoLocal: 'R. Barão de Iguape, 212, 2º Andar\\nLiberdade, 01507-000',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 17h00\\nFechado aos sábados e domingos',
+            telefone: '(11) 3660-6044',
+            email: 'contato@hemocentrosaolucas.com.br',
+            site: 'https://hemocentrosaolucas.com.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/saolucashemocentro\\nInstagram;https://www.instagram.com/hemocentrosaolucas/?hl=pt-br',
+            tipoAgendamento: '1',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Hemocentro São Lucas',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.558467, -46.634878)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Hemocentro São Lucas - Vila Olimpia',
+        detalheLocal:{
+            enderecoLocal: 'Av. Santo Amaro, 2468\\nVila Olímpia, 04556-100',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 17h00\\nFechado aos sábados e domingos',
+            telefone: '(11) 3660-5972',
+            email: 'contato@hemocentrosaolucas.com.br',
+            site: 'https://hemocentrosaolucas.com.br/',
+            redeSocial: 'Facebook;https://www.facebook.com/saolucashemocentro\\nInstagram;https://www.instagram.com/hemocentrosaolucas/?hl=pt-br',
+            tipoAgendamento: '1',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Hemocentro São Lucas',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.605585, -46.675831)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Centro de Hemofilia do Hospital das Clínicas da FMUSP - Pró Sangue',
+        detalheLocal:{
+            enderecoLocal: 'Av. Enéas Carvalho de Aguiar, 155, 1° andar\\nCerqueira Cesar, 05403-000',
+            horarioFuncionamento: 'Segunda à sábado, das 07h00 às 18h00h\\nFechado aos domingos',
+            telefone: '(11) 4573-7800',
+            email: 'faleconosco@prosangue.sp.gov.br',
+            site: 'http://prosangue.sp.gov.br/home/Default.html',
+            redeSocial: 'Facebook;https://www.facebook.com/prosangue\\nInstagram;https://www.instagram.com/prosangue/\\nTwitter;https://twitter.com/pro_sangue',
+            tipoAgendamento: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Pró-Sangue',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.557763, -46.668959)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Conjunto Hospitalar do Mandaqui - Pró Sangue',
+        detalheLocal:{
+            enderecoLocal: 'R. Voluntários da Pátria, 4227\\nMandaqui, 02401-400',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 16h30\\nFechado aos sábados e domingos',
+            telefone: '(11) 4573-7800',
+            email: 'faleconosco@prosangue.sp.gov.br',
+            site: 'http://prosangue.sp.gov.br/home/Default.html',
+            redeSocial: 'Facebook;https://www.facebook.com/prosangue\\nInstagram;https://www.instagram.com/prosangue/\\nTwitter;https://twitter.com/pro_sangue',
+            tipoAgendamento: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Pró-Sangue',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
+        },
+        coordinates: new firebase.firestore.GeoPoint(-23.484589, -46.630398)
+    });
+    localColeta.doc().set({
+        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia - Pró Sangue',
+        detalheLocal:{
+            enderecoLocal: 'Av. Dr. Dante Pazzanese, 500\\nVila Mariana, 04012-180',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 13h00\\nFechado aos sábados e domingos',
+            telefone: '(11) 4573-7800',
+            email: 'faleconosco@prosangue.sp.gov.br',
+            site: 'http://prosangue.sp.gov.br/home/Default.html',
+            redeSocial: 'Facebook;https://www.facebook.com/prosangue\\nInstagram;https://www.instagram.com/prosangue/\\nTwitter;https://twitter.com/pro_sangue',
+            tipoAgendamento: '2',
+            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+        banco:{
+            nomeBanco: 'Pró-Sangue',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
         coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
     });
     localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
+        nomeLocal: 'Banco de Sangue - Einstein Morumbi',
         detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
+            enderecoLocal: 'Av. Albert Einstein, 627, Bloco E, 3º andar\\nMorumbi, 05652-900',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 17h00\\nSábados, das 08h00 às 14h00\\nFechado aos domingos',
+            telefone: '(11) 2151-1233',
+            email: 'bsangue@einstein.br',
+            site: 'https://www.einstein.br/estrutura/banco-sangue',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.596405, -46.715751)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Hemocentro Hospital São Paulo / Unifesp',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
+            enderecoLocal: 'R. Diogo de Faria, 824\\nVila Clementino, 04037-002',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 17h30\\nSábado, das 08h00 às 13h00\\nFechado aos domingos',
+            telefone: '(11) 5576-4240',
+            email: 'doesangue@unifesp.br',
+            site: 'http://www.hospitalsaopaulo.org.br/servicos/item/61-banco-de-sangue',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
+        coordinates: new firebase.firestore.GeoPoint(-23.595506, -46.644824)
     });
     localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
+        nomeLocal: 'Hemonúcleo da Santa Casa de São Paulo',
         detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
+            enderecoLocal: 'R. Marquês de Itu, 579\\nVila Buarque, 01223-001',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 07h00 às 17h00\\nSábados, das 08h00 às 15h00\\nFechado aos domingos',
+            telefone: '(11) 2176-7258',
+            site: 'https://www.santacasasp.org.br/portal/site/doe-sangue/doacao',
+            redeSocial: 'Facebook;https://www.facebook.com/santacasasp/?fref=ts\\nInstagram;https://www.instagram.com/santacasasp/',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.543849, -46.649964)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Banco de Sangue do Hospital Alemão Oswaldo Cruz',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
+            enderecoLocal: 'R. João Julião, 331\\nBela Vista, 01323-020',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 07h00 às 18h00\\nSábados, das 08h00 às 15h00\\nFechado aos domingos',
+            telefone: '(11) 3286-7372',
+            email: 'recepcao@institutohoc.com.br',
+            site: 'https://www.institutohoc.com.br/index.html',
+            redeSocial: 'Facebook;https://www.facebook.com/institutohochemoterapia/',
+            tipoAgendamento: '2',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.568531, -46.643423)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Banco De Sangue Do Hospital Do Servidor Publico Estadual',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
+            enderecoLocal: 'R. Pedro de Toledo, 1800\\nVila Clementino, 04039-000',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 09h00 às 16h\\nSábados, das 08h00 às 16h00\\nFechado aos domingos',
+            telefone: '(11) 4573-8249',
+            site: 'http://www.iamspe.sp.gov.br/banco-de-sangue-2/',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
+        coordinates: new firebase.firestore.GeoPoint(-23.597489, -46.654629)
     });
     localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
+        nomeLocal: 'Hospital Beneficência Portuguesa de São Paulo - Banco de Sangue',
         detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
+            enderecoLocal: 'R. Maestro Cardim, 1041\\nBela Vista, 01323-130',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 16h00\\nSábados, das 07h00 às 14h00\\nFechado aos domingos',
+            telefone: '(11) 3505-1000',
+            site: 'https://www.bp.org.br/bp/pacientes-e-visitantes/doacao-de-sangue-e-plaquetas',
+            redeSocial: 'Facebook;https://www.facebook.com/bporgbr\\nInstagram;https://www.instagram.com/bporgbr/\\nTwitter;https://twitter.com/bporgbr',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.570087, -46.641871)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Hospital Geral de Guarulhos',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
+            enderecoLocal: 'Alameda dos Lírios, 300\\nParque Cecap, 07190-012',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 15h00\\nFechado aos sábados e domingos',
+            telefone: '(11) 3466-1350',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
+        coordinates: new firebase.firestore.GeoPoint(-23.449469, -46.495028)
     });
     localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
+        nomeLocal: 'Hospital Geral Pedreira',
         detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
+            enderecoLocal: 'R. João Francisco de Moura, 251\\nVila Campo Grande, 04455-170',
+            horarioFuncionamento: 'Segunda à sábado, das 08h00 às 12h00\\nFechado aos sábados e domingos',
+            telefone: '(11) 5613-5900',
+            site: 'http://hgped.spdmafiliadas.org.br/agencia-transfusional-e-posto-de-coleta/',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.680972, -46.676464)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Hospital IGESP',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
+            enderecoLocal: 'R. Silvia, 276\\nBela Vista, 01331-010',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 11h30\\nSábados, das 8h00 às 12h00\Fechado aos domingos',
+            telefone: '(11) 3147-6330',
+            email: 'marketing@hospitaligesp.com.br',
+            site: 'https://hospitaligesp.com.br/hemoterapia/',
+            redeSocial: 'Facebook;https://www.facebook.com/hospitaligesp/\\nInstagram;https://www.instagram.com/hospital_igesp/',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
+        coordinates: new firebase.firestore.GeoPoint(-23.560918, -46.650295)
     });
     localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
+        nomeLocal: 'Hospital Nove de Julho',
         detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
+            enderecoLocal: 'R. Peixoto Gomide, 625\\nCerqueira Cesar, 01409-902',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 17h00\\nSábados, das 08h00 às 12h00\\nFechado aos domingos',
+            telefone: '(11) 3285-2922',
+            email: 'hemo9j@hemoterapia9dejulho.com.br',
+            site: 'http://www.hemoterapia9dejulho.com.br/',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.559415, -46.655226)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Hospital Santa Catarina',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
+            enderecoLocal: 'Av. Paulista, 200\\nBela Vista, 01310-000',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 8h00 às 18h00\\nSábados, das 8h00 às 15h00\\nFechado aos domingos',
+            telefone: '(11) 3016-4133',
+            site: 'http://www.hospitalsantacatarina.org.br/servicos/Paginas/Banco-de-sangue.aspx',
+            redeSocial: 'Facebook;https://www.facebook.com/hospitalsantacatarina/\\nInstagram;https://www.instagram.com/hosp.santacatarina/?hl=pt-br',
+            tipoAgendamento: '2',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.569657, -46.645584)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Hospital Sírio Libanês',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
-        detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
-            tipoAgendamento: '1',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
-            dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
-        },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
-    });
-    localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
-        detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
+            enderecoLocal: 'R. Dona Adma Jafet, 91\\nBela Vista, 01308-050',
+            horarioFuncionamento: 'Segunda à sábado, das 07h00 às 16h00\\nFechado aos domingos',
+            telefone: '(11) 3394-5260',
+            site: 'https://www.hospitalsiriolibanes.org.br/hospital/Paginas/quero-ser-doador.aspx',
+            redeSocial: 'Facebook;https://www.facebook.com/HospitalSirioLibanes\\nInstagram;https://www.instagram.com/hsiriolibanes/',
+            tipoAgendamento: '2',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.556913, -46.653985)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'CTA/SP',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
+            enderecoLocal: 'R. Líbero Badaró, 144\\nCentro Histórico de São Paulo, 01008-001',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 19h00\\nFechado aos sábados e domingos',
+            telefone: '(11) 3241-2224',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
+        coordinates: new firebase.firestore.GeoPoint(-23.534208, -46.686974)
     });
     localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
+        nomeLocal: 'Hemocentro Cruz Azul',
         detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
+            enderecoLocal: 'Av. Lins de Vasconcelos, 356\\nCambuci, 01538-900',
+            horarioFuncionamento: 'Segunda à sexta-feira, das 08h00 às 13h00\\nFechado aos sábados e domingos',
+            telefone: '(11) 3348-4000',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.566404, -46.621661)
     });
     localColeta.doc().set({
-        nomeLocal: 'Instituto Dante Pazzanese de Cardiologia',
+        nomeLocal: 'Hospital São Luiz Gonzaga',
         detalheLocal:{
-            enderecoLocal: 'Instituto Dante',
-            horarioFuncionamento: 'Instituto Dante',
-            telefone: 'Instituto Dante',
-            email: 'Instituto Dante',
-            site: 'Instituto Dante',
+            enderecoLocal: 'R. Michel Ouchana, 94\\nJaçanã, 02276-140',
+            horarioFuncionamento: 'Segunda à sexta-feira das 08h00 as 11h00\\nFechado aos sábados e domingo',
+            telefone: '(11) 3466-1000',
             tipoAgendamento: '1',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.58477, -46.651791)
+        coordinates: new firebase.firestore.GeoPoint(-23.458993, -46.582309)
     });
     localColeta.doc().set({
-        nomeLocal: 'Fundação Pró-Sangue Hemocentro de São Paulo',
+        nomeLocal: 'Sabará Hospital Infantil',
         detalheLocal:{
-            enderecoLocal: 'Fundação Pró-Sangue',
-            horarioFuncionamento: 'Fundação Pró-Sangue',
-            telefone: 'Fundação Pró-Sangue',
-            email: 'Fundação Pró-Sangue',
-            site: 'Fundação Pró-Sangue',
-            tipoAgendamento: '1',
+            enderecoLocal: 'Av. Angélica, 1987\\nConsolação, 01227-200',
+            horarioFuncionamento: 'Segunda à sábado, das 08h00 às 16h00\\nFechado aos domingos',
+            telefone: '(11) 3355-3870',
+            tipoAgendamento: '4',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp(),
         },
         banco:{
-            nomeBanco: 'Banco de Sangue de São Paulo',
-            nivelApos: '3',
-            nivelBpos: '2',
-            nivelOpos: '1',
-            nivelABpos: '2',
-            nivelAneg: '3',
-            nivelBneg: '2',
-            nivelOneg: '1',
-            nivelABneg: '2',
+            nomeBanco: '',
             dataAtualizacao: firebase.firestore.FieldValue.serverTimestamp()
         },
-        coordinates: new firebase.firestore.GeoPoint(-23.55777, -46.668824)
+        coordinates: new firebase.firestore.GeoPoint(-23.549838, -46.659362)
     });
 }*/

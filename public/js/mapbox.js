@@ -17,8 +17,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 function valorSelecionado(tipo) {
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
-    carregaLocaisPorTipo(e.latlng, distanciaBusca, tipo).then(consulta => {
-      console.log(consulta);
+    novocarregaLocais(e.latlng, distanciaBusca, tipo).then(consulta => {
       setTimeout(function () {
         if (!check) {
           alert('Houve um erro de carregamento. Por favor atualize a página')
@@ -34,7 +33,6 @@ function valorSelecionado(tipo) {
           alert('Houve um erro de carregamento. Por favor atualize a página')
         }
       }, 10000)
-      console.log(consulta);
       check = apontaLocais(consulta);
     });
   });
