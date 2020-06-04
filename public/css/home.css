@@ -793,3 +793,7 @@ div#myModal:before {
   
 }
 }
+
+div#info_legenda {
+    margin: auto;
+}
