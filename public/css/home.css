@@ -713,7 +713,7 @@ button#button_tipo:hover {
         margin-bottom: 0px;
     }
     div#mostraLocal {
-        background: #00000073 !important;
+        background-color: rgba(0,0,0,0.5);
     }
     @media (max-width: 400px){
 .modal-body .nivel_sangue {
