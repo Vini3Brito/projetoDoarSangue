@@ -17,10 +17,10 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 function valorSelecionado(tipo) {  
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
-    if (tipo==0) {
-      document.getElementById("legenda").style.display = "none"
-    }
     desativa()
+    if (tipo==0) {
+      document.getElementById("legenda").style.visibility = "hidden";
+    }
     novocarregaLocais(e.latlng, distanciaBusca, tipo).then(consulta => {
       setTimeout(function () {
         if (!check) {
@@ -30,10 +30,10 @@ function valorSelecionado(tipo) {
       check = apontaLocais(consulta);
     });
   }).on("locationerror", e => {
-    if (tipo==0) {
-      document.getElementById("legenda").style.display = "none"
-    }
     desativa()
+    if (tipo==0) {
+      document.getElementById("legenda").style.visibility = "hidden";
+    }
     //Consulta de locais quando usuário NÃO passa sua localização
     novocarregaLocais(localInicial, distanciaBusca, tipo).then(consulta => {
       setTimeout(function () {
