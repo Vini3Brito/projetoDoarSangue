@@ -488,6 +488,7 @@ button#button_tipo:hover {
         height: 320px;
         border-radius: 22px;
         margin-left: 24px;
+        text-align: left;
     }
     #local .modal-header {
         border-top-left-radius: 22px;
@@ -798,8 +799,23 @@ div#myModal:before {
     cursor: pointer;
   }
   @media (max-width: 321px){
-#local .container {
-    padding: 0px!important;
-    /* margin-left: 0px; */
-}
+  #local .container {
+      padding: 0px!important;
+  
+      width: 107%;
+      margin-left: -10px;
+    
   }
+}
+
+@media (max-width: 768px){
+    .nivel_sangue .titulo {
+        padding-top: 2px;
+    }
+}
+@media (max-width: 768px){
+.info h6:first-child {
+    padding-top: 8px;
+  
+}
+}
