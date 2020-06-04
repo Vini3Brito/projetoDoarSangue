@@ -133,7 +133,7 @@ async function abrirLocal(item) {
   data = arrumarData(detLocal.dataAtualizacao.toDate())
 
   mLocal = "";
-  mLocal += '<div class="modal fade" id="mostraLocal" tabindex="-1" role="dialog">';
+  mLocal += '<div class="modal" id="mostraLocal" tabindex="-1" role="dialog">';
   mLocal += '<div class="modal-dialog" role="document">';
   mLocal += '<div class="modal-content">';
   mLocal += '<div class="modal-header">';
