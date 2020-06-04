@@ -796,6 +796,8 @@ div#myModal:before {
     background-color: rgba(0,0,0,0.5);
     z-index: 99999;
     cursor: pointer;
+    -webkit-transition: opacity 800ms, visibility 800ms;
+    transition: opacity 800ms, visibility 800ms;
   }
   @media (max-width: 321px){
 #local .container {
