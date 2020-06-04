@@ -72,11 +72,12 @@ function aciona() {
     document.getElementById("overlay").style.display = "block";
 }
 function desativa() {
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById("overlay").style.opacity = "0";
+    document.getElementById("overlay").style.visibility = "hidden";
     document.getElementById("button_informacao").style.display = "block";
-      document.getElementById("img_questionarioo").style.display = "block";
-      document.getElementById("balao").style.display = "block";
-      document.getElementById("legenda").style.display = "block";
+    document.getElementById("img_questionarioo").style.display = "block";
+    document.getElementById("balao").style.display = "block";
+    document.getElementById("legenda").style.display = "block";
     timer_balao()
 }
 

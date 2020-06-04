@@ -17,7 +17,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 function valorSelecionado(tipo) {  
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
-    desativa()
     if (tipo==0) {
       document.getElementById("legenda").style.visibility = "hidden";
     }
@@ -30,7 +29,6 @@ function valorSelecionado(tipo) {
       check = apontaLocais(consulta);
     });
   }).on("locationerror", e => {
-    desativa()
     if (tipo==0) {
       document.getElementById("legenda").style.visibility = "hidden";
     }
@@ -101,7 +99,8 @@ function apontaLocais(locais) {
         abrirLocal(item)
       });
   });
-  return true
+  desativa();
+  return true;
 }
 
 
@@ -134,7 +133,7 @@ async function abrirLocal(item) {
   data = arrumarData(detLocal.dataAtualizacao.toDate())
 
   mLocal = "";
-  mLocal += '<div id="mostraLocal" class="modal"  tabindex="-1" role="dialog">';
+  mLocal += '<div class="modal fade" id="mostraLocal" tabindex="-1" role="dialog">';
   mLocal += '<div class="modal-dialog" role="document">';
   mLocal += '<div class="modal-content">';
   mLocal += '<div class="modal-header">';
