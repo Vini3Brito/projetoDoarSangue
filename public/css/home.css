@@ -758,10 +758,12 @@ div#mostraLocal:before {
     text-align: center;
     padding: 0!important;
 }
+@media(min-width: 576px){
 .modal-dialog {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
+}
 }
 
 
@@ -794,4 +796,10 @@ div#myModal:before {
     background-color: rgba(0,0,0,0.5);
     z-index: 99999;
     cursor: pointer;
+  }
+  @media (max-width: 321px){
+#local .container {
+    padding: 0px!important;
+    /* margin-left: 0px; */
+}
   }
