@@ -180,6 +180,9 @@ async function abrirLocal(item) {
     redes = detLocal.redeSocial.split('\\n')
   }
   data = arrumarData(detLocal.dataAtualizacao.toDate());
+  
+  // $("#mostraLocal").modal();   EM ANÁLISE PARA ALTERAÇÃO DE MODAL
+
   mLocal = "";
   mLocal += '<div class="modal" id="mostraLocal" tabindex="-1" role="dialog">';
   mLocal += '<div class="modal-dialog" role="document">';
