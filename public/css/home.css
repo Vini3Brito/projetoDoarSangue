@@ -789,12 +789,42 @@ div#myModal:before {
     }
 }
 @media (max-width: 768px){
-.info h6:first-child {
-    padding-top: 8px;
-  
-}
-}
+    .info h6:first-child {
+        padding-top: 8px;
+      
+    }
+    }
+    
+    div#info_legenda {
+        margin: auto;
+    }
 
-div#info_legenda {
-    margin: auto;
-}
+    /* confirmar localização */
+    #modal_localizacao {
+        z-index: 99999;
+        text-align: center;
+    }
+    #modal_localizacao .modal-dialog {
+        max-width: 530px!important;
+        width: 100%;
+    }
+    #texto_navegacao {
+        color: white;
+        font-size: 16px;
+        padding: 30px;
+        line-height: 28px;
+    }
+    .modal-content #button_localizacao {
+        display: flex;
+        margin: auto;
+        border: none;
+        width: 70px;
+        height: 35px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        background-image: linear-gradient(#ffffff, #c7c7c7);
+        box-shadow: 0 3px 4px 0 rgba(3, 3, 3, 0.3);
+        cursor: pointer;
+        font-size: 23px;
+        color: black;
+    }

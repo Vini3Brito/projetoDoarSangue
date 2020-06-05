@@ -35,6 +35,25 @@
   <script src="https://unpkg.com/geofirestore/dist/geofirestore.js"></script>
   <script language="javascript" type="text/javascript" src="./js/firestore.js"></script>
   <script language="javascript" type="text/javascript" src="./js/home.js"></script>
+
+
+
+  <!-- Modal inicial sobre a localização -->
+  <div class="modal_selecione" id='modal_localizacao' tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header_selecione">
+          <h2 class="modal-title">Atenção</h2>
+        </div>
+        <div class="modal-body">
+          <div class="tipo_sanguino">
+            <p id='texto_navegacao'>Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.</p>
+            <button id="button_localizacao" aria-label="Fechar" type="button">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- Modal inicial para escolher do tipo sanguineo -->
   <div class="modal_selecione" id='myModal' tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
