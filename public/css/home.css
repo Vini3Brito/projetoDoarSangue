@@ -314,14 +314,15 @@ div#balao {
     }
     .modal_selecione #botao {
         opacity: 1!important;
-    background: white;
-    font-size: 25px;
-    width: 115px;
-    margin: 30px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    outline: inherit;
+        background-image: linear-gradient(#ffffff, #c7c7c7);
+        font-size: 25px;
+        width: 115px;
+        margin: 30px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        outline: inherit;
+        box-shadow: 0 3px 4px 0 rgba(3, 3, 3, 0.3);
 }
 .modal_selecione #botao:hover {
     opacity: 0.9;
