@@ -14,6 +14,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
 }).addTo(mymap);
+
 function valorSelecionado(tipo) {  
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
@@ -44,7 +45,55 @@ function valorSelecionado(tipo) {
   });
 }
 
-
+// const locaisCarregados;
+// mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
+//   //Consulta de locais quando usuário passa sua localização
+//   novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
+//     locaisCarregados = consulta;
+//   });
+//   mostraSelecioneTipo();
+// }).on("locationerror", e => {
+//   //Consulta de locais quando usuário NÃO passa sua localização
+//   novocarregaLocais(localInicial, distanciaBusca).then(consulta => {
+//     locaisCarregados = consulta;
+//   });
+//   mostraSelecioneTipo();
+// });
+// function mostreSelecioneTipo(){
+//   //Fecha modal de localidade
+//   //Abre modal selecione tipo
+// }
+// function valorSelecionado(tipo) {
+//   for(const local in locaisCarregados){
+//     switch (tipo){
+//       case "1":
+//           local.nivelEstoque = local.banco.nivelApos;
+//           break;
+//       case "2":
+//           local.nivelEstoque = local.banco.nivelBpos;
+//           break;
+//       case "3":
+//           local.nivelEstoque = local.banco.nivelOpos;
+//           break;
+//       case "4":
+//           local.nivelEstoque = local.banco.nivelABpos;
+//           break;
+//       case "5":
+//           local.nivelEstoque = local.banco.nivelAneg;
+//           break;
+//       case "6":
+//           local.nivelEstoque = local.banco.nivelBneg;
+//           break;
+//       case "7":
+//           local.nivelEstoque = local.banco.nivelOneg;
+//           break;
+//       case "8":
+//           local.nivelEstoque = local.banco.nivelABneg;
+//           break;
+//     }
+//   }
+//   apontaLocais(locaisCarregados);
+// }
 
 var iconePadrao = L.icon({
   iconUrl: './Ícones/marcador.svg',
@@ -130,8 +179,7 @@ async function abrirLocal(item) {
   if (detLocal.redeSocial != null) {
     redes = detLocal.redeSocial.split('\\n')
   }
-  data = arrumarData(detLocal.dataAtualizacao.toDate())
-
+  data = arrumarData(detLocal.dataAtualizacao.toDate());
   mLocal = "";
   mLocal += '<div class="modal" id="mostraLocal" tabindex="-1" role="dialog">';
   mLocal += '<div class="modal-dialog" role="document">';
@@ -247,16 +295,6 @@ async function abrirLocal(item) {
   mLocal += '</div>';
   document.getElementById("local").innerHTML = mLocal;
 }
-
-//==============================Teste dos métodos==============================
-//------Centro de Hematologia de São Paulo - Banco de Sangue de São Paulo------
-
-// carregaDetalhesLocal("E18O20sOAXudGpju5VMw").then(resultado=>{         
-//   console.log(resultado);
-// });
-// carregaDetalhesBanco("E18O20sOAXudGpju5VMw").then(resultado =>{
-//   console.log(resultado);
-// });
 
 function arrumarData(data) {
   // vData = data.split(" ")
