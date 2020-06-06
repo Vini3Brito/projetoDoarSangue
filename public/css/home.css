@@ -1,19 +1,5 @@
   /* Style questionário Mobile */
-.questionario_mobile img {
-    right: 25px;
-    position: absolute;
-    bottom: -140px;
-    width: 65px;
-    opacity: 0.5;
-}
-@media(max-width: 768px){
-    .questionario_mobile img {
-    right: 5px;
-    position: absolute;
-    bottom: -145px;
-    width: 50px;
-    }
-}
+
 @media(max-width: 768px){
 #executar_questionario img{
     right: 5px!important;
@@ -29,6 +15,7 @@
     width: 65px;
 }
 #executar_questionario{
+    display: none;
     position: absolute;
     bottom: 160px;
     right: 0;
@@ -48,13 +35,6 @@
     font-size: 20px!important;
     }
 
-}
-
-.questionario_mobile {
-    position: absolute;
-    bottom: 160px;
-    right: 0;
-    z-index: 999999;
 }
 
 
@@ -87,9 +67,6 @@
     transition: opacity 300ms, visibility 300ms;
 }
 
-
-
-}
 @media (max-width: 768px){
     #balao_questionario:after {
         top: 103px!important;
@@ -214,9 +191,7 @@ body {
 button#button_informacao {
     display: none;
 }
-#img_questionarioo {
-    display: none;
-}
+
 /* Modal selecionar o tipo sanguineo */
 .modal_selecione {
     position: fixed;
