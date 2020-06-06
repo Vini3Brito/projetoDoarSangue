@@ -46,9 +46,8 @@
           <h2 class="modal-title">Atenção</h2>
         </div>
         <div class="modal-body">
-          <div class="tipo_sanguino">
-            <p id='texto_navegacao'>Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.</p>
-            <button id="button_localizacao" aria-label="Fechar" type="button">OK</button>
+           <p id='texto_navegacao'>Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.</p>
+            <button id="button_localizacao" onclick="close_localizacao()" type="button"><h3> Ok, entendi</h3></button>
           </div>
         </div>
       </div>
@@ -56,7 +55,8 @@
   </div>
   
   <!-- Modal inicial para escolher do tipo sanguineo -->
-  <div class="modal_selecione" id='myModal' tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div id="container_selecione">
+   <div class="modal_selecione" id='myModal' tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header_selecione">
@@ -124,6 +124,7 @@
       </div>
     </div>
   </div>
+</div>
 
   <div id='overlay'></div>
   <!-- Botão de informações -->
@@ -214,18 +215,9 @@
   </div>
   
   <!-- Questinario -->
-  <div class="questionario_mobile">
-    <img id='img_questionarioo' onmouseover='aparecer_texto()' onmouseout="reset()" src="./Ícones/icone-survey.svg"
-      width="65" height="65">
-    <!--  Primeiro texto que será executado em até 5 segundos -->
-    <div id="balao">
-      <p>Após navegar por todo o sistema, você poderá nos ajudar avaliando o site!</p>
-    </div>
-  </div>
-
-  <div id="executar_questionario">
+<div id="executar_questionario">
     <a href="https://forms.gle/y1gkEoRZdHcWBPy4A" target="_blank">
-      <img id='img_questionario' onclick="fechar_balao()" onmouseover='apresentar_balao()' onmouseout="fechar_balao()"
+      <img id='img_questionario' onclick="fechar_balao()"
         src="./Ícones/icone-survey.svg" width="65" height="65"></a>
     <div id="balao_questionario">
       <p>Obrigado por acessar o site! Você pode nos ajudar avaliando o sistema no ícone abaixo.</p>

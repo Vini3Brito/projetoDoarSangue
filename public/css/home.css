@@ -33,7 +33,7 @@
     bottom: 160px;
     right: 0;
     z-index: 999999;
-    display: none;
+   
 }
 .informacoes h3 {
     font-size: 25px;
@@ -119,13 +119,10 @@
     position: relative;
     bottom: -50px;
     box-shadow: 0 2px 4px rgba(3, 3, 3, 0.3);
-    display: none;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 3px;
     font-weight: 600;
-    opacity: 0;
-    visibility: hidden;
     -webkit-transition: opacity 300ms, visibility 300ms;
     transition: opacity 300ms, visibility 300ms;
 }
@@ -813,12 +810,13 @@ div#myModal:before {
         font-size: 16px;
         padding: 30px;
         line-height: 28px;
+        font-weight: 600;
     }
     .modal-content #button_localizacao {
         display: flex;
         margin: auto;
         border: none;
-        width: 70px;
+        width: 190px;
         height: 35px;
         margin-bottom: 20px;
         border-radius: 12px;
@@ -827,4 +825,14 @@ div#myModal:before {
         cursor: pointer;
         font-size: 23px;
         color: black;
+    }
+    #container_selecione {
+        display: none;
+    }
+    #button_localizacao h3 {
+        margin: auto;
+        FONT-SIZE: 24PX;
+    }
+    #button_localizacao:hover {
+        background: white;
     }
