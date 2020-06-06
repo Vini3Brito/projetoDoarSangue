@@ -106,14 +106,12 @@ var iconeEscuro = L.icon({
 
 function verificaLocais(tipo){
   setTimeout(function () {
-    console.log(locais)
     if (typeof locais == "undefined") {
-      console.log('Espera');
       verificaLocais(tipo);
     } else {
       apontaLocais(tipo)
     }
-  }, 200)
+  }, 100)
 }
 
 function apontaLocais(tipo) {
