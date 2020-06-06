@@ -1227,3 +1227,153 @@ function carga6(){
         coordinates: new firebase.firestore.GeoPoint(-23.549838, -46.659362)
     });
 }*/
+
+/* ######## Função executada 06/06 para inserção do banco de sangue da Pró-Sangue
+function carga7(){
+    const localColeta = geofirestore.collection("localColeta");
+    localColeta.where("banco.nomeBanco", "==", "Pró-Sangue").get().then(Snapshot =>{
+        Snapshot.forEach(res=>{
+            console.log(res.id);
+            localColeta.doc(res.id).update({
+                "banco.nivelApos": 2,
+                "banco.nivelBpos": 1,
+                "banco.nivelOpos": 1,
+                "banco.nivelABpos": 3,
+                "banco.nivelAneg": 1,
+                "banco.nivelBneg": 1,
+                "banco.nivelOneg": 1,
+                "banco.nivelABneg": 1,
+                "dataAtualizacao": firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function(){
+                console.log("show");
+            }).catch(e=>{
+                console.log(e)
+            })
+        })
+    })
+}*/
+
+/* ############# Carga realizada 06/06 para atualização do banco de sangue dos demais locais
+function carga8(){
+    const localColeta = geofirestore.collection("localColeta");
+    localColeta.where("banco.nomeBanco", "==", "Banco de Sangue Paulista").get().then(Snapshot =>{
+        Snapshot.forEach(res=>{
+            console.log(res.id);
+            localColeta.doc(res.id).update({
+                "banco.nivelApos": 1,
+                "banco.nivelBpos": 1,
+                "banco.nivelOpos": 1,
+                "banco.nivelABpos": 1,
+                "banco.nivelAneg": 1,
+                "banco.nivelBneg": 1,
+                "banco.nivelOneg": 1,
+                "banco.nivelABneg": 1,
+                "dataAtualizacao": firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function(){
+                console.log("show");
+            }).catch(e=>{
+                console.log(e)
+            })
+        })
+    });
+    localColeta.where("banco.nomeBanco", "==", "Banco de Sangue de São Paulo (mas é outro)").get().then(Snapshot =>{
+        Snapshot.forEach(res=>{
+            console.log(res.id);
+            localColeta.doc(res.id).update({
+                "banco.nivelApos": 3,
+                "banco.nivelBpos": 2,
+                "banco.nivelOpos": 1,
+                "banco.nivelABpos": 3,
+                "banco.nivelAneg": 1,
+                "banco.nivelBneg": 2,
+                "banco.nivelOneg": 1,
+                "banco.nivelABneg": 3,
+                "dataAtualizacao": firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function(){
+                console.log("show");
+            }).catch(e=>{
+                console.log(e)
+            })
+        })
+    })
+    localColeta.where("banco.nomeBanco", "==", "").get().then(Snapshot =>{
+        Snapshot.forEach(res=>{
+            console.log(res.id);
+            localColeta.doc(res.id).update({
+                "banco.nivelApos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelAneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABneg": (Math.floor(Math.random()*2)+1),
+                "dataAtualizacao": firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function(){
+                console.log("show");
+            }).catch(e=>{
+                console.log(e)
+            })
+        })
+    })
+    localColeta.where("banco.nomeBanco", "==", "Banco de Sangue de São Paulo").get().then(Snapshot =>{
+        Snapshot.forEach(res=>{
+            console.log(res.id);
+            localColeta.doc(res.id).update({
+                "banco.nivelApos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelAneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABneg": (Math.floor(Math.random()*2)+1),
+                "dataAtualizacao": firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function(){
+                console.log("show");
+            }).catch(e=>{
+                console.log(e)
+            })
+        })
+    })
+    localColeta.where("banco.nomeBanco", "==", "Colsan").get().then(Snapshot =>{
+        Snapshot.forEach(res=>{
+            console.log(res.id);
+            localColeta.doc(res.id).update({
+                "banco.nivelApos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelAneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABneg": (Math.floor(Math.random()*2)+1),
+                "dataAtualizacao": firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function(){
+                console.log("show");
+            }).catch(e=>{
+                console.log(e)
+            })
+        })
+    })
+    localColeta.where("banco.nomeBanco", "==", "Hemocentro São Lucas").get().then(Snapshot =>{
+        Snapshot.forEach(res=>{
+            console.log(res.id);
+            localColeta.doc(res.id).update({
+                "banco.nivelApos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABpos": (Math.floor(Math.random()*2)+1),
+                "banco.nivelAneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelBneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelOneg": (Math.floor(Math.random()*2)+1),
+                "banco.nivelABneg": (Math.floor(Math.random()*2)+1),
+                "dataAtualizacao": firebase.firestore.FieldValue.serverTimestamp()
+            }).then(function(){
+                console.log("show");
+            }).catch(e=>{
+                console.log(e)
+            })
+        })
+    })
+}*/
