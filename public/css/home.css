@@ -102,9 +102,9 @@
 /* Style informações */
 .btn-primary {
     margin-left: 4px;
-    background-color: #ff0000!important;
+    background-image: linear-gradient(red, #e00000);
     border-color: #ff0000!important;
-    box-shadow: 0 2px 4px 0 rgba(3, 3, 3, 0.3);
+    box-shadow: 0 4px 4px 0 rgba(3, 3, 3, 0.3);
     position: fixed;
     z-index: 99999;
     width: 170px;
@@ -713,10 +713,6 @@ div#myModal:before {
         z-index: 99999;
         text-align: center;
     }
-    #modal_localizacao .modal-dialog {
-        max-width: 530px!important;
-        width: 100%;
-    }
     #texto_navegacao {
         color: white;
         font-size: 16px;
@@ -747,4 +743,12 @@ div#myModal:before {
     }
     #button_localizacao:hover {
         background: white;
+    }
+    @media (min-width: 768px) {
+        #modal_localizacao:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+      }
     }
