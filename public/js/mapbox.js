@@ -15,33 +15,19 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: 'pk.eyJ1IjoibHVjYXNiYXNzaSIsImEiOiJjazl2bzkxcXgwMHVmM2tyenIxZGc0aGNiIn0.lD4f_HJLoF1URO0V3PGu_Q'
 }).addTo(mymap);
 
-function valorSelecionado(tipo) {  
+function inicio() {
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
-    if (tipo==0) {
-      document.getElementById("legenda").style.visibility = "hidden";
-    }
-    novocarregaLocais(e.latlng, distanciaBusca, tipo).then(consulta => {
-      setTimeout(function () {
-        if (!check) {
-          alert('Houve um erro de carregamento. Por favor atualize a página')
-        }
-      }, 10000)
-      check = apontaLocais(consulta);
-    });
+    close_localizacao();
+    localInicial = e.latlng
   }).on("locationerror", e => {
-    if (tipo==0) {
-      document.getElementById("legenda").style.visibility = "hidden";
-    }
-    //Consulta de locais quando usuário NÃO passa sua localização
-    novocarregaLocais(localInicial, distanciaBusca, tipo).then(consulta => {
-      setTimeout(function () {
-        if (!check) {
-          alert('Houve um erro de carregamento. Por favor atualize a página')
-        }
-      }, 10000)
-      check = apontaLocais(consulta);
-    });
+    close_localizacao()
+  });
+}
+
+function valorSelecionado(tipo) {
+  novocarregaLocais(localInicial, distanciaBusca, tipo).then(consulta => {
+    apontaLocais(consulta);
   });
 }
 
@@ -149,7 +135,6 @@ function apontaLocais(locais) {
       });
   });
   desativa();
-  return true;
 }
 
 
@@ -178,7 +163,7 @@ async function abrirLocal(item) {
     redes = detLocal.redeSocial.split('\\n')
   }
   data = arrumarData(detLocal.dataAtualizacao.toDate());
-  
+
   // $("#mostraLocal").modal();   EM ANÁLISE PARA ALTERAÇÃO DE MODAL
 
   mLocal = "";
@@ -264,21 +249,21 @@ async function abrirLocal(item) {
     if (detLocal.email != null) {
       mLocal += '<span>Email: ' + detLocal.email + '</span> <br>'
     }
-    mLocal +='</h6>'
+    mLocal += '</h6>'
     if (detLocal.site != null) {
-      mLocal+='<h6>Redes Sociais:<br>'
+      mLocal += '<h6>Redes Sociais:<br>'
       mLocal += '<span><a href="' + detLocal.site + '"target="_blank"><img alt="site" width="35px" height="35px" src="./Ícones/icone-site.svg"></a></span><span>    </span>'
     }
     if (redes != null) {
       redes.forEach(function (parte) {
         rede = parte.split(";")
-        if (rede[0]=="Instagram"){
+        if (rede[0] == "Instagram") {
           mLocal += '<span><a href="' + rede[1] + '"target="_blank"><img alt="Instagram" width="35px" height="35px" src="./Ícones/icone-instagram.svg"></a></span><span>    </span>'
         }
-        else if (rede[0]=="Facebook"){
-        mLocal += '<span><a href="' + rede[1] + '"target="_blank"><img alt="Facebook" width="35px" height="35px" src="./Ícones/icone-facebook.svg"></a></span><span>    </span>'
+        else if (rede[0] == "Facebook") {
+          mLocal += '<span><a href="' + rede[1] + '"target="_blank"><img alt="Facebook" width="35px" height="35px" src="./Ícones/icone-facebook.svg"></a></span><span>    </span>'
         }
-        else if (rede[0]=="Twitter"){
+        else if (rede[0] == "Twitter") {
           mLocal += '<span><a href="' + rede[1] + '"target="_blank"><img alt="Twitter" width="35px" height="35px" src="./Ícones/icone-twitter.svg"></a></span><span>    </span>'
         }
       })
@@ -315,5 +300,5 @@ function arrumarData(data) {
   // }
   // dataFim = vData[2] + "/" + meses[vData[1]] + "/" + vData[3] + " " + vData[4]
   // return dataFim
-  return data.getDate()+"/"+(data.getMonth()+1)+"/"+data.getFullYear()+" "+data.getHours()+":"+data.getMinutes();
+  return data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear() + " " + data.getHours() + ":" + data.getMinutes();
 }
