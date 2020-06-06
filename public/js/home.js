@@ -38,7 +38,7 @@ function aparecer_texto(){
 function reset(){
     document.getElementById('balao').style.opacity = "0";
     document.getElementById('balao').style.visibility = "hidden";
-}
+} 
 
 /* Função para fechar o modal principal de escolher o tipo sanguineo */
 function close_escolha(){
