@@ -1,19 +1,5 @@
   /* Style questionário Mobile */
-.questionario_mobile img {
-    right: 25px;
-    position: absolute;
-    bottom: -140px;
-    width: 65px;
-    opacity: 0.5;
-}
-@media(max-width: 768px){
-    .questionario_mobile img {
-    right: 5px;
-    position: absolute;
-    bottom: -145px;
-    width: 50px;
-    }
-}
+
 @media(max-width: 768px){
 #executar_questionario img{
     right: 5px!important;
@@ -29,6 +15,7 @@
     width: 65px;
 }
 #executar_questionario{
+    display: none;
     position: absolute;
     bottom: 160px;
     right: 0;
@@ -50,53 +37,6 @@
 
 }
 
-.questionario_mobile {
-    position: absolute;
-    bottom: 160px;
-    right: 0;
-    z-index: 999999;
-}
-#balao {
-    margin: 0 auto;
-    background: #ffffff;
-    font-family: inherit;
-    font-size: 18px;
-    line-height: 1.2em;
-    border-radius: 9px;
-    width: 250px;
-    height: auto;
-    color: black;
-    padding: 4px;
-    position: relative;
-    bottom: -50px;
-    box-shadow: 0 2px 4px rgba(3, 3, 3, 0.3);
-    right: 2px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 3px;
-    font-weight: 600;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: opacity 300ms, visibility 300ms;
-    transition: opacity 300ms, visibility 300ms;
-}
-@media(max-width: 768px){
-#balao {
-    margin: 0 auto;
-    background: #ffffff;
-    font-family: inherit;
-    font-size: 14px;
-    line-height: 1.2em;
-    border-radius: 9px;
-    width: 128px;
-    height: auto;
-    color: black;
-    padding: 4px;
-    position: relative;
-    bottom: -74px;
-    box-shadow: 0 2px 4px rgba(3, 3, 3, 0.3);
-}
-}
 
 @media(max-width: 768px){
     #balao_questionario {
@@ -127,25 +67,6 @@
     transition: opacity 300ms, visibility 300ms;
 }
 
-
-#balao:after {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 0px solid #ff0000;
-    border-top: 20px solid white;
-    top: 88px;
-    left: 70%;
-}
-@media (max-width: 768px){
-#balao:after {
-    top: 86px!important;
-    left: 62%;
-}
-}
 @media (max-width: 768px){
     #balao_questionario:after {
         top: 103px!important;
@@ -176,11 +97,7 @@
         padding-right: 4px;
     }
     }
-    @media(max-width: 768px){
-        #balao p {
-            margin-bottom: 5px;
-        }
-        }    
+
 
 /* Style informações */
 .btn-primary {
@@ -274,12 +191,7 @@ body {
 button#button_informacao {
     display: none;
 }
-#img_questionarioo {
-    display: none;
-}
-div#balao {
-    display: none;
-}
+
 /* Modal selecionar o tipo sanguineo */
 .modal_selecione {
     position: fixed;
@@ -816,8 +728,8 @@ div#myModal:before {
         display: flex;
         margin: auto;
         border: none;
-        width: 190px;
-        height: 35px;
+        width: 140px;
+        height: 50px;
         margin-bottom: 20px;
         border-radius: 12px;
         background-image: linear-gradient(#ffffff, #c7c7c7);
