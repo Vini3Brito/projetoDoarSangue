@@ -263,16 +263,26 @@ async function abrirLocal(item) {
     if (detLocal.telefone != null) {
       mLocal += '<span>Telefone: ' + detLocal.telefone + '</span><br>'
     }
-    if (detLocal.site != null) {
-      mLocal += '<span><a href="' + detLocal.site + '"target="_blank">Site</a></span><br>'
-    }
     if (detLocal.email != null) {
       mLocal += '<span>Email: ' + detLocal.email + '</span> <br>'
+    }
+    mLocal +='</h6>'
+    if (detLocal.site != null) {
+      mLocal+='<h6>Redes Sociais:<br>'
+      mLocal += '<span><a href="' + detLocal.site + '"target="_blank"><img alt="site" width="35px" height="35px" src="./Ícones/icone-site.svg"></a></span><span>    </span>'
     }
     if (redes != null) {
       redes.forEach(function (parte) {
         rede = parte.split(";")
-        mLocal += '<span><a href="' + rede[1] + '"target="_blank">' + rede[0] + '</a> | </span>'
+        if (rede[0]=="Instagram"){
+          mLocal += '<span><a href="' + rede[1] + '"target="_blank"><img alt="Instagram" width="35px" height="35px" src="./Ícones/icone-instagram.svg"></a></span><span>    </span>'
+        }
+        else if (rede[0]=="Facebook"){
+        mLocal += '<span><a href="' + rede[1] + '"target="_blank"><img alt="Facebook" width="35px" height="35px" src="./Ícones/icone-facebook.svg"></a></span><span>    </span>'
+        }
+        else if (rede[0]=="Twitter"){
+          mLocal += '<span><a href="' + rede[1] + '"target="_blank"><img alt="Twitter" width="35px" height="35px" src="./Ícones/icone-twitter.svg"></a></span><span>    </span>'
+        }
       })
     }
     mLocal += '</h6>'
