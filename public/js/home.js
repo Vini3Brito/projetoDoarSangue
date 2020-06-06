@@ -61,7 +61,11 @@ function desativa() {
 }
 
 function close_localizacao(){
-    document.getElementById("modal_localizacao").style.display = "none";
-    document.getElementById("container_selecione").style.display = "block";
+    document.getElementById("modal_localizacao").style.opacity = "0";
+    document.getElementById("modal_localizacao").style.visibility = "hidden";
+    document.getElementById("container_selecione").style.opacity = "1";
+    document.getElementById("container_selecione").style.visibility = "visible";
+    // document.getElementById("modal_localizacao").style.display = "none";
+    // document.getElementById("container_selecione").style.display = "block";
 }
 

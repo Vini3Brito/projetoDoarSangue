@@ -3,7 +3,7 @@ let localInicial = L.latLng(-23.565658, -46.651218);
 let raioExibicao = 5; //Km
 let distanciaBusca = raioExibicao * 10;
 let check = false //checar tempo de execução
-let locais = {}
+let locais;
 //Criação do mapa 
 var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -18,15 +18,16 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 function inicio() {
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
-    close_localizacao();
     //Consulta de locais quando usuário passa sua localização
+    close_localizacao();
     novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
     locais = consulta
     });
   }).on("locationerror", e => {
+    //Consulta de locais quando usuário NÃO passa sua localização
     close_localizacao()
     novocarregaLocais(localInicial, distanciaBusca).then(consulta => {
-    locais = consulta
+    locais = consulta;
     });
   });
 }
@@ -103,9 +104,19 @@ var iconeEscuro = L.icon({
   popupAnchor: [0, -18]
 });
 
+function verificaLocais(tipo){
+  setTimeout(function () {
+    console.log(locais)
+    if (typeof locais == "undefined") {
+      console.log('Espera');
+      verificaLocais(tipo);
+    } else {
+      apontaLocais(tipo)
+    }
+  }, 200)
+}
+
 function apontaLocais(tipo) {
-  console.log(locais)
-  console.log(tipo)
   if (tipo=="0") {
     document.getElementById("legenda").style.visibility = "hidden"
   }
