@@ -3,6 +3,7 @@ let localInicial = L.latLng(-23.565658, -46.651218);
 let raioExibicao = 5; //Km
 let distanciaBusca = raioExibicao * 10;
 let check = false //checar tempo de execução
+let locais = {}
 //Criação do mapa 
 var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -17,19 +18,19 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 function inicio() {
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
-    //Consulta de locais quando usuário passa sua localização
     close_localizacao();
-    localInicial = e.latlng
+    //Consulta de locais quando usuário passa sua localização
+    novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
+    locais = consulta
+    });
   }).on("locationerror", e => {
     close_localizacao()
+    novocarregaLocais(localInicial, distanciaBusca).then(consulta => {
+    locais = consulta
+    });
   });
 }
 
-function valorSelecionado(tipo) {
-  novocarregaLocais(localInicial, distanciaBusca, tipo).then(consulta => {
-    apontaLocais(consulta);
-  });
-}
 
 // const locaisCarregados;
 // mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
@@ -102,7 +103,13 @@ var iconeEscuro = L.icon({
   popupAnchor: [0, -18]
 });
 
-function apontaLocais(locais) {
+function apontaLocais(tipo) {
+  console.log(locais)
+  console.log(tipo)
+  if (tipo=="0") {
+    document.getElementById("legenda").style.visibility = "hidden"
+  }
+  //Ainda não tratei os icones pq vi antes que dava ruim
   locais.forEach(function (item) {
     switch (item.nivelEstoque) {
       case '1':
