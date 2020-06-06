@@ -289,6 +289,7 @@ async function novocarregaLocais(centro, distancia){
             local.nomeLocal = doc.data().nomeLocal;
             local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
             local.detalheLocal = doc.data().detalheLocal;
+            local.banco = doc.data().banco;
             locais.push(local);
         });
     }).catch(function(error){

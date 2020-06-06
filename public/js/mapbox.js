@@ -134,6 +134,7 @@ function apontaLocais(tipo) {
         icone = iconePadrao
         break
     }
+    console.log(item)
     L.marker(item.coordenadas, { icon: icone }).addTo(mymap)
       .bindPopup(item.nomeLocal, {
         closeButton: false,
@@ -169,6 +170,8 @@ async function abrirLocal(item) {
   }
   let detLocal = item.detalheLocal;
   let detBanco = item.banco;
+  console.log(item)
+  console.log(item.banco)
   let horario;
   let redes;
   endereco = detLocal.enderecoLocal.split('\\n')
