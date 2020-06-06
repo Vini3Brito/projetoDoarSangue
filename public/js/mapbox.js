@@ -21,13 +21,13 @@ function inicio() {
     //Consulta de locais quando usuário passa sua localização
     close_localizacao();
     novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
-    locais = consulta
+      locais = consulta
     });
   }).on("locationerror", e => {
     //Consulta de locais quando usuário NÃO passa sua localização
     close_localizacao()
     novocarregaLocais(localInicial, distanciaBusca).then(consulta => {
-    locais = consulta;
+      locais = consulta;
     });
   });
 }
@@ -104,7 +104,7 @@ var iconeEscuro = L.icon({
   popupAnchor: [0, -18]
 });
 
-function verificaLocais(tipo){
+function verificaLocais(tipo) {
   setTimeout(function () {
     if (typeof locais == "undefined") {
       verificaLocais(tipo);
@@ -115,26 +115,25 @@ function verificaLocais(tipo){
 }
 
 function apontaLocais(tipo) {
-  if (tipo=="0") {
+  if (tipo == "0") {
     document.getElementById("legenda").style.visibility = "hidden"
   }
   //Ainda não tratei os icones pq vi antes que dava ruim
   locais.forEach(function (item) {
-    switch (item.nivelEstoque) {
-      case '1':
-        icone = iconeClaro
-        break
-      case '2':
-        icone = iconeMedio
-        break
-      case '3':
-        icone = iconeEscuro
-        break
-      default:
-        icone = iconePadrao
-        break
-    }
-    console.log(item)
+      switch (item.banco[tipo]) {
+        case 1:
+          icone = iconeClaro
+          break
+        case 2:
+          icone = iconeMedio
+          break
+        case 3:
+          icone = iconeEscuro
+          break
+        default:
+          icone = iconePadrao
+          break;
+      }
     L.marker(item.coordenadas, { icon: icone }).addTo(mymap)
       .bindPopup(item.nomeLocal, {
         closeButton: false,
