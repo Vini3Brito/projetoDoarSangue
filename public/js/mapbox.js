@@ -169,8 +169,6 @@ async function abrirLocal(item) {
   }
   let detLocal = item.detalheLocal;
   let detBanco = item.banco;
-  console.log(item)
-  console.log(item.banco)
   let horario;
   let redes;
   endereco = detLocal.enderecoLocal.split('\\n')
