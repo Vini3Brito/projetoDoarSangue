@@ -158,9 +158,7 @@ function apontaLocais(locais) {
 async function abrirLocal(item) {
   document.getElementById("button_informacao").style.display = "none";
   document.getElementById("img_questionario").style.display = "none";
-  document.getElementById("img_questionarioo").style.display = "none";
   document.getElementById("balao_questionario").style.display = "none";
-  document.getElementById("balao").style.display = "none";
   document.getElementById("legenda").style.display = "none";
 
 

@@ -13,20 +13,12 @@ function habilita_survey(){
 function close_modal(){
     document.getElementById("button_informacao").style.display = "block";
     document.getElementById("img_questionario").style.display = "block";
-    document.getElementById("img_questionarioo").style.display = "none";
     document.getElementById("balao_questionario").style.display = "block";
     document.getElementById("balao").style.display = "none";
     document.getElementById("legenda").style.display = "block";
 }
     
-function timer_balao () {
-        document.getElementById('balao').style.opacity = "1";
-        document.getElementById('balao').style.visibility = "visible";
-    setTimeout(function() {
-        document.getElementById('balao').style.opacity = "0";
-        document.getElementById('balao').style.visibility = "hidden";
-    }, 4000);
-}
+
 
 function fechar_balao(){
     document.getElementById('balao_questionario').style.display = 'none';
@@ -50,9 +42,7 @@ function fechaLocal () {
     document.getElementById("mostraLocal").style.display = "none";
     document.getElementById("button_informacao").style.display = "block";
     document.getElementById("img_questionario").style.display = "block";
-    document.getElementById("img_questionarioo").style.display = "block";
     document.getElementById("balao_questionario").style.display = "block";
-    document.getElementById("balao").style.display = "block";
     document.getElementById("legenda").style.display = "block";
     }
     
@@ -69,10 +59,7 @@ function desativa() {
     document.getElementById("overlay").style.opacity = "0";
     document.getElementById("overlay").style.visibility = "hidden";
     document.getElementById("button_informacao").style.display = "block";
-    document.getElementById("img_questionarioo").style.display = "block";
-    document.getElementById("balao").style.display = "block";
     document.getElementById("legenda").style.display = "block";
-    timer_balao()
 }
 
 function close_localizacao(){
