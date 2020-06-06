@@ -20,7 +20,6 @@ function close_modal(){
 function fechar_balao(){
     document.getElementById('balao_questionario').style.display = 'none';
 }
-<<<<<<< HEAD
 function aparecer_texto(){
     document.getElementById('balao').style.opacity = "1";
     document.getElementById('balao').style.visibility = "visible";
@@ -29,8 +28,6 @@ function reset(){
     document.getElementById('balao').style.opacity = "0";
     document.getElementById('balao').style.visibility = "hidden";
 } 
-=======
->>>>>>> ce0039d6f21f54341cadb2675ebc15c53c4f3a8e
 
 /* Função para fechar o modal principal de escolher o tipo sanguineo */
 function close_escolha(){
