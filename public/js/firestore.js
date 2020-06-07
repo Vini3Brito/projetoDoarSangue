@@ -276,7 +276,7 @@ async function carregaDetalhesBanco(idBanco){
     return estoque;
 }
 
-async function novocarregaLocais(centro, distancia, tipo){
+async function novocarregaLocais(centro, distancia){
     const localColeta = geofirestore.collection("localColeta");
     const locais = [];
     await localColeta.near({
@@ -289,35 +289,7 @@ async function novocarregaLocais(centro, distancia, tipo){
             local.nomeLocal = doc.data().nomeLocal;
             local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
             local.detalheLocal = doc.data().detalheLocal;
-            if(doc.data().banco != null){
-                switch (tipo){
-                    case "1":
-                        local.nivelEstoque = doc.data().banco.nivelApos;
-                        break;
-                    case "2":
-                        local.nivelEstoque = doc.data().banco.nivelBpos;
-                        break;
-                    case "3":
-                        local.nivelEstoque = doc.data().banco.nivelOpos;
-                        break;
-                    case "4":
-                        local.nivelEstoque = doc.data().banco.nivelABpos;
-                        break;
-                    case "5":
-                        local.nivelEstoque = doc.data().banco.nivelAneg;
-                        break;
-                    case "6":
-                        local.nivelEstoque = doc.data().banco.nivelBneg;
-                        break;
-                    case "7":
-                        local.nivelEstoque = doc.data().banco.nivelOneg;
-                        break;
-                    case "8":
-                        local.nivelEstoque = doc.data().banco.nivelABneg;
-                        break;
-                }
-                local.banco = doc.data().banco;
-            }
+            local.banco = doc.data().banco;
             locais.push(local);
         });
     }).catch(function(error){

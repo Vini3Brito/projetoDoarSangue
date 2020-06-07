@@ -711,6 +711,8 @@ div#myModal:before {
     #modal_localizacao {
         z-index: 99999;
         text-align: center;
+        -webkit-transition: opacity 300ms, visibility 300ms;
+        transition: opacity 300ms, visibility 300ms;
     }
     #texto_navegacao {
         color: white;
@@ -734,7 +736,10 @@ div#myModal:before {
         color: black;
     }
     #container_selecione {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: opacity 200ms, visibility 200ms;
+        transition: opacity 200ms, visibility 200ms;
     }
     #button_localizacao h3 {
         margin: auto;
