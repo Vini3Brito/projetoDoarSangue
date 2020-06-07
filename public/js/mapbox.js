@@ -118,6 +118,7 @@ function apontaLocais(tipo) {
   if (tipo == "0") {
     document.getElementById("legenda").style.visibility = "hidden"
   }
+  tipo = "nivel" + tipo
   //Ainda não tratei os icones pq vi antes que dava ruim
   locais.forEach(function (item) {
       switch (item.banco[tipo]) {
