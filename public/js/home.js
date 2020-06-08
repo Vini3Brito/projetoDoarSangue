@@ -42,7 +42,6 @@ function fechaLocal () {
     document.getElementById("balao_questionario").style.display = "block";
     document.getElementById("legenda").style.display = "block";
     }
-    
     $(document).click(function(e) {
         if (!$(e.target).is('.panel-body')) {
             $('.collapse').collapse('hide');	    
@@ -70,4 +69,3 @@ function close_localizacao(){
     // document.getElementById("modal_localizacao").style.display = "none";
     // document.getElementById("container_selecione").style.display = "block";
 }
-
