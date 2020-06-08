@@ -207,7 +207,7 @@ async function abrirLocal(item) {
   mLocal += '<div class="container">'
   mLocal += '<div class="nivel_sangue">';
   mLocal += '<div class="titulo">';
-  mLocal += '<h4> Nível de Estoque </h4>'
+  mLocal += '<h4>Nível de Estoque</h4>'
   mLocal += '</div>';
   mLocal += '<div class="container_img">';
   mLocal += '<div class="img01">';
@@ -301,13 +301,13 @@ async function abrirLocal(item) {
   }
   }
   switch (detLocal.tipoAgendamento) {
-    case 2:
+    case "2":
       mLocal += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
       break;
-    case 3:
+    case "3":
       mLocal += '<h6><span>O agendamento para doação ocorre através do telefone.</span></h6>'
       break;
-    case 4:
+    case "4":
       mLocal += '<h6><span>O agendamento para doação ocorre presencialmente.</span></h6>'
       break;
   }
