@@ -1,6 +1,5 @@
 //Variáveis iniciais de ambiente
 let localInicial = L.latLng(-23.565658, -46.651218);
-let localTeste = L.latLng(-23.436244, -46.487870);
 let raioExibicao = 5; //Km
 let distanciaBusca = raioExibicao * 10;
 let check = false //checar tempo de execução
