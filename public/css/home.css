@@ -536,6 +536,8 @@ button#button_tipo:hover {
     #button_legenda {
         position: fixed;
         bottom: 12px;
+        -webkit-transition: bottom 300ms;
+        transition: bottom 150ms;
     }
     #info_legenda h4 {
         font-size: 20px;
@@ -780,3 +782,4 @@ div#myModal:before {
             margin-bottom: 42px;
         }
         }
+        

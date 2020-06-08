@@ -15,9 +15,7 @@ const firebaseConfig = {
   //======================Método de consulta ao banco de dados======================
   //
   //  •  carregaLocais(<latLng> centro, <Number> distancia);
-  //  •  carregaLocaisPorTipo(<latLng> centro, <Number> distancia, <Number> tipo);
-  //  •  carregaDetalhesLocal(<hash> idLocal);
-  //  •  carregaDetalhesBanco(<hash> idLocal);
+  //  •  novocarregaLocais(<latLng> centro, <Number> distancia);
   //
   //========================Detalhe dos métodos de consulta=========================
   //
