@@ -271,10 +271,10 @@ async function abrirLocal(item) {
   if (detLocal.telefone != null || detLocal.site != null || detLocal.email != null || redes != null) {
     mLocal += '<h6>Contato:<br>'
     if (detLocal.telefone != null) {
-      mLocal += '<span>Telefone: ' + detLocal.telefone + '</span><br>'
+      mLocal += '<span>Telefone: <a href="tel:'+detLocal.telefone+'">' + detLocal.telefone + '</span><br>'
     }
     if (detLocal.email != null) {
-      mLocal += '<span>Email: ' + detLocal.email + '</span> <br>'
+      mLocal += '<span>Email: <a href="mailto:'+detLocal.email+'">' + detLocal.email + '</span> <br>'
     }
     mLocal += '</h6>'
     if (detLocal.site != null || redes !=null) {
