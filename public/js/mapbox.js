@@ -94,22 +94,30 @@ function inicio() {
 
 var iconePadrao = L.icon({
   iconUrl: './Ícones/marcador.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 var iconeClaro = L.icon({
   iconUrl: './Ícones/marcador-claro.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 var iconeMedio = L.icon({
   iconUrl: './Ícones/marcador-medio.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 var iconeEscuro = L.icon({
   iconUrl: './Ícones/marcador-escuro.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 
