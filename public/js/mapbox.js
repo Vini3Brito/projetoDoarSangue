@@ -30,7 +30,6 @@ function inicio() {
       mymap.setView(e.latlng);
     }
     //Fim do trecho
-    console.log(e.latlng);
     novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
       locais = consulta
     });
