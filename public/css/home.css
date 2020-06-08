@@ -719,7 +719,8 @@ div#myModal:before {
         color: white;
         font-size: 20px;
         padding: 30px;
-        line-height: 28px;
+        line-height:
+         28px;
         font-weight: 600;
         margin-top: -30px!important;
         margin-bottom: -0.5rem!important;
@@ -738,6 +739,9 @@ div#myModal:before {
         cursor: pointer;
         font-size: 23px;
         color: black;
+    }
+    .modal-content {
+        border-radius: 1.5rem!important;
     }
     #container_selecione {
         opacity: 0;
