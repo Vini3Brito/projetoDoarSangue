@@ -50,6 +50,8 @@ function fechaLocal () {
     
 function aciona() {
     document.getElementById("overlay").style.display = "block";
+    $('.collapse').collapse('show')
+
 }
 function desativa() {
     document.getElementById("overlay").style.opacity = "0";
