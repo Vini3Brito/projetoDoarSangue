@@ -121,6 +121,7 @@ function apontaLocais(tipo) {
   tipo = "nivel" + tipo
   //Ainda não tratei os icones pq vi antes que dava ruim
   locais.forEach(function (item) {
+    
       switch (item.banco[tipo]) {
         case 1:
           icone = iconeClaro
@@ -267,11 +268,11 @@ async function abrirLocal(item) {
       mLocal += '<span>Email: ' + detLocal.email + '</span> <br>'
     }
     mLocal += '</h6>'
-    if (detLocal.site != null) {
+    if (detLocal.site != null || redes !=null) {
       mLocal += '<h6>Redes Sociais:<br>'
-      mLocal += '<span><a href="' + detLocal.site + '"target="_blank"><img alt="site" width="35px" height="35px" src="./Ícones/icone-site.svg"></a></span><span>    </span>'
-    }
-    if (redes != null) {
+      if(detLocal.site!=null){
+      mLocal += '<span><a href="' + detLocal.site + '"target="_blank"><img alt="site" width="35px" height="35px" src="./Ícones/icone-site.svg"></a></span><span>    </span>'}
+      if (redes != null) {
       redes.forEach(function (parte) {
         rede = parte.split(";")
         if (rede[0] == "Instagram") {
@@ -285,9 +286,10 @@ async function abrirLocal(item) {
         }
       })
     }
+    
     mLocal += '</h6>'
   }
-
+  }
   switch (detLocal.tipoAgendamento) {
     case 2:
       mLocal += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
