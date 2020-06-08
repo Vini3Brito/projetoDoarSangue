@@ -715,12 +715,16 @@ div#myModal:before {
         transition: opacity 300ms, visibility 300ms;
     }
     #texto_navegacao {
+        text-align: justify;
         color: white;
-        font-size: 16px;
+        font-size: 20px;
         padding: 30px;
         line-height: 28px;
         font-weight: 600;
+        margin-top: -30px!important;
+        margin-bottom: -0.5rem!important;
     }
+
     .modal-content #button_localizacao {
         display: flex;
         margin: auto;
