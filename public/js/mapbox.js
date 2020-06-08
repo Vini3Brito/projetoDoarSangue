@@ -1,5 +1,6 @@
 //Variáveis iniciais de ambiente
 let localInicial = L.latLng(-23.565658, -46.651218);
+let localTeste = L.latLng(-23.436244, -46.487870);
 let raioExibicao = 5; //Km
 let distanciaBusca = raioExibicao * 10;
 let check = false //checar tempo de execução
@@ -20,6 +21,16 @@ function inicio() {
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
     close_localizacao();
+    //Trecho para tratar caso o usuário esteja fora dos limites de São Paulo
+    let latitude = e.latlng.lat;
+    let longitude = e.latlng.lng;
+    if(latitude > -23.436245 || latitude < -23.727655 || longitude > -46.487871 || longitude < -46.808425){
+      e.latlng.lat = localInicial.lat;
+      e.latlng.lng = localInicial.lng;
+      mymap.setView(e.latlng);
+    }
+    //Fim do trecho
+    console.log(e.latlng);
     novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
       locais = consulta
     });
