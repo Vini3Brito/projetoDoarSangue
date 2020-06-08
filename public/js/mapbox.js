@@ -83,28 +83,25 @@ function apontaLocais(tipo) {
   if (tipo == "0") {
     document.getElementById("legenda").style.visibility = "hidden"
   }
-  tipo = "nivel" + tipo
-  //Ainda não tratei os icones pq vi antes que dava ruim
+  tipo = "nivel" + tipo;
   locais.forEach(function (item) {
-    
-      switch (item.banco[tipo]) {
-        case 1:
-          icone = iconeClaro
-          break
-        case 2:
-          icone = iconeMedio
-          break
-        case 3:
-          icone = iconeEscuro
-          break
-        default:
-          icone = iconePadrao
-          break;
-      }
+    switch (item.banco[tipo]) {
+      case 1:
+        icone = iconeClaro
+        break
+      case 2:
+        icone = iconeMedio
+        break
+      case 3:
+        icone = iconeEscuro
+        break
+      default:
+        icone = iconePadrao
+        break;
+    }
     L.marker(item.coordenadas, { icon: icone }).addTo(mymap)
       .bindPopup(item.nomeLocal, {
         closeButton: false,
-        //maxWith = x Caso precise mudar
       })
       //Popup só aparecer com mouse passando em cima
       .on('mouseover', function (e) {
