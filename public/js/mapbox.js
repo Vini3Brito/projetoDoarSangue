@@ -23,7 +23,7 @@ function inicio() {
     //Trecho para tratar caso o usuário esteja fora dos limites de São Paulo
     let latitude = e.latlng.lat;
     let longitude = e.latlng.lng;
-    if(latitude > -23.436245 || latitude < -23.727655 || longitude > -46.487871 || longitude < -46.808425){
+    if(latitude > -23.417254 || latitude < -23.727655 || longitude > -46.474720 || longitude < -46.808425){
       e.latlng.lat = localInicial.lat;
       e.latlng.lng = localInicial.lng;
       mymap.setView(e.latlng);
