@@ -244,6 +244,8 @@ async function abrirLocal(item) {
   mLocal += '<h5> AB- </h5>'
   mLocal += '</div>';
   mLocal += '</div>';
+  mLocal += '<p> Os dados sobre o nível do estoque podem ser fictícios'
+    mLocal += '</p> '
   mLocal += '</div>';
   mLocal += '<div class="info">';
   mLocal += '<div class="endereco">';
@@ -286,7 +288,6 @@ async function abrirLocal(item) {
         }
       })
     }
-    
     mLocal += '</h6>'
   }
   }

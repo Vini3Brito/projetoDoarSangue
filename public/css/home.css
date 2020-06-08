@@ -517,6 +517,7 @@ button#button_tipo:hover {
         color: black;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
+     
 }
 @media(max-width: 768px){
     .card.card-body {
@@ -760,3 +761,18 @@ div#myModal:before {
         height: 100%;
       }
     }
+    .nivel_sangue p {
+        color: white;
+        /* bottom: -10px; */
+        position: absolute;
+    }
+    @media(min-width: 401px) and (max-width: 768px){
+        .modal-body .nivel_sangue {
+            margin-bottom: 28px;
+        }
+        }
+        @media(min-width: 1px) and (max-width: 400px){
+        .modal-body .nivel_sangue {
+            margin-bottom: 42px;
+        }
+        }

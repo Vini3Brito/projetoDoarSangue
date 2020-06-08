@@ -46,7 +46,7 @@
         <div class="modal-header_selecione" >
           <h2 class="modal-title">Atenção</h2>
         </div>
-      <div class="modal-body" style="background-image: url(../public/Ícones/gota-background.svg); background-repeat: no-repeat;">
+      <div class="modal-body">
         <p id='texto_navegacao'>Este site foi realizado por alunos de Sistemas de Informação da Anhembi Morumbi. Por se tratar de um projeto acadêmico, alguns dados acerca da situação do estoque de sangue são ficticios. Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.</p>
             <button id="button_localizacao" onclick="inicio()" type="button"><h3> Ok, entendi</h3></button>
           </div>
@@ -64,7 +64,7 @@
           <h2 class="modal-title">Selecione o tipo sanguíneo</h2>
         </div>
         <div class="modal-body">
-          <div class="tipo_sanguino">
+          <div class="tipo_sanguino" style="background-image: url(../public/Ícones/gota-background.svg); background-repeat: no-repeat; background-position: 200px 70px;">
             <p id='textTipo'>(Mostraremos quais locais mais precisam do tipo informado)</p>
             <div id="container">
 
@@ -229,7 +229,7 @@
   <!-- Legenda -->
   <div id="legenda">
     <button class="btn btn-primary" id='button_legenda' type="button" data-toggle="collapse"
-      data-target=".multi-collapse" aria-expanded="false"
+      data-target=".multi-collapse" aria-expanded="true"
       aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
 
     <div class="row">
