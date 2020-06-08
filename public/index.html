@@ -225,12 +225,12 @@
       <p>Obrigado por acessar o site! Você pode nos ajudar avaliando o sistema no ícone abaixo.</p>
     </div>
   </div>
-
+  
   <!-- Legenda -->
   <div id="legenda">
     <button class="btn btn-primary" id='button_legenda' type="button" data-toggle="collapse"
-      data-target=".multi-collapse" aria-expanded="false"
-      aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
+      data-target=".multi-collapse" aria-expanded="true"
+      aria-controls="multiCollapseExample1">Legenda</button>
 
     <div class="row">
       <div class="col">
@@ -255,103 +255,11 @@
       </div>
     </div>
   </div>
-  
-  
 
   <!-- local é pra abrir o modal de local -->
-  <div id='local'>
-    
-    <!--    CÓDIGO EM ANÁLISE, NÃO APAGAR
-    <div class="modal fade" id="mostraLocal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true" data-backdrop="static" data-keyboard="false">
-      <div class="modal-dialog" role="dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">' + item.nomeLocal + '</h4>
-            <button type="button" onclick="fechaLocal()" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <div class="nivel_sangue">
-                <div class="titulo">
-                  <h4> Nível de Estoque </h4>
-                </div>
-                <div class="container_img">
-                  <div class="img01">
-                    <img src="' + ref.img[detBanco.nivelApos - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelApos - 1] + '</h6>
-                    <h5> A+ </h5>
-                  </div>
-                  <div class="img02">
-                    <img src="' + ref.img[detBanco.nivelAneg - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelAneg - 1] + '</h6>
-                    <h5> A- </h5>
-                  </div>
-                  <div class="img03">
-                    <img src="' + ref.img[detBanco.nivelBpos - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelBpos - 1] + '</h6>
-                    <h5> B+ </h5>
-                  </div>
-                  <div class="img04">
-                    <img src="' + ref.img[detBanco.nivelBneg - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelBneg - 1] + '</h6>
-                    <h5> B- </h5>
-                  </div>
-                </div>
-                <div class="container_imgs">
-                  <div class="img05">
-                    <img src="' + ref.img[detBanco.nivelOpos - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelOpos - 1] + '</h6>
-                    <h5> O+ </h5>
-                  </div>
-                  <div class="img06">
-                    <img src="' + ref.img[detBanco.nivelOneg - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelOneg - 1] + '</h6>
-                    <h5> O- </h5>
-                  </div>
-                  <div class="img07">
-                    <img src="' + ref.img[detBanco.nivelABpos - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelABpos - 1] + '</h6>
-                    <h5> AB+ </h5>
-                  </div>
-                  <div class="img08">
-                    <img src="' + ref.img[detBanco.nivelABneg - 1] + '">
-                    <h6>' + ref.texto[detBanco.nivelABneg - 1] + '</h6>
-                    <h5> AB- </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="info">
-                <div class="endereco">
-                <h6>Endereço: <br>
-                  <span>' + parte + '</span><br>
-                </h6>
-                  <h6>Funcionamento: <br>
-                    <span>' + parte + ';</span><br>
-                  </h6>
-                  <h6>Contato:<br>
-                    <span>Telefone: ' + detLocal.telefone + '</span><br>
-                    <span><a href="' + detLocal.site + '"target="_blank">Site</a></span><br>
-                    <span>Email: ' + detLocal.email + '</span> <br>
-                      <span><a href="' + rede[1] + '"target="_blank">' + rede[0] + '</a> | </span>
-                  </h6>
-                <p>Ultima atualização: ' + data + '</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-  </div>
-  <div id='mapid'>
-    
-  </div>
+  <div id='local'></div>
+  <div id='mapid'></div>
 
-  <!-- <script>
-    alert('Caso esteja fora da cidade de São Paulo, não serão apresentados locais de doação no momento. Pedimos que não conceda a localização, tendo assim melhor experiência com o sistema.');
-  </script> -->
   <script language="javascript" type="text/javascript" src="./js/mapbox.js"></script>
   <script type="text/javascript">
     $('#myModal').modal({
