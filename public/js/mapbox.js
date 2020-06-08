@@ -20,6 +20,15 @@ function inicio() {
   mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
     //Consulta de locais quando usuário passa sua localização
     close_localizacao();
+    //Trecho para tratar caso o usuário esteja fora dos limites de São Paulo
+    let latitude = e.latlng.lat;
+    let longitude = e.latlng.lng;
+    if(latitude > -23.436245 || latitude < -23.727655 || longitude > -46.487871 || longitude < -46.808425){
+      e.latlng.lat = localInicial.lat;
+      e.latlng.lng = localInicial.lng;
+      mymap.setView(e.latlng);
+    }
+    //Fim do trecho
     novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
       locais = consulta
     });
@@ -262,10 +271,10 @@ async function abrirLocal(item) {
   if (detLocal.telefone != null || detLocal.site != null || detLocal.email != null || redes != null) {
     mLocal += '<h6>Contato:<br>'
     if (detLocal.telefone != null) {
-      mLocal += '<span>Telefone: ' + detLocal.telefone + '</span><br>'
+      mLocal += '<span>Telefone: <a href="tel:'+detLocal.telefone+'">' + detLocal.telefone + '</a></span><br>'
     }
     if (detLocal.email != null) {
-      mLocal += '<span>Email: ' + detLocal.email + '</span> <br>'
+      mLocal += '<span>Email: <a href="mailto:'+detLocal.email+'">' + detLocal.email + '</a></span> <br>'
     }
     mLocal += '</h6>'
     if (detLocal.site != null || redes !=null) {
