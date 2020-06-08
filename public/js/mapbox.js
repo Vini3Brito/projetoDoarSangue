@@ -2,7 +2,6 @@
 let localInicial = L.latLng(-23.565658, -46.651218);
 let raioExibicao = 5; //Km
 let distanciaBusca = raioExibicao * 10;
-let check = false //checar tempo de execução
 let locais;
 //Criação do mapa 
 var mymap = L.map('mapid', { zoomControl: false }).setView(localInicial, 14.5);
@@ -41,75 +40,32 @@ function inicio() {
   });
 }
 
-
-// const locaisCarregados;
-// mymap.locate({ setView: true, maxZoom: 14.5 }).on("locationfound", e => {
-//   //Consulta de locais quando usuário passa sua localização
-//   novocarregaLocais(e.latlng, distanciaBusca).then(consulta => {
-//     locaisCarregados = consulta;
-//   });
-//   mostraSelecioneTipo();
-// }).on("locationerror", e => {
-//   //Consulta de locais quando usuário NÃO passa sua localização
-//   novocarregaLocais(localInicial, distanciaBusca).then(consulta => {
-//     locaisCarregados = consulta;
-//   });
-//   mostraSelecioneTipo();
-// });
-// function mostreSelecioneTipo(){
-//   //Fecha modal de localidade
-//   //Abre modal selecione tipo
-// }
-// function valorSelecionado(tipo) {
-//   for(const local in locaisCarregados){
-//     switch (tipo){
-//       case "1":
-//           local.nivelEstoque = local.banco.nivelApos;
-//           break;
-//       case "2":
-//           local.nivelEstoque = local.banco.nivelBpos;
-//           break;
-//       case "3":
-//           local.nivelEstoque = local.banco.nivelOpos;
-//           break;
-//       case "4":
-//           local.nivelEstoque = local.banco.nivelABpos;
-//           break;
-//       case "5":
-//           local.nivelEstoque = local.banco.nivelAneg;
-//           break;
-//       case "6":
-//           local.nivelEstoque = local.banco.nivelBneg;
-//           break;
-//       case "7":
-//           local.nivelEstoque = local.banco.nivelOneg;
-//           break;
-//       case "8":
-//           local.nivelEstoque = local.banco.nivelABneg;
-//           break;
-//     }
-//   }
-//   apontaLocais(locaisCarregados);
-// }
-
 var iconePadrao = L.icon({
   iconUrl: './Ícones/marcador.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 var iconeClaro = L.icon({
   iconUrl: './Ícones/marcador-claro.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 var iconeMedio = L.icon({
   iconUrl: './Ícones/marcador-medio.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 var iconeEscuro = L.icon({
   iconUrl: './Ícones/marcador-escuro.svg',
+  shadowUrl: './Ícones/marcador-sombra.svg',
   iconSize: [25.8, 48.8],
+  shadowSize: [25.8, 48.8],
   popupAnchor: [0, -18]
 });
 
@@ -191,8 +147,6 @@ async function abrirLocal(item) {
   }
   data = arrumarData(detLocal.dataAtualizacao.toDate());
 
-  // $("#mostraLocal").modal();   EM ANÁLISE PARA ALTERAÇÃO DE MODAL
-
   mLocal = "";
   mLocal += '<div class="modal" id="mostraLocal" tabindex="-1" role="dialog">';
   mLocal += '<div class="modal-dialog" role="document">';
@@ -207,7 +161,9 @@ async function abrirLocal(item) {
   mLocal += '<div class="container">'
   mLocal += '<div class="nivel_sangue">';
   mLocal += '<div class="titulo">';
-  mLocal += '<h4> Nível de Estoque </h4>'
+  mLocal += '<h4>Nível de Estoque</h4>'
+  mLocal += '<p> (Os dados sobre o nível do estoque podem ser fictícios)'
+  mLocal += '</p> '
   mLocal += '</div>';
   mLocal += '<div class="container_img">';
   mLocal += '<div class="img01">';
@@ -253,8 +209,6 @@ async function abrirLocal(item) {
   mLocal += '<h5> AB- </h5>'
   mLocal += '</div>';
   mLocal += '</div>';
-  mLocal += '<p> Os dados sobre o nível do estoque podem ser fictícios'
-    mLocal += '</p> '
   mLocal += '</div>';
   mLocal += '<div class="info">';
   mLocal += '<div class="endereco">';
@@ -301,13 +255,13 @@ async function abrirLocal(item) {
   }
   }
   switch (detLocal.tipoAgendamento) {
-    case 2:
+    case "2":
       mLocal += '<h6><span>O agendamento para doação ocorre através do site.</span></h6>'
       break;
-    case 3:
+    case "3":
       mLocal += '<h6><span>O agendamento para doação ocorre através do telefone.</span></h6>'
       break;
-    case 4:
+    case "4":
       mLocal += '<h6><span>O agendamento para doação ocorre presencialmente.</span></h6>'
       break;
   }
@@ -322,12 +276,17 @@ async function abrirLocal(item) {
 }
 
 function arrumarData(data) {
-  // vData = data.split(" ")
-  // meses = {
-  //   'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'Jun': '06', 'Jul': '07', 'Aug': '08',
-  //   'Sep': '09', 'Out': '10', 'Nov': '11', 'Dec': '12'
-  // }
-  // dataFim = vData[2] + "/" + meses[vData[1]] + "/" + vData[3] + " " + vData[4]
-  // return dataFim
-  return data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear() + " " + data.getHours() + ":" + data.getMinutes();
+  let dia;
+  let mes;
+  if(data.getDate().toString().length == 1){
+    dia = "0" + data.getDate()
+  } else {
+    dia = data.getDate()
+  }
+  if((data.getMonth()+1).toString().length == 1){
+    mes = "0" + (data.getMonth()+1)
+  } else {
+    mes = (data.getMonth()+1)
+  }
+  return dia + "/" + mes + "/" + data.getFullYear() + " " + data.getHours() + ":" + data.getMinutes();
 }
