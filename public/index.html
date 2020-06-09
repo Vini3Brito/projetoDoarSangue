@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
   <title>Projeto Doar Sangue</title>
   <link rel='stylesheet' type='text/css' media='screen' href='./css/home.css'>
   <!-- link Bootstrap -->
@@ -29,7 +30,6 @@
 </head>
 
 <body>
-  
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
@@ -77,22 +77,22 @@
               <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a+"
                 value="Apos" onclick="verificaLocais(this.value);aciona()">
                 A+
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
               <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="a-"
                 value="Aneg" onclick="verificaLocais(this.value);aciona()">
                 A-
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
               <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b+"
                 value="Bpos" onclick="verificaLocais(this.value);aciona()">
                 B+
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
               <button class="close" data-dismiss="modal" aria-label="Fechar" type="button" id="botao" class="b-"
                 value="Bneg" onclick="verificaLocais(this.value);aciona()">
                 B-
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
 
 
@@ -103,22 +103,22 @@
               <button class="close" onclick="verificaLocais(this.value);aciona()" data-dismiss="modal" aria-label="Fechar"
                 type="button" id="botao" class="o+" value="Opos">
                 O+
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
               <button class="close" onclick="verificaLocais(this.value);aciona()" data-dismiss="modal" aria-label="Fechar"
                 type="button" id="botao" class="o-" value="Oneg">
                 O-
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
               <button class="close" onclick="verificaLocais(this.value);aciona()" data-dismiss="modal" aria-label="Fechar"
                 type="button" id="botao" class="ab+" value="ABpos">
                 AB+
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
               <button class="close" onclick="verificaLocais(this.value);aciona()" data-dismiss="modal" aria-label="Fechar"
                 type="button" id="botao" class="ab-" value="ABneg">
                 AB-
-                <img src="../Ícones/bolsa_alta.svg">
+                <img src="./Ícones/bolsa_alta.svg">
               </button>
 
             </div>
@@ -233,25 +233,48 @@
   <div id="legenda">
     <button class="btn btn-primary" id='button_legenda' type="button" data-toggle="collapse"
       data-target=".multi-collapse" aria-expanded="true"
-      aria-controls="multiCollapseExample1 multiCollapseExample2">Legenda</button>
-
+      aria-controls="multiCollapseExample1">Legenda</button>
     <div class="row">
       <div class="col">
         <div class="collapse multi-collapse" id="multiCollapseExample1" >
-          <div class="card card-body" id="legendaa">
+          <div class="card card-body">
             <div id="info_legenda">
-              <div class="critico">
-                <h4>Crítico</h4>
-                <img src="../Ícones/marcador-claro.svg">
+              <!-- Linha crítico -->
+              <div class="row">
+                <div class="critico">
+                  <div class="col">
+                    <h4>Crítico</h4>
+                  </div>
+                  <div class="col">
+                    <img src="./Ícones/marcador-claro.svg">
+                  </div>
+                </div>
               </div>
-              <div class="Alerta">
-                <h4>Alerta</h4>
-                <img src="../Ícones/marcador-medio.svg">
+              <!-- fim linha critico -->
+              <!-- Linha alerta -->
+              <div class="row">
+                <div class="alerta">
+                  <div class="col">
+                    <h4>Alerta</h4>
+                  </div>
+                  <div class="col">
+                    <img src="./Ícones/marcador-medio.svg">
+                  </div>
+                </div>
               </div>
-              <div class="estavel">
-                <h4>Estável</h4>
-                <img src="../Ícones/marcador-escuro.svg">
+              <!-- fim linha alerta -->
+              <!-- Linha estavel -->
+              <div class="row">
+                <div class="estavel">
+                  <div class="col">
+                    <h4>Estável</h4>
+                  </div>
+                  <div class="col">
+                    <img src="./Ícones/marcador-escuro.svg">
+                  </div>
+                </div>
               </div>
+              <!-- fim linha estavel -->
             </div>
           </div>
         </div>
@@ -269,12 +292,10 @@
       keyboard: false
     })
 
-
-
     $('#multiCollapseExample1').on('hidden.bs.collapse', function () {
       document.getElementById("button_legenda").style.bottom = "12px";
     })
- $('#multiCollapseExample1').on('show.bs.collapse', function () {
+    $('#multiCollapseExample1').on('show.bs.collapse', function () {
       document.getElementById("button_legenda").style.bottom = "125px";
     })
 

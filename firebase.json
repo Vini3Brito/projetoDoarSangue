@@ -28,25 +28,25 @@
         "source": "/js/home.js",
         "headers": [ {
           "key": "Cache-Control",
-          "value": "max-age=120"
+          "value": "max-age=30"
         } ]
       }, {
         "source": "/js/mapbox.js",
         "headers": [ {
           "key": "Cache-Control",
-          "value": "max-age=120"
+          "value": "max-age=300"
         } ]
       }, {
         "source": "/js/firebase.js",
         "headers": [ {
           "key": "Cache-Control",
-          "value": "max-age=120"
+          "value": "max-age=30"
         } ]
       }, {
         "source": "/css/home.css",
         "headers": [ {
           "key": "Cache-Control",
-          "value": "max-age=120"
+          "value": "max-age=30"
         } ]
       }
     ]

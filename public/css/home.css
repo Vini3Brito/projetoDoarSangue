@@ -1,4 +1,22 @@
-  /* Style questionário Mobile */
+/* Deixar mapa travado sem rolagem no mobile*/
+@media(max-width: 768px){
+    html, body {
+        height: 100%;
+    }
+    body {
+        width: 100%;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: 0 0;
+            -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        overflow-y: scroll;
+    }
+}
+   /* Style questionário Mobile */
 
 @media(max-width: 768px){
 #executar_questionario img{
@@ -522,22 +540,23 @@ button#button_tipo:hover {
 @media(max-width: 768px){
     .card.card-body {
         width: 135px!important;
-    
+        max-height: 123px!important;
+        height: 100%;
     }
-    }
+}
 
     @media (max-width: 768px){
         #button_legenda {
             font-size: 20px!important;
         }
-        }
+    }
         
         
     #button_legenda {
         position: fixed;
         bottom: 12px;
         -webkit-transition: bottom 300ms;
-        transition: bottom 150ms;
+        transition: bottom 300ms;
     }
     #info_legenda h4 {
         font-size: 20px;
@@ -546,21 +565,24 @@ button#button_tipo:hover {
     }
     .critico img {
         width: 25px;
-        margin-left: 20px;
+        margin-right: 20px;
+        /* margin-left: 20px; */
     }
     .critico {
         display: flex;
     }
     .alerta img {
         width: 25px;
-        margin-left: 24px;
+        margin-right: 24px;
+        /* margin-left: 24px; */
     }
     .alerta {
         display: flex;
     }
     .estavel img {
         width: 25px;
-        margin-left: 17px;
+        margin-right: 17px;
+        /* margin-left: 17px; */
     }
     .estavel {
         display: flex;
