@@ -574,7 +574,7 @@ button#button_tipo:hover {
     .alerta img {
         width: 25px;
         margin-right: 24px;
-        /* margin-left: 24px; */
+        margin-left: 5px;
     }
     .alerta {
         display: flex;
