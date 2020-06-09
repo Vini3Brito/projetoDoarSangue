@@ -684,7 +684,7 @@ div#myModal:before {
     -webkit-transition: opacity 800ms, visibility 800ms;
     transition: opacity 800ms, visibility 800ms;
   }
-  @media (max-width: 321px){
+  @media (max-width: 370px){
   #local .container {
       padding: 0px!important;
   
