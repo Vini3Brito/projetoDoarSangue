@@ -95,21 +95,32 @@ const firebaseConfig = {
 }
 
 async function novocarregaLocais(centro, distancia){
-    const localColeta = geofirestore.collection("localColeta");
+    // const localColeta = geofirestore.collection("localColeta");      //Trecho comentado após atualização do Geofirestore
+    const localColeta = db.collection("localColeta");
     const locais = [];
-    await localColeta.near({
-        center: new firebase.firestore.GeoPoint(centro.lat, centro.lng),
-        radius: distancia
-    }).get().then(function(res){
+    // await localColeta.near({                                         //Trecho comentado após atualização do Geofirestore
+    //     center: new firebase.firestore.GeoPoint(centro.lat, centro.lng),
+    //     radius: distancia
+    // }).get().then(function(res){
+    //     res.forEach(function(doc){
+    //         let local = new Object();
+    //         local.idLocal = doc.id;
+    //         local.nomeLocal = doc.data().nomeLocal;
+    //         local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
+    //         local.detalheLocal = doc.data().detalheLocal;
+    //         local.banco = doc.data().banco;
+    //         locais.push(local);
+    //     });
+    await localColeta.get().then(function(res){         //Início do trecho de solução temporária adicionado 16/06
         res.forEach(function(doc){
             let local = new Object();
             local.idLocal = doc.id;
-            local.nomeLocal = doc.data().nomeLocal;
-            local.coordenadas = L.latLng(doc.data().coordinates.latitude, doc.data().coordinates.longitude);
-            local.detalheLocal = doc.data().detalheLocal;
-            local.banco = doc.data().banco;
+            local.nomeLocal = doc.data().d.nomeLocal;
+            local.coordenadas = L.latLng(doc.data().d.coordinates.latitude, doc.data().d.coordinates.longitude);
+            local.detalheLocal = doc.data().d.detalheLocal;
+            local.banco = doc.data().d.banco;
             locais.push(local);
-        });
+        });                 //Final do trecho 
     }).catch(function(error){
         let codigo = error.code;
         if(codigo == "deadline-exceeded"){
